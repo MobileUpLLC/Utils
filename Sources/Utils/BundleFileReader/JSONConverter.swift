@@ -44,7 +44,6 @@ open class JSONConverter {
         jsonString: String,
         options: JSONSerialization.WritingOptions = []
     ) throws -> Data {
-        
         return try encode(object: jsonString)
     }
     
