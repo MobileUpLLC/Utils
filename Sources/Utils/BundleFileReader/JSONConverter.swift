@@ -7,14 +7,14 @@
 
 import Foundation
 
-open class JSONConverter {
+public class JSONConverter {
     
     enum Error: Swift.Error {
         
         case parsing
     }
     
-    class func encode<T: Encodable>(
+    public class func encode<T: Encodable>(
         object: T,
         dataEncodingStrategy: JSONEncoder.DateEncodingStrategy = .deferredToDate
     ) throws -> Data {
@@ -24,7 +24,7 @@ open class JSONConverter {
         return try encoder.encode(object)
     }
     
-    class func encode(
+    public class func encode(
         json: JSON,
         options: JSONSerialization.WritingOptions = []
     ) throws -> Data {
@@ -32,7 +32,7 @@ open class JSONConverter {
         return try JSONSerialization.data(withJSONObject: json, options: options)
     }
     
-    class func encode(
+    public class func encode(
         dictionary: [String : Any],
         options: JSONSerialization.WritingOptions = []
     ) throws -> Data {
@@ -40,14 +40,14 @@ open class JSONConverter {
         return try encode(json: dictionary, options: options)
     }
     
-    class func encode(
+    public class func encode(
         jsonString: String,
         options: JSONSerialization.WritingOptions = []
     ) throws -> Data {
         return try encode(object: jsonString)
     }
     
-    class func decode<T: Decodable>(
+    public class func decode<T: Decodable>(
         _ type: T.Type,
         data: Data,
         dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate
@@ -58,7 +58,7 @@ open class JSONConverter {
         return try decoder.decode(type, from: data)
     }
     
-    class func decode<T: Decodable>(
+    public class func decode<T: Decodable>(
         _ type: T.Type,
         json: JSON,
         dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate
@@ -68,7 +68,7 @@ open class JSONConverter {
         return try decode(type, data: data, dateDecodingStrategy: dateDecodingStrategy)
     }
     
-    class func decode<T: Decodable>(
+    public class func decode<T: Decodable>(
         _ type: T.Type,
         dictionary: [String: Any],
         dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate
@@ -78,7 +78,7 @@ open class JSONConverter {
         return try decode(type, data: data, dateDecodingStrategy: dateDecodingStrategy)
     }
     
-    class func decode(
+    public class func decode(
         data: Data,
         options: JSONSerialization.ReadingOptions = []
     ) throws -> [String: Any] {
@@ -90,7 +90,7 @@ open class JSONConverter {
         return result
     }
     
-    class func decode(
+    public class func decode(
         data: Data,
         options: JSONSerialization.ReadingOptions = []
     ) throws -> String {

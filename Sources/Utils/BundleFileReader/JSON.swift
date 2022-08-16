@@ -7,4 +7,4 @@
 
 import Foundation
 
-typealias JSON = Any
+public typealias JSON = Any
