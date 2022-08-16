@@ -28,3 +28,4 @@ xcshareddata/
 # Swift Package Manager
 .build/
 Package.resolved*
+lintOutput.json
