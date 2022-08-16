@@ -52,4 +52,4 @@ dependencies: [
 
 ## License
 
-FormController is distributed under the [MIT License](https://github.com/MobileUpLLC/Utils/blob/main/LICENSE).
+Utils is distributed under the [MIT License](https://github.com/MobileUpLLC/Utils/blob/main/LICENSE).
