@@ -39,7 +39,7 @@
                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="ApplyDataButtonTap" destination="-1" eventType="touchUpInside" id="n6a-nS-JLo"/>
+                        <action selector="applyDataButtonTap" destination="-1" eventType="touchUpInside" id="3Wr-6W-yXd"/>
                     </connections>
                 </button>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="vky-x5-TN0">

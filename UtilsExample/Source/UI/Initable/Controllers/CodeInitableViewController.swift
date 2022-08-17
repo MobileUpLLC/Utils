@@ -46,7 +46,10 @@ final class CodeInitableViewController: UIViewController, CodeInitable {
 
         NSLayoutConstraint.activate([
             initableLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            initableLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.baseViewInset)
+            initableLabel.topAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.topAnchor,
+                constant: Constants.baseViewInset
+            )
         ])
     }
 

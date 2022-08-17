@@ -40,7 +40,7 @@ final class ClosureExampleViewController: UIViewController, XibInitable {
         sliderValue.text = String(sender.value)
     }
 
-    @IBAction private func ApplyDataButtonTap() {
+    @IBAction private func applyDataButtonTap() {
         textFieldClosure?(textField.text ?? Constants.empty)
         sliderClosure?(sliderInput)
         

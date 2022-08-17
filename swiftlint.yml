@@ -133,6 +133,6 @@ nesting:
     warning: 4
     error: 8
 
-warning_threshold: 20
+warning_threshold: 50
 
 reporter: "xcode"
