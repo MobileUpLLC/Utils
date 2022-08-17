@@ -33,7 +33,7 @@ open class LocalNotificationService: NSObject, UNUserNotificationCenterDelegate 
 
     open func openApplicaitonSettings() { }
 
-    private override init() {
+    public override init() {
         super.init()
     
         UNUserNotificationCenter.current().delegate = self
