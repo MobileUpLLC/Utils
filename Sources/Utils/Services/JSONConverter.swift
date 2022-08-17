@@ -25,7 +25,7 @@ public class JSONConverter {
     }
     
     public class func encode(
-        json: JSON,
+        json: Any,
         options: JSONSerialization.WritingOptions = []
     ) throws -> Data {
         
@@ -60,7 +60,7 @@ public class JSONConverter {
     
     public class func decode<T: Decodable>(
         _ type: T.Type,
-        json: JSON,
+        json: Any,
         dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate
     ) throws -> T {
         let data = try encode(json: json)
@@ -94,13 +94,10 @@ public class JSONConverter {
         data: Data,
         options: JSONSerialization.ReadingOptions = []
     ) throws -> String {
-        
         let jsonObject = try JSONSerialization.jsonObject(with: data, options: options)
-        
         let prettyData = try encode(json: jsonObject, options: .prettyPrinted)
-        
         let prettyString = String(data: prettyData, encoding: .utf8)
-        
+
         return prettyString ?? ""
     }
 }

@@ -8,6 +8,11 @@
 import Foundation
 
 open class BundleFileReader {
+    
+    private enum Constants {
+        
+        static let jsonExtension: String = "json"
+    }
 
     enum BundleFileReaderError: Error {
         
@@ -15,13 +20,13 @@ open class BundleFileReader {
     }
     
     public static func readObject<T: Decodable>(name: String, bundle: Bundle = .main) throws -> T {
-        let data = try readData(name: name, withExtension: "json", bundle: bundle)
+        let data = try readData(name: name, withExtension: Constants.jsonExtension, bundle: bundle)
         
         return try JSONConverter.decode(T.self, data: data)
     }
     
     public static func readJSON<T: Codable>(name: String, into type: T.Type, bundle: Bundle = .main) throws -> JSON {
-        let data = try readData(name: name, withExtension: "json", bundle: bundle)
+        let data = try readData(name: name, withExtension: Constants.jsonExtension, bundle: bundle)
         
         return try JSONConverter.decode(type, data: data)
     }
