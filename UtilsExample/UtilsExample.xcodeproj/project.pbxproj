@@ -10,7 +10,6 @@
 		941BA1CE28ABA8C000E747EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D108B628ABA74000D1C7A3 /* LaunchScreen.storyboard */; };
 		948BE09828ABA1CB00A3D10F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948BE09728ABA1CB00A3D10F /* AppDelegate.swift */; };
 		948BE0A128ABA1CC00A3D10F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 948BE0A028ABA1CC00A3D10F /* Assets.xcassets */; };
-		94B2D29028ACF4280032E411 /* LocalPushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2D28F28ACF4280032E411 /* LocalPushNotificationService.swift */; };
 		94B5553128ABB48D000DEFEF /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = 94B5553028ABB48D000DEFEF /* Utils */; };
 		94B5553428ABC4A2000DEFEF /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5553228ABC4A2000DEFEF /* ExampleViewController.swift */; };
 		94B5553528ABC4A2000DEFEF /* ExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B5553328ABC4A2000DEFEF /* ExampleViewController.xib */; };
@@ -22,11 +21,11 @@
 		E512FBA928AC1EA700C518DA /* FormCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512FBA828AC1EA700C518DA /* FormCodeView.swift */; };
 		E5246BBB28ACD44E00381384 /* FormXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5246BBA28ACD44D00381384 /* FormXibView.swift */; };
 		E5246BBD28ACD46C00381384 /* FormXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5246BBC28ACD46C00381384 /* FormXibView.xib */; };
+		FAA4CCD628ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json in Resources */ = {isa = PBXBuildFile; fileRef = FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */; };
 		FAD395A428ACDFAE00862F9C /* XibViewViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD395A228ACDFAE00862F9C /* XibViewViewControllerExample.swift */; };
 		FAD395A528ACDFAE00862F9C /* XibViewViewControllerExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD395A328ACDFAE00862F9C /* XibViewViewControllerExample.xib */; };
 		FAD395A928ACE0EE00862F9C /* XibViewExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD395A828ACE0EE00862F9C /* XibViewExample.xib */; };
 		FAD395AB28ACE10200862F9C /* XibViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD395AA28ACE10200862F9C /* XibViewExample.swift */; };
-		FAA4CCD628ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json in Resources */ = {isa = PBXBuildFile; fileRef = FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */; };
 		FAD395B428ACFAF300862F9C /* UtilsExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +43,6 @@
 		948BE09428ABA1CB00A3D10F /* UtilsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UtilsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		948BE09728ABA1CB00A3D10F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		948BE0A028ABA1CC00A3D10F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		94B2D28F28ACF4280032E411 /* LocalPushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalPushNotificationService.swift; path = ../../../../../../LocalPushNotificationService.swift; sourceTree = "<group>"; };
 		94B5553228ABC4A2000DEFEF /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		94B5553328ABC4A2000DEFEF /* ExampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleViewController.xib; sourceTree = "<group>"; };
 		94B5553728ABC60E000DEFEF /* XibInitableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibInitableViewController.swift; sourceTree = "<group>"; };
@@ -57,11 +55,11 @@
 		E512FBA828AC1EA700C518DA /* FormCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCodeView.swift; sourceTree = "<group>"; };
 		E5246BBA28ACD44D00381384 /* FormXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormXibView.swift; sourceTree = "<group>"; };
 		E5246BBC28ACD46C00381384 /* FormXibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormXibView.xib; sourceTree = "<group>"; };
+		FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonArrayForBundleFileReaderTest.json; sourceTree = "<group>"; };
 		FAD395A228ACDFAE00862F9C /* XibViewViewControllerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibViewViewControllerExample.swift; sourceTree = "<group>"; };
 		FAD395A328ACDFAE00862F9C /* XibViewViewControllerExample.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibViewViewControllerExample.xib; sourceTree = "<group>"; };
 		FAD395A828ACE0EE00862F9C /* XibViewExample.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibViewExample.xib; sourceTree = "<group>"; };
 		FAD395AA28ACE10200862F9C /* XibViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibViewExample.swift; sourceTree = "<group>"; };
-		FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonArrayForBundleFileReaderTest.json; sourceTree = "<group>"; };
 		FAD395B128ACFAF300862F9C /* UtilsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExampleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,8 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				948BE09628ABA1CB00A3D10F /* Source */,
-				FAD395B228ACFAF300862F9C /* UtilsExampleTests */,
 				948BE09528ABA1CB00A3D10F /* Products */,
+				FAC03E8628AD4D5C0095AA1F /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,7 +104,6 @@
 		948BE09628ABA1CB00A3D10F /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				94B2D28D28ACF4060032E411 /* Services */,
 				948BE0AC28ABA5C300A3D10F /* UI */,
 				948BE0AB28ABA59600A3D10F /* App */,
 			);
@@ -116,7 +113,6 @@
 		948BE0AB28ABA59600A3D10F /* App */ = {
 			isa = PBXGroup;
 			children = (
-				FAD395AC28ACF94000862F9C /* Resources */,
 				948BE09728ABA1CB00A3D10F /* AppDelegate.swift */,
 				94D108B628ABA74000D1C7A3 /* LaunchScreen.storyboard */,
 				948BE0A028ABA1CC00A3D10F /* Assets.xcassets */,
@@ -135,22 +131,6 @@
 				94B5553328ABC4A2000DEFEF /* ExampleViewController.xib */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		94B2D28D28ACF4060032E411 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				94B2D28E28ACF40D0032E411 /* LocalPushNotificationService */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		94B2D28E28ACF40D0032E411 /* LocalPushNotificationService */ = {
-			isa = PBXGroup;
-			children = (
-				94B2D28F28ACF4280032E411 /* LocalPushNotificationService.swift */,
-			);
-			path = LocalPushNotificationService;
 			sourceTree = "<group>";
 		};
 		94B5553628ABC5F6000DEFEF /* Initable */ = {
@@ -189,6 +169,15 @@
 				E5246BBC28ACD46C00381384 /* FormXibView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FAC03E8628AD4D5C0095AA1F /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */,
+				FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		FAD395A128ACD6F900862F9C /* XibView */ = {
@@ -354,7 +343,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAD395A428ACDFAE00862F9C /* XibViewViewControllerExample.swift in Sources */,
-				94B2D29028ACF4280032E411 /* LocalPushNotificationService.swift in Sources */,
 				E512FBA928AC1EA700C518DA /* FormCodeView.swift in Sources */,
 				94B5553928ABC60E000DEFEF /* XibInitableViewController.swift in Sources */,
 				94B5554228ABD76F000DEFEF /* ClosureExampleViewController.swift in Sources */,
