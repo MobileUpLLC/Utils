@@ -10,11 +10,49 @@ Some handly utilities for IOS-app development.
 
 ## Features
 
-- Here will be a list of Utils, what we will use
+- Initiate view from code and xib with Initable protocols
+- Find and decode json with BundleFileReader
+- Handly create Local PushNotification service with LocalPushNotificationService
+- Use base extensions and generic closures for neat and clean code-writing
+- Create reusable Xib View's to init from Xib with XibView
 
 ## Usage
 
-### 1. Here will be description for some non-obvious features
+### 1. Initable and XibView
+
+Initable protocls conforms with ```UIView``` and ```UIViewController```.
+
+1. Inherit your class from Code or Xib -Initable protocol
+2. Init your class with ```.initate()```
+3. In case you creating Xib View, that need's to be inited in another Xib, inherit XibView class, that conform to XibInitable
+
+### 2. BundleFileReader
+
+BundleFilesReader and jsonDecoder allows you to conveniently decode json files from your project
+
+```swift
+func testDictionaryEncoding() {
+    let dictionary: [String: Any] = ["One": 1, "Two": "Два", "Three": 0.47, "Four": true]
+
+    do {
+        let encodedData = try JSONConverter.encode(dictionary: dictionary)
+        let decodedData = try JSONConverter.decode(data: encodedData) as [String: Any]
+
+        XCTAssertEqual(
+            NSDictionary(dictionary: dictionary, copyItems: false),
+            NSDictionary(dictionary: decodedData, copyItems: false)
+        )
+    } catch {
+        XCTFail()
+    }
+}
+```
+
+### 3. LocalPushNotificationService
+
+1. Create your service class, that will inherit LocalPushNotificationService
+2. Override methods, that you will need
+3. Implement service class instance and use
 
 ## Requirements
 
@@ -31,7 +69,7 @@ Utils doesn't contain any external dependencies.
 2. Add the following to Podfile 
 
 ```
-pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.0.1'
+pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.0.20'
 ```
 
 3. Make ```pod install```
@@ -46,7 +84,7 @@ Swift Package Manager
 
 ```
 dependencies: [
-    .package(url: "https://github.com/MobileUpLLC/Utils", .upToNextMajor(from: "0.0.1"))
+    .package(url: "https://github.com/MobileUpLLC/Utils", .upToNextMajor(from: "0.0.20"))
 ]
 ```
 
