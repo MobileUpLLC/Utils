@@ -14,7 +14,7 @@ final class ExampleViewController: UIViewController {
         static let successAuthorization = "Success"
         static let successAuthorizationStatus = "Lock screen to get Notification"
         static let nonSuccessAuthorizationStatus = "Has no rules to push Notifications"
-        static let notificationContent = "Feed the cat"
+        static let notificationTitle = "Feed the cat"
         static let notificationSubtitle = "It looks hungry"
         static let notificationDelay: TimeInterval = 5
     }
@@ -77,7 +77,7 @@ final class ExampleViewController: UIViewController {
 
     private func createNotificationRequest() {
         let content = UNMutableNotificationContent()
-        content.title = Constants.notificationSubtitle
+        content.title = Constants.notificationTitle
         content.subtitle = Constants.notificationSubtitle
         content.sound = UNNotificationSound.default
 
