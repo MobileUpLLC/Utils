@@ -25,7 +25,7 @@ open class BundleFileReader {
         return try JSONConverter.decode(T.self, data: data)
     }
     
-    public static func readJSON<T: Codable>(name: String, into type: T.Type, bundle: Bundle = .main) throws -> JSON {
+    public static func readJSON<T: Codable>(name: String, into type: T.Type, bundle: Bundle = .main) throws -> Any {
         let data = try readData(name: name, withExtension: Constants.jsonExtension, bundle: bundle)
         
         return try JSONConverter.decode(type, data: data)

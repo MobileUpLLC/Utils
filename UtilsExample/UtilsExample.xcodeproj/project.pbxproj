@@ -16,9 +16,20 @@
 		94B5553928ABC60E000DEFEF /* XibInitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5553728ABC60E000DEFEF /* XibInitableViewController.swift */; };
 		94B5553A28ABC60E000DEFEF /* XibInitableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B5553828ABC60E000DEFEF /* XibInitableViewController.xib */; };
 		94B5553C28ABC749000DEFEF /* CodeInitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5553B28ABC749000DEFEF /* CodeInitableViewController.swift */; };
-		FAA4CCD628ABD55B00CF022D /* array.json in Resources */ = {isa = PBXBuildFile; fileRef = FAA4CCD528ABD55B00CF022D /* array.json */; };
+		FAA4CCD628ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json in Resources */ = {isa = PBXBuildFile; fileRef = FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */; };
 		FAA4CCD828ABD5FC00CF022D /* BundleFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4CCD728ABD5FC00CF022D /* BundleFileReader.swift */; };
+		FAD395B428ACFAF300862F9C /* UtilsExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAD395B528ACFAF300862F9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 948BE08C28ABA1CB00A3D10F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 948BE09328ABA1CB00A3D10F;
+			remoteInfo = UtilsExample;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		948BE09428ABA1CB00A3D10F /* UtilsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UtilsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,8 +42,10 @@
 		94B5553B28ABC749000DEFEF /* CodeInitableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInitableViewController.swift; sourceTree = "<group>"; };
 		94D108B628ABA74000D1C7A3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94F83EB928ABAA84006C91AA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAA4CCD528ABD55B00CF022D /* array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = array.json; sourceTree = "<group>"; };
+		FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonArrayForBundleFileReaderTest.json; sourceTree = "<group>"; };
 		FAA4CCD728ABD5FC00CF022D /* BundleFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleFileReader.swift; sourceTree = "<group>"; };
+		FAD395B128ACFAF300862F9C /* UtilsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExampleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +57,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAD395AE28ACFAF300862F9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -51,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				948BE09628ABA1CB00A3D10F /* Source */,
+				FAD395B228ACFAF300862F9C /* UtilsExampleTests */,
 				948BE09528ABA1CB00A3D10F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				948BE09428ABA1CB00A3D10F /* UtilsExample.app */,
+				FAD395B128ACFAF300862F9C /* UtilsExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,6 +97,7 @@
 		948BE0AB28ABA59600A3D10F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				FAD395AC28ACF94000862F9C /* Resources */,
 				948BE09728ABA1CB00A3D10F /* AppDelegate.swift */,
 				94D108B628ABA74000D1C7A3 /* LaunchScreen.storyboard */,
 				948BE0A028ABA1CC00A3D10F /* Assets.xcassets */,
@@ -107,10 +130,25 @@
 		FAA4CCD428ABD3A300CF022D /* BundleFileReader */ = {
 			isa = PBXGroup;
 			children = (
-				FAA4CCD528ABD55B00CF022D /* array.json */,
 				FAA4CCD728ABD5FC00CF022D /* BundleFileReader.swift */,
 			);
 			path = BundleFileReader;
+			sourceTree = "<group>";
+		};
+		FAD395AC28ACF94000862F9C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FAD395B228ACFAF300862F9C /* UtilsExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */,
+			);
+			path = UtilsExampleTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +174,24 @@
 			productReference = 948BE09428ABA1CB00A3D10F /* UtilsExample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FAD395B028ACFAF300862F9C /* UtilsExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAD395B728ACFAF300862F9C /* Build configuration list for PBXNativeTarget "UtilsExampleTests" */;
+			buildPhases = (
+				FAD395AD28ACFAF300862F9C /* Sources */,
+				FAD395AE28ACFAF300862F9C /* Frameworks */,
+				FAD395AF28ACFAF300862F9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAD395B628ACFAF300862F9C /* PBXTargetDependency */,
+			);
+			name = UtilsExampleTests;
+			productName = UtilsExampleTests;
+			productReference = FAD395B128ACFAF300862F9C /* UtilsExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -148,6 +204,10 @@
 				TargetAttributes = {
 					948BE09328ABA1CB00A3D10F = {
 						CreatedOnToolsVersion = 13.3.1;
+					};
+					FAD395B028ACFAF300862F9C = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 948BE09328ABA1CB00A3D10F;
 					};
 				};
 			};
@@ -168,6 +228,7 @@
 			projectRoot = "";
 			targets = (
 				948BE09328ABA1CB00A3D10F /* UtilsExample */,
+				FAD395B028ACFAF300862F9C /* UtilsExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -178,10 +239,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				94B5553A28ABC60E000DEFEF /* XibInitableViewController.xib in Resources */,
-				FAA4CCD628ABD55B00CF022D /* array.json in Resources */,
+				FAA4CCD628ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json in Resources */,
 				941BA1CE28ABA8C000E747EE /* LaunchScreen.storyboard in Resources */,
 				94B5553528ABC4A2000DEFEF /* ExampleViewController.xib in Resources */,
 				948BE0A128ABA1CC00A3D10F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD395AF28ACFAF300862F9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +268,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAD395AD28ACFAF300862F9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAD395B428ACFAF300862F9C /* UtilsExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAD395B628ACFAF300862F9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 948BE09328ABA1CB00A3D10F /* UtilsExample */;
+			targetProxy = FAD395B528ACFAF300862F9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		948BE0A628ABA1CC00A3D10F /* Debug */ = {
@@ -376,6 +460,42 @@
 			};
 			name = Release;
 		};
+		FAD395B828ACFAF300862F9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SV97SW9934;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.mobileup.Utils-Example.UtilsExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UtilsExample.app/UtilsExample";
+			};
+			name = Debug;
+		};
+		FAD395B928ACFAF300862F9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SV97SW9934;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.mobileup.Utils-Example.UtilsExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UtilsExample.app/UtilsExample";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -397,6 +517,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		FAD395B728ACFAF300862F9C /* Build configuration list for PBXNativeTarget "UtilsExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAD395B828ACFAF300862F9C /* Debug */,
+				FAD395B928ACFAF300862F9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -405,7 +534,7 @@
 			repositoryURL = "https://github.com/MobileUpLLC/Utils";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.7;
+				minimumVersion = 0.0.13;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
