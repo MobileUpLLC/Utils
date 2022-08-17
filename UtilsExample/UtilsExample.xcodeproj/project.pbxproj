@@ -16,15 +16,15 @@
 		94B5553928ABC60E000DEFEF /* XibInitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5553728ABC60E000DEFEF /* XibInitableViewController.swift */; };
 		94B5553A28ABC60E000DEFEF /* XibInitableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B5553828ABC60E000DEFEF /* XibInitableViewController.xib */; };
 		94B5553C28ABC749000DEFEF /* CodeInitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5553B28ABC749000DEFEF /* CodeInitableViewController.swift */; };
-		FAD395A428ACDFAE00862F9C /* XibViewViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD395A228ACDFAE00862F9C /* XibViewViewControllerExample.swift */; };
-		FAD395A528ACDFAE00862F9C /* XibViewViewControllerExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD395A328ACDFAE00862F9C /* XibViewViewControllerExample.xib */; };
-		FAD395A928ACE0EE00862F9C /* XibViewExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD395A828ACE0EE00862F9C /* XibViewExample.xib */; };
-		FAD395AB28ACE10200862F9C /* XibViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD395AA28ACE10200862F9C /* XibViewExample.swift */; };
 		94B5554228ABD76F000DEFEF /* ClosureExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5554028ABD76F000DEFEF /* ClosureExampleViewController.swift */; };
 		94B5554328ABD76F000DEFEF /* ClosureExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B5554128ABD76F000DEFEF /* ClosureExampleViewController.xib */; };
 		E512FBA928AC1EA700C518DA /* FormCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512FBA828AC1EA700C518DA /* FormCodeView.swift */; };
 		E5246BBB28ACD44E00381384 /* FormXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5246BBA28ACD44D00381384 /* FormXibView.swift */; };
 		E5246BBD28ACD46C00381384 /* FormXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5246BBC28ACD46C00381384 /* FormXibView.xib */; };
+		FAD395A428ACDFAE00862F9C /* XibViewViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD395A228ACDFAE00862F9C /* XibViewViewControllerExample.swift */; };
+		FAD395A528ACDFAE00862F9C /* XibViewViewControllerExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD395A328ACDFAE00862F9C /* XibViewViewControllerExample.xib */; };
+		FAD395A928ACE0EE00862F9C /* XibViewExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD395A828ACE0EE00862F9C /* XibViewExample.xib */; };
+		FAD395AB28ACE10200862F9C /* XibViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD395AA28ACE10200862F9C /* XibViewExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,13 +40,13 @@
 		94B5554128ABD76F000DEFEF /* ClosureExampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClosureExampleViewController.xib; sourceTree = "<group>"; };
 		94D108B628ABA74000D1C7A3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94F83EB928ABAA84006C91AA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E512FBA828AC1EA700C518DA /* FormCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCodeView.swift; sourceTree = "<group>"; };
+		E5246BBA28ACD44D00381384 /* FormXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormXibView.swift; sourceTree = "<group>"; };
+		E5246BBC28ACD46C00381384 /* FormXibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormXibView.xib; sourceTree = "<group>"; };
 		FAD395A228ACDFAE00862F9C /* XibViewViewControllerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibViewViewControllerExample.swift; sourceTree = "<group>"; };
 		FAD395A328ACDFAE00862F9C /* XibViewViewControllerExample.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibViewViewControllerExample.xib; sourceTree = "<group>"; };
 		FAD395A828ACE0EE00862F9C /* XibViewExample.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibViewExample.xib; sourceTree = "<group>"; };
 		FAD395AA28ACE10200862F9C /* XibViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibViewExample.swift; sourceTree = "<group>"; };
-		E512FBA828AC1EA700C518DA /* FormCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCodeView.swift; sourceTree = "<group>"; };
-		E5246BBA28ACD44D00381384 /* FormXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormXibView.swift; sourceTree = "<group>"; };
-		E5246BBC28ACD46C00381384 /* FormXibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormXibView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +118,15 @@
 			path = Initable;
 			sourceTree = "<group>";
 		};
+		94B5553D28ABD54E000DEFEF /* Closure */ = {
+			isa = PBXGroup;
+			children = (
+				94B5554028ABD76F000DEFEF /* ClosureExampleViewController.swift */,
+				94B5554128ABD76F000DEFEF /* ClosureExampleViewController.xib */,
+			);
+			path = Closure;
+			sourceTree = "<group>";
+		};
 		E512FBAE28AC2C5A00C518DA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,15 +145,6 @@
 				E5246BBC28ACD46C00381384 /* FormXibView.xib */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		94B5553D28ABD54E000DEFEF /* Closure */ = {
-			isa = PBXGroup;
-			children = (
-				94B5554028ABD76F000DEFEF /* ClosureExampleViewController.swift */,
-				94B5554128ABD76F000DEFEF /* ClosureExampleViewController.xib */,
-			);
-			path = Closure;
 			sourceTree = "<group>";
 		};
 		FAD395A128ACD6F900862F9C /* XibView */ = {
@@ -475,7 +475,7 @@
 			repositoryURL = "https://github.com/MobileUpLLC/Utils";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.10;
+				minimumVersion = 0.0.11;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
