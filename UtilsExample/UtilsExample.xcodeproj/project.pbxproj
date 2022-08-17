@@ -10,7 +10,6 @@
 		941BA1CE28ABA8C000E747EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D108B628ABA74000D1C7A3 /* LaunchScreen.storyboard */; };
 		948BE09828ABA1CB00A3D10F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948BE09728ABA1CB00A3D10F /* AppDelegate.swift */; };
 		948BE0A128ABA1CC00A3D10F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 948BE0A028ABA1CC00A3D10F /* Assets.xcassets */; };
-		94B2D29228AD1C8E0032E411 /* LocalPushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2D29128AD1C360032E411 /* LocalPushNotificationService.swift */; };
 		94B5553128ABB48D000DEFEF /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = 94B5553028ABB48D000DEFEF /* Utils */; };
 		94B5553428ABC4A2000DEFEF /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5553228ABC4A2000DEFEF /* ExampleViewController.swift */; };
 		94B5553528ABC4A2000DEFEF /* ExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B5553328ABC4A2000DEFEF /* ExampleViewController.xib */; };
@@ -40,7 +39,6 @@
 		948BE09428ABA1CB00A3D10F /* UtilsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UtilsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		948BE09728ABA1CB00A3D10F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		948BE0A028ABA1CC00A3D10F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		94B2D29128AD1C360032E411 /* LocalPushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushNotificationService.swift; sourceTree = "<group>"; };
 		94B5553228ABC4A2000DEFEF /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		94B5553328ABC4A2000DEFEF /* ExampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleViewController.xib; sourceTree = "<group>"; };
 		94B5553728ABC60E000DEFEF /* XibInitableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibInitableViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 		948BE09628ABA1CB00A3D10F /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				94B2D28D28ACF4060032E411 /* Services */,
 				948BE0AC28ABA5C300A3D10F /* UI */,
 				948BE0AB28ABA59600A3D10F /* App */,
 			);
@@ -126,14 +123,6 @@
 				94B5553328ABC4A2000DEFEF /* ExampleViewController.xib */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		94B2D28D28ACF4060032E411 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				94B2D29128AD1C360032E411 /* LocalPushNotificationService.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		94B5553628ABC5F6000DEFEF /* Initable */ = {
@@ -323,7 +312,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94B2D29228AD1C8E0032E411 /* LocalPushNotificationService.swift in Sources */,
 				E512FBA928AC1EA700C518DA /* FormCodeView.swift in Sources */,
 				94B5553928ABC60E000DEFEF /* XibInitableViewController.swift in Sources */,
 				94B5554228ABD76F000DEFEF /* ClosureExampleViewController.swift in Sources */,
