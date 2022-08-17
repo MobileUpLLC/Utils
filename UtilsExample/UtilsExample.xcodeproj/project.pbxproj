@@ -17,7 +17,6 @@
 		94B5553A28ABC60E000DEFEF /* XibInitableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B5553828ABC60E000DEFEF /* XibInitableViewController.xib */; };
 		94B5553C28ABC749000DEFEF /* CodeInitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5553B28ABC749000DEFEF /* CodeInitableViewController.swift */; };
 		FAA4CCD628ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json in Resources */ = {isa = PBXBuildFile; fileRef = FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */; };
-		FAA4CCD828ABD5FC00CF022D /* BundleFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4CCD728ABD5FC00CF022D /* BundleFileReader.swift */; };
 		FAD395B428ACFAF300862F9C /* UtilsExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +42,6 @@
 		94D108B628ABA74000D1C7A3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94F83EB928ABAA84006C91AA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonArrayForBundleFileReaderTest.json; sourceTree = "<group>"; };
-		FAA4CCD728ABD5FC00CF022D /* BundleFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleFileReader.swift; sourceTree = "<group>"; };
 		FAD395B128ACFAF300862F9C /* UtilsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExampleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,7 +107,6 @@
 		948BE0AC28ABA5C300A3D10F /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				FAA4CCD428ABD3A300CF022D /* BundleFileReader */,
 				94B5553628ABC5F6000DEFEF /* Initable */,
 				94B5553228ABC4A2000DEFEF /* ExampleViewController.swift */,
 				94B5553328ABC4A2000DEFEF /* ExampleViewController.xib */,
@@ -125,14 +122,6 @@
 				94B5553B28ABC749000DEFEF /* CodeInitableViewController.swift */,
 			);
 			path = Initable;
-			sourceTree = "<group>";
-		};
-		FAA4CCD428ABD3A300CF022D /* BundleFileReader */ = {
-			isa = PBXGroup;
-			children = (
-				FAA4CCD728ABD5FC00CF022D /* BundleFileReader.swift */,
-			);
-			path = BundleFileReader;
 			sourceTree = "<group>";
 		};
 		FAD395AC28ACF94000862F9C /* Resources */ = {
@@ -262,7 +251,6 @@
 			files = (
 				94B5553928ABC60E000DEFEF /* XibInitableViewController.swift in Sources */,
 				948BE09828ABA1CB00A3D10F /* AppDelegate.swift in Sources */,
-				FAA4CCD828ABD5FC00CF022D /* BundleFileReader.swift in Sources */,
 				94B5553C28ABC749000DEFEF /* CodeInitableViewController.swift in Sources */,
 				94B5553428ABC4A2000DEFEF /* ExampleViewController.swift in Sources */,
 			);
@@ -534,7 +522,7 @@
 			repositoryURL = "https://github.com/MobileUpLLC/Utils";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.13;
+				minimumVersion = 0.0.16;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

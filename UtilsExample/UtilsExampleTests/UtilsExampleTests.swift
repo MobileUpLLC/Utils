@@ -51,12 +51,10 @@ class UtilsExampleTests: XCTestCase {
     }
     
     func testJsonArrayEncoding() {
-        let testBundle = Bundle(for: type(of: self))
-        
         do {
             let initialDecodedData: [Person] = try BundleFileReader.readObject(
                 name: Constnts.jsonFileName,
-                bundle: testBundle
+                bundle: Bundle.main.self
             )
             let encodedData = try JSONConverter.encode(object: initialDecodedData)
             let finalDecodedData = try JSONConverter.decode([Person].self, data: encodedData)

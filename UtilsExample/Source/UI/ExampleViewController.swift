@@ -13,10 +13,6 @@ final class ExampleViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
-        let BundleFileReader = BundleFileReaderExample()
-        BundleFileReader.dataEncodingExample()
-        BundleFileReader.dictionaryEncodingExample()
-        BundleFileReader.jsonArrayEncodingExample()
     }
 
     @IBAction private func openXibInitableTap() {
