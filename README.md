@@ -12,7 +12,7 @@ Some handly utilities for IOS-app development.
 
 - Initiate view from code and xib with Initable protocols
 - Find and decode json with BundleFileReader
-- Handly create Local PushNotification service with LocalPushNotificationService
+- Handly create Local Push Notification Service with LocalNotificationService
 - Use base extensions and generic closures for neat and clean code-writing
 - Create reusable Xib View's to init from Xib with XibView
 
@@ -24,7 +24,8 @@ Initable protocls conforms with ```UIView``` and ```UIViewController```.
 
 1. Inherit your class from Code or Xib -Initable protocol
 2. Init your class with ```.initate()```
-3. In case you creating Xib View, that need's to be inited in another Xib, inherit XibView class, that conform to XibInitable
+
+In case you creating View from Xib, that need's to be inited in another Xib – inherit XibView class ```MyView: XibView```. XibView is also conform to XibInitable.
 
 ### 2. BundleFileReader
 
@@ -48,11 +49,53 @@ func testDictionaryEncoding() {
 }
 ```
 
-### 3. LocalPushNotificationService
+### 3. LocalNotificationService
 
-1. Create your service class, that will inherit LocalPushNotificationService
+1. Create your service class, that will inherit LocalNotificationService
 2. Override methods, that you will need
-3. Implement service class instance and use
+
+```swift
+import Utils
+
+final class LocalPushNotificationService: LocalNotificationService {
+
+    static let shared = LocalPushNotificationService()
+    
+    override private init() {
+        super.init()
+    }
+
+    override func requestAuthorization(
+        options: UNAuthorizationOptions = [.alert, .sound, .badge],
+        completion: @escaping (Result<Bool, Error>) -> Void
+    ) {
+        super.requestAuthorization(options: options, completion: completion)
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: options) { success, error in
+            if success {
+                completion(.success(true))
+            } else if let error = error {
+                completion(.failure(error))
+            }
+        }
+    }
+}
+```
+
+3. Implement service class instance ```let notificationService = LocalPushNotificationService.shared```  and use
+
+```swift
+@IBAction private func pushNotificationButtonTap(_ sender: UIButton) {
+    pushService.getAuthorizationStatus { [weak self] status in
+        if status == .authorized { 
+            self?.createNotificationRequest()
+            print(Constants.successAuthorizationStatus)
+        } else {
+            print(Constants.nonSuccessAuthorizationStatus)
+        }
+    }
+}
+```
 
 ## Requirements
 
