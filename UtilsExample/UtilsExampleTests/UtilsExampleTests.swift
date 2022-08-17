@@ -30,7 +30,7 @@ class UtilsExampleTests: XCTestCase {
             
             XCTAssertEqual(decodedData, testObject)
         } catch {
-            XCTFail()
+            XCTFail("Data encoding fall")
         }
     }
     
@@ -46,7 +46,7 @@ class UtilsExampleTests: XCTestCase {
                 NSDictionary(dictionary: decodedData, copyItems: false)
             )
         } catch {
-            XCTFail()
+            XCTFail("Dictionary encoding fall")
         }
     }
     
@@ -62,7 +62,7 @@ class UtilsExampleTests: XCTestCase {
             XCTAssertNotNil(initialDecodedData)
             XCTAssertEqual(initialDecodedData, finalDecodedData)
         } catch {
-            XCTFail()
+            XCTFail("Array encoding fall")
         }
     }
 }

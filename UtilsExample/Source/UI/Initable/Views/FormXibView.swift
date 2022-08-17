@@ -16,7 +16,7 @@ final class FormXibView: UIView, XibInitable {
         static let textFieldCornerRadius: CGFloat = 8
     }
     
-    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private var emailTextField: UITextField!
 
     override func awakeFromNib() {
         super.awakeFromNib()

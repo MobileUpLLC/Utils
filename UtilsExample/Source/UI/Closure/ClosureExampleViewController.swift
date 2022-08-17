@@ -21,13 +21,12 @@ final class ClosureExampleViewController: UIViewController, XibInitable {
     
     private var sliderInput: Float = Constants.sliderBaseValue
 
-    @IBOutlet private weak var textField: UITextField!
-    @IBOutlet private weak var closureLabel: UILabel!
-    @IBOutlet private weak var sliderValue: UILabel!
+    @IBOutlet private var textField: UITextField!
+    @IBOutlet private var closureLabel: UILabel!
+    @IBOutlet private var sliderValue: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap) 

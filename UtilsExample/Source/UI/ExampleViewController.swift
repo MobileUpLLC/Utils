@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Utils
 
 final class ExampleViewController: UIViewController {
     
     private enum Constants {
         
         static let successAuthorization = "Success"
+        static let nonSuccessAuthorization = "Failure"
         static let successAuthorizationStatus = "Lock screen to get Notification"
         static let nonSuccessAuthorizationStatus = "Has no rules to push Notifications"
         static let notificationTitle = "Feed the cat"
@@ -19,10 +21,10 @@ final class ExampleViewController: UIViewController {
         static let notificationDelay: TimeInterval = 5
     }
     
-    @IBOutlet private weak var closureTextFieldResultLabel: UILabel!
-    @IBOutlet private weak var closureSliderResultLabel: UILabel!
+    @IBOutlet private var closureTextFieldResultLabel: UILabel!
+    @IBOutlet private var closureSliderResultLabel: UILabel!
     
-    private let pushService = LocalPushNotificationService.shared
+    private let pushService = LocalNotificationService.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +33,12 @@ final class ExampleViewController: UIViewController {
         
         pushService.requestAuthorization { result in
             switch result {
-            case .success(_):
-                print(Constants.successAuthorization)
+            case .success(let isAuthorised):
+                if isAuthorised {
+                    print(Constants.successAuthorization)
+                } else {
+                    print(Constants.nonSuccessAuthorization)
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
