@@ -61,7 +61,6 @@ opt_in_rules:
   - private_outlet
   - prefer_zero_over_explicit_init
   - prohibited_super_call
-  - prohibited_interface_builder
   - quick_discouraged_call
   - quick_discouraged_focused_test
   - quick_discouraged_pending_test
