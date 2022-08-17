@@ -26,14 +26,14 @@ open class LocalNotificationService: NSObject, UNUserNotificationCenterDelegate 
 
     public weak var delegate: LocalNotificationServiceDelegate?
 
-    public func requestAuthorization(
+    open func requestAuthorization(
         options: UNAuthorizationOptions = [.alert, .sound, .badge],
         completion: @escaping (Result<Bool, Error>) -> Void
     ) { }
 
-    public func getAuthorizationStatus(completion: UNAuthorizationStatus) { }
+    open func getAuthorizationStatus(completion: UNAuthorizationStatus) { }
 
-    public func openApplicaitonSettings() { }
+    open func openApplicaitonSettings() { }
 
     private override init() {
         super.init()
@@ -41,7 +41,7 @@ open class LocalNotificationService: NSObject, UNUserNotificationCenterDelegate 
         UNUserNotificationCenter.current().delegate = self
     }
     
-    public func userNotificationCenter(
+    open func userNotificationCenter(
         _ center: UNUserNotificationCenter,
         willPresent notification: UNNotification,
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
@@ -49,7 +49,7 @@ open class LocalNotificationService: NSObject, UNUserNotificationCenterDelegate 
 
     }
     
-    public func userNotificationCenter(
+    open func userNotificationCenter(
         _ center: UNUserNotificationCenter,
         didReceive response: UNNotificationResponse,
         withCompletionHandler completionHandler: @escaping () -> Void
