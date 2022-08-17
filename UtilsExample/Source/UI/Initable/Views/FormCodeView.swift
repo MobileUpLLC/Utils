@@ -20,7 +20,7 @@ final class FormCodeView: UIView, CodeInitable {
         static let textFieldHeight: CGFloat = 30
     }
     
-    let formLabel: UILabel = {
+    private let formLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.formLabelText
         label.textColor = .black
@@ -28,7 +28,7 @@ final class FormCodeView: UIView, CodeInitable {
         return label
     }()
     
-    let formTextField: UITextField = {
+    private let formTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = Constants.formPlaceholder
         textField.backgroundColor = .white

@@ -87,19 +87,18 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkw-Hl-RSz">
-                    <rect key="frame" x="16" y="350" width="382" height="56"/>
-                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="py9-L2-mxN">
+                    <rect key="frame" x="16" y="790" width="382" height="56"/>
+                    <color key="backgroundColor" red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="2bG-6Z-Mzi"/>
-                        <constraint firstAttribute="height" constant="56" id="Rsb-LD-Pju"/>
+                        <constraint firstAttribute="height" constant="56" id="pMj-vF-7It"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Open XibView">
+                    <buttonConfiguration key="configuration" style="plain" title="Push Notification">
                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="openXibViewTap" destination="-1" eventType="touchUpInside" id="UUE-7s-4Fh"/>
+                        <action selector="pushNotificationButtonTap:" destination="-1" eventType="touchUpInside" id="J6m-np-qeJ"/>
                     </connections>
                 </button>
             </subviews>
@@ -107,17 +106,20 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nhx-KG-PD1" secondAttribute="trailing" constant="8" id="121-v1-m41"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="py9-L2-mxN" secondAttribute="bottom" constant="16" id="2PT-mQ-lhE"/>
                 <constraint firstItem="qEC-Kv-UAp" firstAttribute="leading" secondItem="TkG-3p-K3H" secondAttribute="trailing" constant="8" id="3Yy-zN-HmK"/>
                 <constraint firstItem="r0y-tX-uQS" firstAttribute="top" secondItem="6gR-Mf-cbd" secondAttribute="bottom" constant="16" id="D3a-lg-6iM"/>
                 <constraint firstItem="Lkw-Hl-RSz" firstAttribute="top" secondItem="nhx-KG-PD1" secondAttribute="bottom" constant="16" id="Iu9-7v-F41"/>
                 <constraint firstItem="qEC-Kv-UAp" firstAttribute="top" secondItem="8sv-FB-D6K" secondAttribute="bottom" constant="16" id="K4I-Ja-lAY"/>
                 <constraint firstItem="r0y-tX-uQS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="O51-ZJ-o0h"/>
+                <constraint firstItem="py9-L2-mxN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="P6E-sh-KZL"/>
                 <constraint firstItem="6gR-Mf-cbd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Qk5-tg-nfo"/>
                 <constraint firstItem="TkG-3p-K3H" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="RoU-wt-AF8"/>
                 <constraint firstItem="TkG-3p-K3H" firstAttribute="top" secondItem="8sv-FB-D6K" secondAttribute="bottom" constant="16" id="Sqb-Y2-eyC"/>
                 <constraint firstItem="667-cW-PeS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Wrg-vq-lv6"/>
                 <constraint firstItem="Lkw-Hl-RSz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="aP0-It-9uf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qEC-Kv-UAp" secondAttribute="trailing" constant="8" id="bld-ZC-f5H"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="py9-L2-mxN" secondAttribute="trailing" constant="16" id="fOR-j1-Rmh"/>
                 <constraint firstItem="nhx-KG-PD1" firstAttribute="top" secondItem="TkG-3p-K3H" secondAttribute="bottom" constant="16" id="h31-dv-Zcm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="r0y-tX-uQS" secondAttribute="trailing" constant="16" id="hri-NF-Ivo"/>
                 <constraint firstItem="nhx-KG-PD1" firstAttribute="leading" secondItem="667-cW-PeS" secondAttribute="trailing" constant="8" id="jgh-hs-8aI"/>
