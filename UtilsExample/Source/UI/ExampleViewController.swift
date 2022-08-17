@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import Utils
 
 final class ExampleViewController: UIViewController {
-
+    
+    @IBOutlet private weak var closureTextFieldResultLabel: UILabel!
+    @IBOutlet private weak var closureSliderResultLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +30,20 @@ final class ExampleViewController: UIViewController {
     
         navigationController?.pushViewController(codeController, animated: true)
     }
+    
+    @IBAction private func openClosureControllerTap(_ sender: UIButton) {
+        let xibContoller = ClosureExampleViewController.initiate()
+        
+        xibContoller.textFieldClosure = { [weak self] result in
+            self?.closureTextFieldResultLabel.text = result
+        }
+        xibContoller.sliderClosure = { [weak self] result in
+            self?.closureSliderResultLabel.text = String(result)
+        }
+        
+        navigationController?.pushViewController(xibContoller, animated: true)
+    }
+    
     @IBAction func openXibViewTap() {
         let controller = XibViewViewControllerExample.initiate()
         
