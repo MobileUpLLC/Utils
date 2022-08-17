@@ -44,7 +44,9 @@ open class LocalNotificationService: NSObject, UNUserNotificationCenterDelegate 
         willPresent notification: UNNotification,
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
     ) {
-
+        if let options = delegate?.localNotificationService(self, willPresent: notification) {
+            completionHandler(options)
+        }
     }
     
     open func userNotificationCenter(
@@ -52,6 +54,8 @@ open class LocalNotificationService: NSObject, UNUserNotificationCenterDelegate 
         didReceive response: UNNotificationResponse,
         withCompletionHandler completionHandler: @escaping () -> Void
     ) {
+        delegate?.localNotificationService(self, didReceive: response)
+        
         completionHandler()
     }
 }
