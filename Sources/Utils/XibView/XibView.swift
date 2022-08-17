@@ -9,11 +9,11 @@ import UIKit
 
 open class XibView: View, XibInitable {
     
-    public var view: UIView?
+    open var view: UIView?
     
     static private var nibCache: [String: UINib] = [:]
     
-    public override func initSetup() {
+    open override func initSetup() {
         super.initSetup()
         
         checkViewFromNib()

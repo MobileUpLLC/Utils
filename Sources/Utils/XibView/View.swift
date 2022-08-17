@@ -31,5 +31,5 @@ open class View: UIView {
         initSetup()
     }
     
-    public func initSetup() { }
+    open func initSetup() { }
 }
