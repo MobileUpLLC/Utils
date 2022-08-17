@@ -19,8 +19,8 @@ final class ExampleViewController: UIViewController {
         static let notificationDelay: TimeInterval = 5
     }
     
-    @IBOutlet private weak var closureTextFieldResultLabel: UILabel!
-    @IBOutlet private weak var closureSliderResultLabel: UILabel!
+    @IBOutlet private var closureTextFieldResultLabel: UILabel!
+    @IBOutlet private var closureSliderResultLabel: UILabel!
     
     private let pushService = LocalPushNotificationService.shared
 
@@ -45,7 +45,7 @@ final class ExampleViewController: UIViewController {
         navigationController?.pushViewController(xibController, animated: true)
     }
 
-    @IBAction func openCodeInitableControllerTap() {
+    @IBAction private func openCodeInitableControllerTap() {
         let codeController = CodeInitableViewController.initiate()
     
         navigationController?.pushViewController(codeController, animated: true)

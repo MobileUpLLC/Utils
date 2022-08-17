@@ -59,5 +59,3 @@ open class LocalNotificationService: NSObject, UNUserNotificationCenterDelegate 
         completionHandler()
     }
 }
-
-
