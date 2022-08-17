@@ -51,38 +51,7 @@ func testDictionaryEncoding() {
 
 ### 3. LocalNotificationService
 
-1. Create your service class, that will inherit LocalNotificationService
-2. Override methods, that you will need
-
-```swift
-import Utils
-
-final class LocalPushNotificationService: LocalNotificationService {
-
-    static let shared = LocalPushNotificationService()
-    
-    override private init() {
-        super.init()
-    }
-
-    override func requestAuthorization(
-        options: UNAuthorizationOptions = [.alert, .sound, .badge],
-        completion: @escaping (Result<Bool, Error>) -> Void
-    ) {
-        super.requestAuthorization(options: options, completion: completion)
-        
-        UNUserNotificationCenter.current().requestAuthorization(options: options) { success, error in
-            if success {
-                completion(.success(true))
-            } else if let error = error {
-                completion(.failure(error))
-            }
-        }
-    }
-}
-```
-
-3. Implement service class instance ```let notificationService = LocalPushNotificationService.shared```  and use
+Implement localNotificationService ```let pushService = LocalNotificationService.shared```
 
 ```swift
 @IBAction private func pushNotificationButtonTap(_ sender: UIButton) {
