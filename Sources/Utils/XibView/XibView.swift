@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class XibView: View{
+open class XibView: View {
 
     var view: UIView?
     
