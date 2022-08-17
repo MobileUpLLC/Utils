@@ -15,37 +15,52 @@ struct Person: Codable, Equatable {
 }
 
 class BundleFileReaderExample {
-    
-    func testDataEncoding() {
+
+    func dataEncodingExample() {
         let testObject = 434.33
-        
-        
-        let encodedData = try JSONConverter.encode(object: testObject)
-        
-        let decodedData = try JSONConverter.decode(Double.self, data: encodedData)
-        
-        print(decodedData, testObject)
+
+        do {
+            let encodedData = try JSONConverter.encode(object: testObject)
+            
+            let decodedData = try JSONConverter.decode(Double.self, data: encodedData)
+
+            print("dataEncodingExample success", decodedData, testObject)
+        } catch {
+            print("dataEncodingExample faild")
+        }
     }
-    
-    func testDictionaryEncoding() {
+
+    func dictionaryEncodingExample() {
         let dictionary: [String: Any] = ["One": 1, "Two": "Два", "Three": 0.47, "Four": true]
-        
-        let encodedData = try JSONConverter.encode(dictionary: dictionary)
-        
-        let decodedData = try JSONConverter.decode(data: encodedData) as [String: Any]
-        
-        print(NSDictionary(dictionary: dictionary, copyItems: false), NSDictionary(dictionary: decodedData, copyItems: false))
+
+        do {
+            let encodedData = try JSONConverter.encode(dictionary: dictionary)
+            
+            let decodedData = try JSONConverter.decode(data: encodedData) as [String: Any]
+            
+            print(
+                "dictionaryEncodingExample success",
+                NSDictionary(dictionary: dictionary, copyItems: false),
+                NSDictionary(dictionary: decodedData, copyItems: false)
+            )
+        } catch {
+            print("dictionaryEncodingExample faild")
+        }
     }
-    
-    func testJsonArrayEncoding() {
+
+    func jsonArrayEncodingExample() {
         let testBundle = Bundle(for: type(of: self))
         
-        let initialDecodedData: [Person] = try BundleFileReader.readObject(name: "array", bundle: testBundle)
-        
-        let encodedData = try JSONConverter.encode(object: initialDecodedData)
-        
-        let finalDecodedData = try JSONConverter.decode([Person].self, data: encodedData)
-        
-        print(initialDecodedData, finalDecodedData)
+        do {
+            let initialDecodedData: [Person] = try BundleFileReader.readObject(name: "array", bundle: testBundle)
+            
+            let encodedData = try JSONConverter.encode(object: initialDecodedData)
+            
+            let finalDecodedData = try JSONConverter.decode([Person].self, data: encodedData)
+            
+            print("jsonArrayEncodingExample success",initialDecodedData, finalDecodedData)
+        } catch {
+            print("jsonArrayEncodingExample faild")
+        }
     }
 }
