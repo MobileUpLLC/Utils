@@ -46,7 +46,7 @@ public class LocalNotificationService: NSObject, UNUserNotificationCenterDelegat
         }
     }
 
-    public override init() {
+    private override init() {
         super.init()
     
         UNUserNotificationCenter.current().delegate = self

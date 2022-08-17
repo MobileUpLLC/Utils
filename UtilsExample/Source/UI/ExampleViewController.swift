@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Utils
 
 final class ExampleViewController: UIViewController {
     
@@ -23,7 +24,7 @@ final class ExampleViewController: UIViewController {
     @IBOutlet private var closureTextFieldResultLabel: UILabel!
     @IBOutlet private var closureSliderResultLabel: UILabel!
     
-    private let pushService = LocalPushNotificationService.shared
+    private let pushService = LocalNotificationService.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
