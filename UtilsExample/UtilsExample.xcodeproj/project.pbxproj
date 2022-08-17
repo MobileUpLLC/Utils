@@ -18,6 +18,11 @@
 		94B5553C28ABC749000DEFEF /* CodeInitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5553B28ABC749000DEFEF /* CodeInitableViewController.swift */; };
 		FAA4CCD628ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json in Resources */ = {isa = PBXBuildFile; fileRef = FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */; };
 		FAD395B428ACFAF300862F9C /* UtilsExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */; };
+		94B5554228ABD76F000DEFEF /* ClosureExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5554028ABD76F000DEFEF /* ClosureExampleViewController.swift */; };
+		94B5554328ABD76F000DEFEF /* ClosureExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B5554128ABD76F000DEFEF /* ClosureExampleViewController.xib */; };
+		E512FBA928AC1EA700C518DA /* FormCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512FBA828AC1EA700C518DA /* FormCodeView.swift */; };
+		E5246BBB28ACD44E00381384 /* FormXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5246BBA28ACD44D00381384 /* FormXibView.swift */; };
+		E5246BBD28ACD46C00381384 /* FormXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5246BBC28ACD46C00381384 /* FormXibView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +44,16 @@
 		94B5553728ABC60E000DEFEF /* XibInitableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibInitableViewController.swift; sourceTree = "<group>"; };
 		94B5553828ABC60E000DEFEF /* XibInitableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibInitableViewController.xib; sourceTree = "<group>"; };
 		94B5553B28ABC749000DEFEF /* CodeInitableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInitableViewController.swift; sourceTree = "<group>"; };
+		94B5554028ABD76F000DEFEF /* ClosureExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureExampleViewController.swift; sourceTree = "<group>"; };
+		94B5554128ABD76F000DEFEF /* ClosureExampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClosureExampleViewController.xib; sourceTree = "<group>"; };
 		94D108B628ABA74000D1C7A3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94F83EB928ABAA84006C91AA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonArrayForBundleFileReaderTest.json; sourceTree = "<group>"; };
 		FAD395B128ACFAF300862F9C /* UtilsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExampleTests.swift; sourceTree = "<group>"; };
+		E512FBA828AC1EA700C518DA /* FormCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCodeView.swift; sourceTree = "<group>"; };
+		E5246BBA28ACD44D00381384 /* FormXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormXibView.swift; sourceTree = "<group>"; };
+		E5246BBC28ACD46C00381384 /* FormXibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormXibView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +117,7 @@
 		948BE0AC28ABA5C300A3D10F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				94B5553D28ABD54E000DEFEF /* Closure */,
 				94B5553628ABC5F6000DEFEF /* Initable */,
 				94B5553228ABC4A2000DEFEF /* ExampleViewController.swift */,
 				94B5553328ABC4A2000DEFEF /* ExampleViewController.xib */,
@@ -117,11 +128,39 @@
 		94B5553628ABC5F6000DEFEF /* Initable */ = {
 			isa = PBXGroup;
 			children = (
+				E512FBAE28AC2C5A00C518DA /* Controllers */,
+				E512FBAF28AC2C8700C518DA /* Views */,
+			);
+			path = Initable;
+			sourceTree = "<group>";
+		};
+		E512FBAE28AC2C5A00C518DA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				94B5553728ABC60E000DEFEF /* XibInitableViewController.swift */,
 				94B5553828ABC60E000DEFEF /* XibInitableViewController.xib */,
 				94B5553B28ABC749000DEFEF /* CodeInitableViewController.swift */,
 			);
-			path = Initable;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E512FBAF28AC2C8700C518DA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E512FBA828AC1EA700C518DA /* FormCodeView.swift */,
+				E5246BBA28ACD44D00381384 /* FormXibView.swift */,
+				E5246BBC28ACD46C00381384 /* FormXibView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		94B5553D28ABD54E000DEFEF /* Closure */ = {
+			isa = PBXGroup;
+			children = (
+				94B5554028ABD76F000DEFEF /* ClosureExampleViewController.swift */,
+				94B5554128ABD76F000DEFEF /* ClosureExampleViewController.xib */,
+			);
+			path = Closure;
 			sourceTree = "<group>";
 		};
 		FAD395AC28ACF94000862F9C /* Resources */ = {
@@ -147,6 +186,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 948BE0A828ABA1CC00A3D10F /* Build configuration list for PBXNativeTarget "UtilsExample" */;
 			buildPhases = (
+				94B5554428ABE74B000DEFEF /* Swiftlint */,
 				948BE09028ABA1CB00A3D10F /* Sources */,
 				948BE09128ABA1CB00A3D10F /* Frameworks */,
 				948BE09228ABA1CB00A3D10F /* Resources */,
@@ -227,6 +267,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94B5554328ABD76F000DEFEF /* ClosureExampleViewController.xib in Resources */,
+				E5246BBD28ACD46C00381384 /* FormXibView.xib in Resources */,
 				94B5553A28ABC60E000DEFEF /* XibInitableViewController.xib in Resources */,
 				FAA4CCD628ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json in Resources */,
 				941BA1CE28ABA8C000E747EE /* LaunchScreen.storyboard in Resources */,
@@ -244,14 +286,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		94B5554428ABE74B000DEFEF /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint --path .. --config ../swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		948BE09028ABA1CB00A3D10F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E512FBA928AC1EA700C518DA /* FormCodeView.swift in Sources */,
 				94B5553928ABC60E000DEFEF /* XibInitableViewController.swift in Sources */,
+				94B5554228ABD76F000DEFEF /* ClosureExampleViewController.swift in Sources */,
 				948BE09828ABA1CB00A3D10F /* AppDelegate.swift in Sources */,
 				94B5553C28ABC749000DEFEF /* CodeInitableViewController.swift in Sources */,
+				E5246BBB28ACD44E00381384 /* FormXibView.swift in Sources */,
 				94B5553428ABC4A2000DEFEF /* ExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,9 +460,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U2FVAML6Y7;
+				DEVELOPMENT_TEAM = 73J6889622;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Source/App/Info.plist;
 				"INFOPLIST_FILE[sdk=*]" = Source/App/Info.plist;
@@ -413,6 +480,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.mobileup.UtilsExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -426,7 +494,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U2FVAML6Y7;
+				DEVELOPMENT_TEAM = 73J6889622;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Source/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FormXibView" customModule="UtilsExample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="248"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This form was inited from Xib" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkr-I0-b8w">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wws-9J-7jK">
+                    <rect key="frame" x="0.0" y="37" width="414" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="hello@mobileup.ru" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cj9-MK-zqO">
+                    <rect key="frame" x="0.0" y="74" width="414" height="174"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="Wws-9J-7jK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="3Tf-bF-8ip"/>
+                <constraint firstItem="tkr-I0-b8w" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="40k-bF-MW8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="cj9-MK-zqO" secondAttribute="bottom" id="BKv-Ak-4iW"/>
+                <constraint firstItem="cj9-MK-zqO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ips-6B-wdA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tkr-I0-b8w" secondAttribute="trailing" id="VBh-KU-RRM"/>
+                <constraint firstItem="Wws-9J-7jK" firstAttribute="top" secondItem="tkr-I0-b8w" secondAttribute="bottom" constant="16" id="WDe-3R-stn"/>
+                <constraint firstItem="cj9-MK-zqO" firstAttribute="top" secondItem="Wws-9J-7jK" secondAttribute="bottom" constant="16" id="eEz-h0-1i2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cj9-MK-zqO" secondAttribute="trailing" id="qtz-TF-Dno"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Wws-9J-7jK" secondAttribute="trailing" id="snt-0E-px7"/>
+                <constraint firstItem="tkr-I0-b8w" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zLG-hb-NZu"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="emailTextField" destination="cj9-MK-zqO" id="sFh-1J-Kcv"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="-145.98214285714286"/>
+        </view>
+    </objects>
+</document>
