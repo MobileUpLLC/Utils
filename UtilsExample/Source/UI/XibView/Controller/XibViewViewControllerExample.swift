@@ -8,11 +8,11 @@
 import UIKit
 import Utils
 
-class XibViewViewController: UIViewController, XibInitable {
+class XibViewViewControllerExample: UIViewController, XibInitable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
     }
 }
