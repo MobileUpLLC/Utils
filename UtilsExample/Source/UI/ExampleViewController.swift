@@ -26,4 +26,7 @@ final class ExampleViewController: UIViewController {
     
         navigationController?.pushViewController(codeController, animated: true)
     }
+    @IBAction func openXibViewTap() {
+        
+    }
 }
