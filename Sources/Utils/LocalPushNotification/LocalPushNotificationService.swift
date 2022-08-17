@@ -22,8 +22,6 @@ public protocol LocalNotificationServiceDelegate: AnyObject {
 
 open class LocalNotificationService: NSObject, UNUserNotificationCenterDelegate {
 
-    public static let shared = LocalNotificationService()
-
     public weak var delegate: LocalNotificationServiceDelegate?
 
     open func requestAuthorization(
