@@ -31,7 +31,7 @@ open class LocalNotificationService: NSObject, UNUserNotificationCenterDelegate 
         completion: @escaping (Result<Bool, Error>) -> Void
     ) { }
 
-    open func getAuthorizationStatus(completion: UNAuthorizationStatus) { }
+    open func getAuthorizationStatus(completion: @escaping (UNAuthorizationStatus) -> Void) { }
 
     open func openApplicaitonSettings() { }
 
