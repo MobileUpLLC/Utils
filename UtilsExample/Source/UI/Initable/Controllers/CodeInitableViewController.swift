@@ -20,9 +20,9 @@ final class CodeInitableViewController: UIViewController, CodeInitable {
         static let initableLabelText = "Hello, i was inited by code"
     }
 
-    private let initableLabel = UILabel()
-    private let formCodeView = FormCodeView.initiate()
-    private let formXibView = FormXibView.initiate()
+    private lazy var initableLabel = UILabel()
+    private lazy var formCodeView = FormCodeView.initiate()
+    private lazy var formXibView = FormXibView.initiate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
