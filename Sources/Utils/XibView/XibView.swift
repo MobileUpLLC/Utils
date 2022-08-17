@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class XibView: View, XibInitable {
+open class XibView: View, XibInitable {
     
     public var view: UIView?
     
