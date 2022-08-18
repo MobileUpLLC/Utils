@@ -24,7 +24,7 @@ open class View: UIView {
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
     public required init(fromCodeWithFrame frame: CGRect) {
         super.init(frame: frame)
         

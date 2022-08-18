@@ -17,13 +17,6 @@ open class XibView: View {
         checkViewFromNib()
     }
     
-    private func layoutView() {
-        guard let view = view else { return }
-
-        insertSubview(view, at: .zero)
-        layoutSubview(view)
-    }
-    
     private func checkViewFromNib() {
         if let viewFromNib = loadViewFromNib() {
             view = viewFromNib
@@ -31,6 +24,13 @@ open class XibView: View {
         } else {
             view = self
         }
+    }
+    
+    private func layoutView() {
+        guard let view = view else { return }
+
+        insertSubview(view, at: .zero)
+        layoutSubview(view)
     }
     
     private func loadViewFromNib() -> UIView? {

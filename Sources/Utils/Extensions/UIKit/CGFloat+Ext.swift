@@ -9,7 +9,6 @@ import UIKit
 
 public extension CGFloat {
 
-    static var zero: Self { 0 }
     static var one: Self { 1 }
     static var two: Self { 2 }
     static var three: Self { 3 }

@@ -8,7 +8,12 @@ import UIKit
 
 public extension UIColor {
     
-    var toHex: String { getHex() }
+    private enum Constants {
+        
+        static let componentMaxValue: Float = 255
+    }
+    
+    var hexValue: String { getHex() }
     
     convenience init?(hex: String) {
         var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -49,7 +54,7 @@ public extension UIColor {
         let red = Float(components[.zero])
         let green = Float(components[.one])
         let blue = Float(components[.two])
-        var alpha = Float(.one)
+        var alpha: Float = .one
         
         if components.count == .four {
             alpha = Float(components[.three])

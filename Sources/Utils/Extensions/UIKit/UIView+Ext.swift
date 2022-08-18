@@ -7,37 +7,26 @@
 
 import UIKit
 
+public struct LayoutInsets {
+    
+    public static var zero: LayoutInsets { self.init(top: .zero, left: .zero, bottom: .zero, right: .zero) }
+    
+    public var top: CGFloat?
+    public var left: CGFloat?
+    public var bottom: CGFloat?
+    public var right: CGFloat?
+    
+    public static func insets(
+        top: CGFloat? = .zero,
+        left: CGFloat? = .zero,
+        bottom: CGFloat? = .zero,
+        right: CGFloat? = .zero
+    ) -> LayoutInsets {
+        return LayoutInsets(top: top, left: left, bottom: bottom, right: right)
+    }
+}
+
 public extension UIView {
-    
-    func setConstraint(type: NSLayoutConstraint.Attribute, value: CGFloat) {
-        if let constraint = findConstraint(type: type) {
-            constraint.constant = value
-        }
-    }
-    
-    func findConstraint(type: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
-        if let constraint = findConstraintInSuperview(type: type) {
-            return constraint
-        }
-        
-        return constraints.first(where: { $0.firstAttribute == type &&  $0.secondAttribute != type })
-    }
-    
-    func findConstraintInSuperview(type: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
-        if let superview = superview {
-            for constraint in superview.constraints {
-                let isFirstItemIsSelf = (constraint.firstItem as? UIView) == self
-                let isSecondItemIsSelf = (constraint.secondItem as? UIView) == self
-                let isConstraintAssociatedWithSelf = (isFirstItemIsSelf || isSecondItemIsSelf)
-                
-                if constraint.firstAttribute == type && isConstraintAssociatedWithSelf {
-                    return constraint
-                }
-            }
-        }
-        
-        return nil
-    }
     
     func layoutSubview(
         _ view: UIView,
@@ -139,24 +128,5 @@ public extension NSLayoutAnchor {
     
     @objc func makeConstraint(equalTo anchor: NSLayoutAnchor, constant: CGFloat) {
         constraint(equalTo: anchor, constant: constant).isActive = true
-    }
-}
-
-public struct LayoutInsets {
-    
-    public static var zero: LayoutInsets { self.init(top: .zero, left: .zero, bottom: .zero, right: .zero) }
-    
-    public var top: CGFloat?
-    public var left: CGFloat?
-    public var bottom: CGFloat?
-    public var right: CGFloat?
-    
-    public static func insets(
-        top: CGFloat? = .zero,
-        left: CGFloat? = .zero,
-        bottom: CGFloat? = .zero,
-        right: CGFloat? = .zero
-    ) -> LayoutInsets {
-        return LayoutInsets(top: top, left: left, bottom: bottom, right: right)
     }
 }

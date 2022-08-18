@@ -8,12 +8,7 @@
 import Foundation
 
 public extension Double {
-    
-    func toString(maxFractionDigits: Int = 2) -> String {
-        return String(format: "%.\(maxFractionDigits)f", self)
-    }
-    
-    static var zero: Self { 0 }
+
     static var one: Self { 1 }
     static var two: Self { 2 }
     static var three: Self { 3 }
