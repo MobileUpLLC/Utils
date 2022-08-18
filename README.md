@@ -21,15 +21,18 @@ Some handly utilities for IOS-app development.
 ### 1. Initable and XibView
 
 Initable protocls conforms with ```UIView``` and ```UIViewController```.
+Usage example: https://github.com/MobileUpLLC/Utils/tree/develop/UtilsExample/Source/UI/Initable
 
 1. Inherit your class from Code or Xib -Initable protocol
 2. Init your class with ```.initate()```
 
 In case you creating View from Xib, that need's to be inited in another Xib – inherit XibView class ```MyView: XibView```. XibView is also conform to XibInitable.
+XibView example: https://github.com/MobileUpLLC/Utils/tree/develop/UtilsExample/Source/UI/XibView
 
 ### 2. BundleFileReader
 
 ```BundleFilesReader``` and ```jsonDecoder``` allows you to conveniently decode json files from your project
+Usage example: https://github.com/MobileUpLLC/Utils/blob/develop/UtilsExample/UtilsExampleTests/UtilsExampleTests.swift
 
 ```swift
 func testDictionaryEncoding() {
@@ -52,6 +55,7 @@ func testDictionaryEncoding() {
 ### 3. LocalNotificationService
 
 Implement localNotificationService as singletone ```let pushService = LocalNotificationService.shared```
+Usage examle: https://github.com/MobileUpLLC/Utils/blob/develop/UtilsExample/Source/UI/ExampleViewController.swift
 
 1. Use ```requestAuthorization``` to request User's approve for sending notifications
 2. Use ```getAuthorizationStatus``` to check current authorization status
