@@ -27,9 +27,9 @@ Initable protocls conforms with ```UIView``` and ```UIViewController```.
 
 In case you creating View from Xib, that need's to be inited in another Xib – inherit XibView class ```MyView: XibView```. XibView is also conform to XibInitable.
 
-Initable usage example: https://github.com/MobileUpLLC/Utils/tree/develop/UtilsExample/Source/UI/Initable
+[Initable usage example](https://github.com/MobileUpLLC/Utils/tree/develop/UtilsExample/Source/UI/Initable)
 
-XibView usage example: https://github.com/MobileUpLLC/Utils/tree/develop/UtilsExample/Source/UI/XibView
+[XibView usage example](https://github.com/MobileUpLLC/Utils/tree/develop/UtilsExample/Source/UI/XibView)
 
 ### 2. BundleFileReader
 
@@ -53,7 +53,7 @@ func testDictionaryEncoding() {
 }
 ```
 
-Usage example: https://github.com/MobileUpLLC/Utils/blob/develop/UtilsExample/UtilsExampleTests/UtilsExampleTests.swift
+[BundleFileReader usage example](https://github.com/MobileUpLLC/Utils/blob/develop/UtilsExample/UtilsExampleTests/UtilsExampleTests.swift)
 
 ### 3. LocalNotificationService
 
@@ -77,7 +77,7 @@ An example:
     }
 }
 ```
-Usage examle: https://github.com/MobileUpLLC/Utils/blob/develop/UtilsExample/Source/UI/ExampleViewController.swift
+[LocalNotificationService usage examle](https://github.com/MobileUpLLC/Utils/blob/develop/UtilsExample/Source/UI/ExampleViewController.swift)
 
 ## Requirements
 
