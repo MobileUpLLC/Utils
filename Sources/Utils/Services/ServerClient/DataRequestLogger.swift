@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class DataRequestLogger {
+open class DataRequestLogger {
     
     func logRequest(_ request: Request) {
         guard let urlRequest = request.request else {
@@ -19,7 +19,7 @@ class DataRequestLogger {
         printLogs(request.cURLDescription())
     }
     
-    func printLogs(_ logs: String) {
+    open func printLogs(_ logs: String) {
         #if DEBUG
           debugPrint(logs)
         #endif
