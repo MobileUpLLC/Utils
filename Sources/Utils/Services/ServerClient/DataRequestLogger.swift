@@ -1,6 +1,5 @@
 //
 //  DataRequestLogger.swift
-//  Sever-minerals
 //
 //  Created by Petrovich on 08.11.2021.
 //
