@@ -138,11 +138,11 @@ open class DataRequestLogger {
 
 extension DataRequestLogger: EventMonitor {
     
-    func requestDidResume(_ request: Request) {
+    public func requestDidResume(_ request: Request) {
         logRequest(request)
     }
     
-    func requestDidFinish(_ request: Request) {
+    public func requestDidFinish(_ request: Request) {
         guard let dataRequest = request as? DataRequest else {
             printLogs("Error: failed to convert request `\(request)` to DataRequest")
             return
