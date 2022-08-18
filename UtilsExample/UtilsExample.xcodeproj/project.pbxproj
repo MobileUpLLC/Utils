@@ -654,7 +654,7 @@
 			repositoryURL = "https://github.com/MobileUpLLC/Utils";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.25;
+				minimumVersion = 0.0.26;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -20,7 +20,9 @@ class DataRequestLogger {
     }
     
     func printLogs(_ logs: String) {
-        print(logs)
+        #if DEBUG
+          debugPrint(logs)
+        #endif
     }
     
     private func logRequest(_ urlRequest: URLRequest) {
