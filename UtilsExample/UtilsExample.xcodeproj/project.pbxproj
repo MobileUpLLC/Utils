@@ -23,6 +23,10 @@
 		E5246BBD28ACD46C00381384 /* FormXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5246BBC28ACD46C00381384 /* FormXibView.xib */; };
 		E5DA631D28AE75D4005E5689 /* ExampleServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA631C28AE75D4005E5689 /* ExampleServerClient.swift */; };
 		E5DA632228AE8B03005E5689 /* ExampleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA632128AE8B03005E5689 /* ExampleEntity.swift */; };
+		FAA2CADA28AE143D006EA394 /* XibViewViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2CAD528AE143D006EA394 /* XibViewViewControllerExample.swift */; };
+		FAA2CADB28AE143D006EA394 /* XibViewViewControllerExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA2CAD628AE143D006EA394 /* XibViewViewControllerExample.xib */; };
+		FAA2CADC28AE143D006EA394 /* XibViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2CAD828AE143D006EA394 /* XibViewExample.swift */; };
+		FAA2CADD28AE143D006EA394 /* XibViewExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA2CAD928AE143D006EA394 /* XibViewExample.xib */; };
 		FAA4CCD628ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json in Resources */ = {isa = PBXBuildFile; fileRef = FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */; };
 		FAD395B428ACFAF300862F9C /* UtilsExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +59,10 @@
 		E5246BBC28ACD46C00381384 /* FormXibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormXibView.xib; sourceTree = "<group>"; };
 		E5DA631C28AE75D4005E5689 /* ExampleServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleServerClient.swift; sourceTree = "<group>"; };
 		E5DA632128AE8B03005E5689 /* ExampleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleEntity.swift; sourceTree = "<group>"; };
+		FAA2CAD528AE143D006EA394 /* XibViewViewControllerExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibViewViewControllerExample.swift; sourceTree = "<group>"; };
+		FAA2CAD628AE143D006EA394 /* XibViewViewControllerExample.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XibViewViewControllerExample.xib; sourceTree = "<group>"; };
+		FAA2CAD828AE143D006EA394 /* XibViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibViewExample.swift; sourceTree = "<group>"; };
+		FAA2CAD928AE143D006EA394 /* XibViewExample.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XibViewExample.xib; sourceTree = "<group>"; };
 		FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonArrayForBundleFileReaderTest.json; sourceTree = "<group>"; };
 		FAD395B128ACFAF300862F9C /* UtilsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExampleTests.swift; sourceTree = "<group>"; };
@@ -123,6 +131,7 @@
 		948BE0AC28ABA5C300A3D10F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FAA2CAD328AE143D006EA394 /* XibView */,
 				94B5553D28ABD54E000DEFEF /* Closure */,
 				94B5553628ABC5F6000DEFEF /* Initable */,
 				94B5553228ABC4A2000DEFEF /* ExampleViewController.swift */,
@@ -183,6 +192,33 @@
 				E5DA632128AE8B03005E5689 /* ExampleEntity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		FAA2CAD328AE143D006EA394 /* XibView */ = {
+			isa = PBXGroup;
+			children = (
+				FAA2CAD428AE143D006EA394 /* Controller */,
+				FAA2CAD728AE143D006EA394 /* View */,
+			);
+			path = XibView;
+			sourceTree = "<group>";
+		};
+		FAA2CAD428AE143D006EA394 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FAA2CAD528AE143D006EA394 /* XibViewViewControllerExample.swift */,
+				FAA2CAD628AE143D006EA394 /* XibViewViewControllerExample.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FAA2CAD728AE143D006EA394 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAA2CAD828AE143D006EA394 /* XibViewExample.swift */,
+				FAA2CAD928AE143D006EA394 /* XibViewExample.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FAD395AC28ACF94000862F9C /* Resources */ = {
@@ -294,7 +330,9 @@
 				94B5553A28ABC60E000DEFEF /* XibInitableViewController.xib in Resources */,
 				FAA4CCD628ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json in Resources */,
 				941BA1CE28ABA8C000E747EE /* LaunchScreen.storyboard in Resources */,
+				FAA2CADD28AE143D006EA394 /* XibViewExample.xib in Resources */,
 				94B5553528ABC4A2000DEFEF /* ExampleViewController.xib in Resources */,
+				FAA2CADB28AE143D006EA394 /* XibViewViewControllerExample.xib in Resources */,
 				948BE0A128ABA1CC00A3D10F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA2CADC28AE143D006EA394 /* XibViewExample.swift in Sources */,
 				E512FBA928AC1EA700C518DA /* FormCodeView.swift in Sources */,
 				E5DA632228AE8B03005E5689 /* ExampleEntity.swift in Sources */,
 				94B5553928ABC60E000DEFEF /* XibInitableViewController.swift in Sources */,
@@ -343,6 +382,7 @@
 				E5246BBB28ACD44E00381384 /* FormXibView.swift in Sources */,
 				E5DA631D28AE75D4005E5689 /* ExampleServerClient.swift in Sources */,
 				94B5553428ABC4A2000DEFEF /* ExampleViewController.swift in Sources */,
+				FAA2CADA28AE143D006EA394 /* XibViewViewControllerExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

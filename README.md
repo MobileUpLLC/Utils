@@ -10,11 +10,74 @@ Some handly utilities for IOS-app development.
 
 ## Features
 
-- Here will be a list of Utils, what we will use
+- Initiate view from code and xib with Initable protocols
+- Find and decode json with BundleFileReader
+- Handly create Local Push Notification Service with LocalNotificationService
+- Use base extensions and generic closures for neat and clean code-writing
+- Create reusable Xib View's to init from Xib with XibView
 
 ## Usage
 
-### 1. Here will be description for some non-obvious features
+### 1. Initable and XibView
+
+Initable protocls conforms with ```UIView``` and ```UIViewController```.
+
+1. Inherit your class from Code or Xib -Initable protocol
+2. Init your class with ```.initate()```
+
+In case you creating View from Xib, that need's to be inited in another Xib – inherit XibView class ```MyView: XibView```. XibView is also conform to XibInitable.
+
+[Initable usage example](https://github.com/MobileUpLLC/Utils/tree/develop/UtilsExample/Source/UI/Initable)
+
+[XibView usage example](https://github.com/MobileUpLLC/Utils/tree/develop/UtilsExample/Source/UI/XibView)
+
+### 2. BundleFileReader
+
+```BundleFilesReader``` and ```jsonDecoder``` allows you to conveniently decode json files from your project
+
+```swift
+func testDictionaryEncoding() {
+    let dictionary: [String: Any] = ["One": 1, "Two": "Два", "Three": 0.47, "Four": true]
+
+    do {
+        let encodedData = try JSONConverter.encode(dictionary: dictionary)
+        let decodedData = try JSONConverter.decode(data: encodedData) as [String: Any]
+
+        XCTAssertEqual(
+            NSDictionary(dictionary: dictionary, copyItems: false),
+            NSDictionary(dictionary: decodedData, copyItems: false)
+        )
+    } catch {
+        XCTFail()
+    }
+}
+```
+
+[BundleFileReader usage example](https://github.com/MobileUpLLC/Utils/blob/develop/UtilsExample/UtilsExampleTests/UtilsExampleTests.swift)
+
+### 3. LocalNotificationService
+
+Implement localNotificationService as singletone ```let pushService = LocalNotificationService.shared```
+
+1. Use ```requestAuthorization``` to request User's approve for sending notifications
+2. Use ```getAuthorizationStatus``` to check current authorization status
+3. Use ```willPresent``` to ask the delegate what to do after receiving notification
+4. Use ```didRecieve``` to inform delegate about receiving notification
+
+An example:
+```swift
+@IBAction private func pushNotificationButtonTap(_ sender: UIButton) {
+    pushService.getAuthorizationStatus { [weak self] status in
+        if status == .authorized { 
+            self?.createNotificationRequest()
+            print(Constants.successAuthorizationStatus)
+        } else {
+            print(Constants.nonSuccessAuthorizationStatus)
+        }
+    }
+}
+```
+[LocalNotificationService usage examle](https://github.com/MobileUpLLC/Utils/blob/develop/UtilsExample/Source/UI/ExampleViewController.swift)
 
 ## Requirements
 
@@ -31,7 +94,7 @@ Utils doesn't contain any external dependencies.
 2. Add the following to Podfile 
 
 ```
-pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.0.1'
+pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.0.23'
 ```
 
 3. Make ```pod install```
@@ -46,7 +109,7 @@ Swift Package Manager
 
 ```
 dependencies: [
-    .package(url: "https://github.com/MobileUpLLC/Utils", .upToNextMajor(from: "0.0.1"))
+    .package(url: "https://github.com/MobileUpLLC/Utils", .upToNextMajor(from: "0.0.23"))
 ]
 ```
 
