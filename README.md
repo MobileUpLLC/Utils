@@ -102,7 +102,7 @@ class ExampleServerClient: HttpClient<ServerError> {
     static let shared = ExampleServerClient(baseUrl: "https://dog.ceo/")
     
     convenience init(baseUrl: String) {
-        self.init(baseUrl: baseUrl, session: Session())
+        self.init(baseUrl: baseUrl, session: Session(DataRequestLogger()))
     }
 }
 ```
@@ -191,6 +191,24 @@ func getJsonFormServer() {
 }
 ```
 
+8. You can also make your own DataRequestLogger 
+    1. Create ```class ExampleLogger: DataRequestLogger```
+    2. Override ```printLogs()``` with your Log framework
+    ```swift
+    final class RequestLogger: DataRequestLogger {
+
+        override func printLogs(_ logs: String) {
+            Log.details(logs)
+        }
+    }
+    ```
+    3. Then push your logger in ```ServerClient``` Init
+
+    ```swift    
+    convenience init(baseUrl: String) {
+        self.init(baseUrl: baseUrl, session: Session(RequestLogger()))
+    }
+```
 ## Requirements
 
 - Swift 5.0 +
