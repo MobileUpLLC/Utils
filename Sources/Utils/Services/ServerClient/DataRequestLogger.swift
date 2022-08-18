@@ -10,7 +10,7 @@ import Alamofire
 
 open class DataRequestLogger {
     
-    func logRequest(_ request: Request) {
+    open func logRequest(_ request: Request) {
         guard let urlRequest = request.request else {
             return
         }
