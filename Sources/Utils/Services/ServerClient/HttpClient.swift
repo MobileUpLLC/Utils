@@ -8,11 +8,7 @@
 import Foundation
 import Alamofire
 
-// MARK: - HttpClient
-
 open class HttpClient<E: Error>: BaseHttpClient {
-    
-    // MARK: - Public methods
     
     open func post<T: Decodable>(
         type: T.Type,

@@ -7,18 +7,12 @@
 
 import Alamofire
 
-// MARK: - BaseHttpClient
-
 open class BaseHttpClient {
-    
-    // MARK: - Public properties
     
     let baseUrl: String
     let session: Session
     
     var defaultHeaders: HTTPHeaders? { nil }
-    
-    // MARK: - Public methods
     
     public convenience init(baseUrl: String) {
         self.init(
@@ -119,8 +113,6 @@ open class BaseHttpClient {
             to: destination
         )
     }
-    
-    // MARK: - Private methods
     
     private func getFullUrl(from endpoint: String) -> URLConvertible {
         return baseUrl + endpoint

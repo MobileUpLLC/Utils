@@ -8,12 +8,8 @@
 import Foundation
 import Alamofire
 
-// MARK: - DataRequestLogger
-
 class DataRequestLogger {
     
-    // MARK: - Public methods
-        
     func logRequest(_ request: Request) {
         guard let urlRequest = request.request else {
             return
@@ -26,8 +22,6 @@ class DataRequestLogger {
     func printLogs(_ logs: String) {
         print(logs)
     }
-    
-    // MARK: - Private methods
     
     private func logRequest(_ urlRequest: URLRequest) {
         let url = urlRequest.url?.absoluteString ?? "Undefind"
@@ -139,8 +133,6 @@ class DataRequestLogger {
         return prettyString
     }
 }
-
-// MARK: - EventMonitor
 
 extension DataRequestLogger: EventMonitor {
     
