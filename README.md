@@ -82,7 +82,7 @@ An example:
 
 ### 4. ServerClient
 
-Handly decision to create server-oriented application. 
+Idea of the Client is a One Server, one Error type, many Data types. Handly way to create client-server application.
 
 1. Implement your own ```ServerClient``` singletone inherited from ```HttpClient``` with custom Error handler
 2. Override ```init(baseUrl: String)``` with calling ```init(baseUrl, session)```
