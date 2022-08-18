@@ -9,12 +9,8 @@ import UIKit
 public extension UIViewController {
     
     var isHiddenTabBar: Bool {
-        get {
-            tabBarController?.tabBar.isHidden ?? true
-        }
-        set(value) {
-            tabBarController?.tabBar.isHidden = value
-        }
+        get { tabBarController?.tabBar.isHidden ?? true }
+        set(value) { tabBarController?.tabBar.isHidden = value }
     }
     
     static var className: String { String(describing: Self.self) }

@@ -8,23 +8,18 @@ import UIKit
 
 public extension UIColor {
     
-    private enum Constants {
-        
-        static let componentMaxValue: Float = 255
-    }
-    
     var toHex: String { getHex() }
     
     convenience init?(hex: String) {
         var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
         hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
         
-        var rgb: UInt64 = 0
+        var rgb: UInt64 = .zero
         
-        var rvalue: CGFloat = 0.0
-        var gvalue: CGFloat = 0.0
-        var bvalue: CGFloat = 0.0
-        var avalue: CGFloat = 1.0
+        var rvalue: CGFloat = .zero
+        var gvalue: CGFloat = .zero
+        var bvalue: CGFloat = .zero
+        var avalue: CGFloat = .one
         
         let length = hexSanitized.count
         
@@ -49,15 +44,15 @@ public extension UIColor {
     }
     
     private func getHex() -> String {
-        guard let components = cgColor.components, components.count >= 3 else { return .empty }
+        guard let components = cgColor.components, components.count >= .three else { return .empty }
         
-        let red = Float(components[0])
-        let green = Float(components[1])
-        let blue = Float(components[2])
-        var alpha = Float(1.0)
+        let red = Float(components[.zero])
+        let green = Float(components[.one])
+        let blue = Float(components[.two])
+        var alpha = Float(.one)
         
-        if components.count == 4 {
-            alpha = Float(components[3])
+        if components.count == .four {
+            alpha = Float(components[.three])
         }
         
         let hex = String(

@@ -33,18 +33,18 @@ public extension String {
     }
     
     func deletingPrefix(_ prefix: String) -> String {
-        guard self.hasPrefix(prefix) else { return self }
+        guard self.hasPrefix(prefix) else {
+            return self
+        }
         return String(self.dropFirst(prefix.count))
     }
     
     func capitalizingFirstLetter() -> String {
-        return prefix(1).capitalized + dropFirst()
+        return prefix(.one).capitalized + dropFirst()
     }
     
     func separated(by separator: String, every: Int) -> String {
-        return enumerated()
-            .map { $0.isMultiple(of: every) && ($0 != 0) ? "\(separator)\($1)" : String($1) }
-            .joined()
+        return enumerated().map { $0.isMultiple(of: every) && ($0 != .zero) ? "\(separator)\($1)" : String($1) }.joined()
     }
     
     mutating func capitalizeFirstLetter() {

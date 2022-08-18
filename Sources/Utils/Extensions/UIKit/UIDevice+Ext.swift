@@ -9,7 +9,5 @@ import UIKit
 
 public extension UIDevice {
     
-    static var hasNotch: Bool {
-        (UIApplication.shared.delegate?.window??.safeAreaInsets.bottom ?? .zero) > .zero
-    }
+    static var hasNotch: Bool { (UIApplication.shared.delegate?.window??.safeAreaInsets.bottom ?? .zero) > .zero }
 }
