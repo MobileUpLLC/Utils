@@ -20,26 +20,39 @@ public protocol LocalNotificationServiceDelegate: AnyObject {
     )
 }
 
-open class LocalNotificationService: NSObject, UNUserNotificationCenterDelegate {
+public class LocalNotificationService: NSObject, UNUserNotificationCenterDelegate {
 
+    public static let shared = LocalNotificationService()
+    
     public weak var delegate: LocalNotificationServiceDelegate?
 
-    open func requestAuthorization(
+    public func requestAuthorization(
         options: UNAuthorizationOptions = [.alert, .sound, .badge],
         completion: @escaping (Result<Bool, Error>) -> Void
-    ) { }
+    ) {
+        UNUserNotificationCenter.current().requestAuthorization(options: options) { success, error in
+            completion(.success(success))
+            if let error = error {
+                completion(.failure(error))
+            }
+        }
+    }
 
-    open func getAuthorizationStatus(completion: @escaping (UNAuthorizationStatus) -> Void) { }
+    public func getAuthorizationStatus(completion: @escaping (UNAuthorizationStatus) -> Void) {
+        let center = UNUserNotificationCenter.current()
 
-    open func openApplicaitonSettings() { }
+        center.getNotificationSettings { settings in
+            completion(settings.authorizationStatus)
+        }
+    }
 
-    public override init() {
+    private override init() {
         super.init()
     
         UNUserNotificationCenter.current().delegate = self
     }
     
-    open func userNotificationCenter(
+    public func userNotificationCenter(
         _ center: UNUserNotificationCenter,
         willPresent notification: UNNotification,
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
@@ -49,7 +62,7 @@ open class LocalNotificationService: NSObject, UNUserNotificationCenterDelegate 
         }
     }
     
-    open func userNotificationCenter(
+    public func userNotificationCenter(
         _ center: UNUserNotificationCenter,
         didReceive response: UNNotificationResponse,
         withCompletionHandler completionHandler: @escaping () -> Void
@@ -59,5 +72,3 @@ open class LocalNotificationService: NSObject, UNUserNotificationCenterDelegate 
         completionHandler()
     }
 }
-
-

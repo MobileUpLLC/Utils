@@ -32,7 +32,7 @@ public extension XibInitable where Self: UIView {
         guard let instance = UINib(nibName: xibName, bundle: nil)
             .instantiate(withOwner: nil, options: nil)
             .first as? Self else {
-            fatalError()
+            fatalError("Can not reslolve UINib")
         }
 
         return instance
