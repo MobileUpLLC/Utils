@@ -72,13 +72,19 @@ final class ExampleViewController: UIViewController {
     
     @IBAction private func pushNotificationButtonTap(_ sender: UIButton) {
         pushService.getAuthorizationStatus { [weak self] status in
-            if status == .authorized { 
+            if status == .authorized {
                 self?.createNotificationRequest()
                 print(Constants.successAuthorizationStatus)
             } else {
                 print(Constants.nonSuccessAuthorizationStatus)
             }
         }
+    }
+
+   @IBAction private func openXibViewTap() {
+        let controller = XibViewViewControllerExample.initiate()
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
 
     private func createNotificationRequest() {
