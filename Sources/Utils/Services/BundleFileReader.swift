@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// swiftlint:disable convenience_type
 open class BundleFileReader {
     
     private enum Constants {

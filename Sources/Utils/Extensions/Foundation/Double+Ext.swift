@@ -21,7 +21,7 @@ public extension Double {
     static var ten: Self { 10 }
     
     static var hundred: Self { 100 }
-    static var thousand: Self { 1000 }
-    static var million: Self { 1000000 }
-    static var billion: Self { 1000000000 }
+    static var thousand: Self { 1_000 }
+    static var million: Self { 1_000_000 }
+    static var billion: Self { 1_000_000_000 }
 }

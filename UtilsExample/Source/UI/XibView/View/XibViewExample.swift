@@ -10,7 +10,7 @@ import UIKit
 
 class XibViewExample: XibView {
     
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet private weak var label: UILabel!
     
     override func initSetup() {
         super.initSetup()

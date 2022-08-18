@@ -27,7 +27,9 @@ open class XibView: View {
     }
     
     private func layoutView() {
-        guard let view = view else { return }
+        guard let view = view else {
+            return
+        }
 
         insertSubview(view, at: .zero)
         layoutSubview(view)

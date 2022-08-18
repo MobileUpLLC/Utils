@@ -49,7 +49,9 @@ public extension UIColor {
     }
     
     private func getHex() -> String {
-        guard let components = cgColor.components, components.count >= .three else { return .empty }
+        guard let components = cgColor.components, components.count >= .three else {
+            return .empty
+        }
         
         let red = Float(components[.zero])
         let green = Float(components[.one])
