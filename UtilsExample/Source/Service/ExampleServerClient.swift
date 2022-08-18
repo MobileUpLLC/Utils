@@ -21,7 +21,9 @@ class ExampleServerClient: HttpClient<ServerError> {
     static let shared = ExampleServerClient(baseUrl: "https://dog.ceo/")
     
     convenience init(baseUrl: String) {
-        self.init(baseUrl: baseUrl, session: Session())
+        self.init(
+            baseUrl: baseUrl,
+            session: Session(eventMonitors: [DataRequestLogger()]))
     }
     
     override class func convertError(_ error: AFError) -> ServerError {
