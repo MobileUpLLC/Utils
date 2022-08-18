@@ -22,21 +22,21 @@ final class ExampleViewController: UIViewController {
     @IBOutlet private weak var closureTextFieldResultLabel: UILabel!
     @IBOutlet private weak var closureSliderResultLabel: UILabel!
     
-    private let pushService = LocalPushNotificationService.shared
+    //private let pushService = LocalPushNotificationService.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
         
-        pushService.requestAuthorization { result in
-            switch result {
-            case .success(_):
-                print(Constants.successAuthorization)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+//        pushService.requestAuthorization { result in
+//            switch result {
+//            case .success(_):
+//                print(Constants.successAuthorization)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
     }
 
     @IBAction private func openXibInitableTap() {
@@ -65,14 +65,14 @@ final class ExampleViewController: UIViewController {
     }
     
     @IBAction private func pushNotificationButtonTap(_ sender: UIButton) {
-        pushService.getAuthorizationStatus { [weak self] status in
-            if status == .authorized { 
-                self?.createNotificationRequest()
-                print(Constants.successAuthorizationStatus)
-            } else {
-                print(Constants.nonSuccessAuthorizationStatus)
-            }
-        }
+//        pushService.getAuthorizationStatus { [weak self] status in
+//            if status == .authorized {
+//                self?.createNotificationRequest()
+//                print(Constants.successAuthorizationStatus)
+//            } else {
+//                print(Constants.nonSuccessAuthorizationStatus)
+//            }
+//        }
     }
 
    @IBAction private func openXibViewTap() {
