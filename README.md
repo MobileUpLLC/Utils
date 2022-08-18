@@ -29,7 +29,7 @@ In case you creating View from Xib, that need's to be inited in another Xib – 
 
 ### 2. BundleFileReader
 
-BundleFilesReader and jsonDecoder allows you to conveniently decode json files from your project
+```BundleFilesReader``` and ```jsonDecoder``` allows you to conveniently decode json files from your project
 
 ```swift
 func testDictionaryEncoding() {
@@ -51,8 +51,14 @@ func testDictionaryEncoding() {
 
 ### 3. LocalNotificationService
 
-Implement localNotificationService ```let pushService = LocalNotificationService.shared```
+Implement localNotificationService as singletone ```let pushService = LocalNotificationService.shared```
 
+1. Use ```requestAuthorization``` to request User's approve for sending notifications
+2. Use ```getAuthorizationStatus``` to check current authorization status
+3. Use ```willPresent``` to ask the delegate what to do after receiving notification
+4. Use ```didRecieve``` to inform delegate about receiving notification
+
+An example:
 ```swift
 @IBAction private func pushNotificationButtonTap(_ sender: UIButton) {
     pushService.getAuthorizationStatus { [weak self] status in
@@ -81,7 +87,7 @@ Utils doesn't contain any external dependencies.
 2. Add the following to Podfile 
 
 ```
-pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.0.20'
+pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.0.23'
 ```
 
 3. Make ```pod install```
@@ -96,7 +102,7 @@ Swift Package Manager
 
 ```
 dependencies: [
-    .package(url: "https://github.com/MobileUpLLC/Utils", .upToNextMajor(from: "0.0.20"))
+    .package(url: "https://github.com/MobileUpLLC/Utils", .upToNextMajor(from: "0.0.23"))
 ]
 ```
 
