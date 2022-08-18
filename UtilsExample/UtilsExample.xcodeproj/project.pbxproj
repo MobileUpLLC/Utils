@@ -60,10 +60,6 @@
 		FAA2CAD828AE143D006EA394 /* XibViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibViewExample.swift; sourceTree = "<group>"; };
 		FAA2CAD928AE143D006EA394 /* XibViewExample.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XibViewExample.xib; sourceTree = "<group>"; };
 		FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonArrayForBundleFileReaderTest.json; sourceTree = "<group>"; };
-		FAD395A228ACDFAE00862F9C /* XibViewViewControllerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibViewViewControllerExample.swift; sourceTree = "<group>"; };
-		FAD395A328ACDFAE00862F9C /* XibViewViewControllerExample.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibViewViewControllerExample.xib; sourceTree = "<group>"; };
-		FAD395A828ACE0EE00862F9C /* XibViewExample.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibViewExample.xib; sourceTree = "<group>"; };
-		FAD395AA28ACE10200862F9C /* XibViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibViewExample.swift; sourceTree = "<group>"; };
 		FAD395B128ACFAF300862F9C /* UtilsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExampleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,7 +89,6 @@
 				948BE09628ABA1CB00A3D10F /* Source */,
 				FAD395B228ACFAF300862F9C /* UtilsExampleTests */,
 				948BE09528ABA1CB00A3D10F /* Products */,
-				FAA2CAC728AE13A8006EA394 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,17 +170,6 @@
 				E5246BBC28ACD46C00381384 /* FormXibView.xib */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		FAA2CAC728AE13A8006EA394 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				FAD395A228ACDFAE00862F9C /* XibViewViewControllerExample.swift */,
-				FAD395AA28ACE10200862F9C /* XibViewExample.swift */,
-				FAD395A328ACDFAE00862F9C /* XibViewViewControllerExample.xib */,
-				FAD395A828ACE0EE00862F9C /* XibViewExample.xib */,
-			);
-			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		FAA2CAD328AE143D006EA394 /* XibView */ = {
