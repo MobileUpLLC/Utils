@@ -21,6 +21,8 @@
 		E512FBA928AC1EA700C518DA /* FormCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512FBA828AC1EA700C518DA /* FormCodeView.swift */; };
 		E5246BBB28ACD44E00381384 /* FormXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5246BBA28ACD44D00381384 /* FormXibView.swift */; };
 		E5246BBD28ACD46C00381384 /* FormXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5246BBC28ACD46C00381384 /* FormXibView.xib */; };
+		E5DA631D28AE75D4005E5689 /* ExampleServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA631C28AE75D4005E5689 /* ExampleServerClient.swift */; };
+		E5DA632228AE8B03005E5689 /* ExampleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA632128AE8B03005E5689 /* ExampleEntity.swift */; };
 		FAA4CCD628ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json in Resources */ = {isa = PBXBuildFile; fileRef = FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */; };
 		FAD395B428ACFAF300862F9C /* UtilsExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,8 @@
 		E512FBA828AC1EA700C518DA /* FormCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCodeView.swift; sourceTree = "<group>"; };
 		E5246BBA28ACD44D00381384 /* FormXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormXibView.swift; sourceTree = "<group>"; };
 		E5246BBC28ACD46C00381384 /* FormXibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormXibView.xib; sourceTree = "<group>"; };
+		E5DA631C28AE75D4005E5689 /* ExampleServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleServerClient.swift; sourceTree = "<group>"; };
+		E5DA632128AE8B03005E5689 /* ExampleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleEntity.swift; sourceTree = "<group>"; };
 		FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonArrayForBundleFileReaderTest.json; sourceTree = "<group>"; };
 		FAD395B128ACFAF300862F9C /* UtilsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExampleTests.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 		948BE09628ABA1CB00A3D10F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				E5DA632028AE8ABB005E5689 /* Entity */,
+				E5DA631B28AE75BB005E5689 /* Service */,
 				948BE0AC28ABA5C300A3D10F /* UI */,
 				948BE0AB28ABA59600A3D10F /* App */,
 			);
@@ -161,6 +167,22 @@
 				E5246BBC28ACD46C00381384 /* FormXibView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E5DA631B28AE75BB005E5689 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E5DA631C28AE75D4005E5689 /* ExampleServerClient.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E5DA632028AE8ABB005E5689 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E5DA632128AE8B03005E5689 /* ExampleEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		FAD395AC28ACF94000862F9C /* Resources */ = {
@@ -313,11 +335,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E512FBA928AC1EA700C518DA /* FormCodeView.swift in Sources */,
+				E5DA632228AE8B03005E5689 /* ExampleEntity.swift in Sources */,
 				94B5553928ABC60E000DEFEF /* XibInitableViewController.swift in Sources */,
 				94B5554228ABD76F000DEFEF /* ClosureExampleViewController.swift in Sources */,
 				948BE09828ABA1CB00A3D10F /* AppDelegate.swift in Sources */,
 				94B5553C28ABC749000DEFEF /* CodeInitableViewController.swift in Sources */,
 				E5246BBB28ACD44E00381384 /* FormXibView.swift in Sources */,
+				E5DA631D28AE75D4005E5689 /* ExampleServerClient.swift in Sources */,
 				94B5553428ABC4A2000DEFEF /* ExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,7 +614,7 @@
 			repositoryURL = "https://github.com/MobileUpLLC/Utils";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.22;
+				minimumVersion = 0.0.25;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

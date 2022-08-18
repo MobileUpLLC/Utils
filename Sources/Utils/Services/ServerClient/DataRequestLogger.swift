@@ -100,7 +100,9 @@ class DataRequestLogger {
     }
     
     private func composeData(_ data: Data?) -> String {
-        guard let data = data else { return "Empty" }
+        guard let data = data else {
+            return "Empty"
+        }
         
         if let json = prettyString(from: data) {
             return "JSON \(json)"
@@ -112,7 +114,9 @@ class DataRequestLogger {
     }
     
     private func composeHeaders(_ headers: [AnyHashable: Any]?) -> String {
-        guard let headers = headers, headers.isEmpty == false else { return "Empty" }
+        guard let headers = headers, headers.isEmpty == false else {
+            return "Empty"
+        }
         
         var result = "[\n"
         for (key, value) in headers {
