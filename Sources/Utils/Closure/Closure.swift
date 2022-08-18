@@ -20,4 +20,3 @@ public enum Closure {
     public typealias Array<T> = (([T]) -> Swift.Void)
     public typealias Generic<T> = ((T) -> Swift.Void)
 }
-

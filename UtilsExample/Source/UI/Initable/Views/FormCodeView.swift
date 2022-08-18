@@ -68,6 +68,5 @@ final class FormCodeView: UIView, CodeInitable {
             formTextField.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             formTextField.heightAnchor.constraint(equalToConstant: Constants.textFieldHeight)
         ])
-    }
-    
+    }    
 }
