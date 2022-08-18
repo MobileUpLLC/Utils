@@ -20,7 +20,6 @@ opt_in_rules:
   - contains_over_filter_is_empty
   - contains_over_first_not_nil
   - contains_over_range_nil_comparison
-  - convenience_type
   - compiler_protocol_init
   - custom_rules
   - discouraged_optional_boolean

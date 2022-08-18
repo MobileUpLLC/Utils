@@ -6,7 +6,7 @@
 //
 
 import Foundation
-// swiftlint:disable convenience_type
+
 public class JSONConverter {
     
     enum Error: Swift.Error {

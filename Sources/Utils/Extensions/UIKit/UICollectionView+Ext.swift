@@ -10,15 +10,10 @@ import UIKit
 public extension UICollectionView {
     
     func register(_ cellClass: UICollectionViewCell.Type) {
-        register(cellClass, forCellWithReuseIdentifier: cellClass.reuseId)
-    }
-    
-    func registerXib(_ cellClass: UICollectionViewCell.Type) {
-        let nib: UINib? = UINib(nibName: cellClass.reuseId, bundle: nil)
-        guard let nib = nib else {
-            fatalError("Не удалось найти Xib \(cellClass.reuseId)!")
+        if Bundle.main.path(forResource: cellClass.reuseId, ofType: "nib") == nil {
+            register(cellClass, forCellWithReuseIdentifier: cellClass.reuseId)
+        } else {
+            register(UINib(nibName: cellClass.reuseId, bundle: .main), forCellWithReuseIdentifier: cellClass.reuseId)
         }
-
-        register(nib, forCellWithReuseIdentifier: cellClass.reuseId)
     }
 }

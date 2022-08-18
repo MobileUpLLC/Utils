@@ -14,4 +14,5 @@ public extension String {
     static var comma: Self { "," }
     static var slash: Self { "/" }
     static var dot: Self { "." }
+    static var grid: Self { "#" }
 }
