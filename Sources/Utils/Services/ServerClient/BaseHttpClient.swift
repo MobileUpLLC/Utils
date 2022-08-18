@@ -20,14 +20,14 @@ open class BaseHttpClient {
     
     // MARK: - Public methods
     
-    convenience init(baseUrl: String) {
+    public convenience init(baseUrl: String) {
         self.init(
             baseUrl: baseUrl,
             session: Session(eventMonitors: [DataRequestLogger()])
         )
     }
     
-    init(baseUrl: String, session: Session) {
+    public init(baseUrl: String, session: Session) {
         self.baseUrl = baseUrl
         self.session = session
     }
