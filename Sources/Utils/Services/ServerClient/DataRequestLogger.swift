@@ -25,6 +25,8 @@ open class DataRequestLogger {
         #endif
     }
     
+    public init() { }
+    
     private func logRequest(_ urlRequest: URLRequest) {
         let url = urlRequest.url?.absoluteString ?? "Undefind"
         let method = urlRequest.httpMethod ?? "Undefind"
