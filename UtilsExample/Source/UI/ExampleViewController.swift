@@ -45,7 +45,7 @@ final class ExampleViewController: UIViewController {
         navigationController?.pushViewController(xibController, animated: true)
     }
 
-    @IBAction func openCodeInitableControllerTap() {
+    @IBAction private func openCodeInitableControllerTap() {
         let codeController = CodeInitableViewController.initiate()
     
         navigationController?.pushViewController(codeController, animated: true)
@@ -73,6 +73,12 @@ final class ExampleViewController: UIViewController {
                 print(Constants.nonSuccessAuthorizationStatus)
             }
         }
+    }
+
+   @IBAction private func openXibViewTap() {
+        let controller = XibViewViewControllerExample.initiate()
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
 
     private func createNotificationRequest() {
