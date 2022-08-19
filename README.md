@@ -237,11 +237,7 @@ Added hex value for UIColor
 ### 6. Button
 
 Added a basic button that you can work with and xib. Just inherit your button from the ```Button``` class in the inspector
-```swift
-    let hexFromGreen: String = UIColor.green.hexValue
-    
-    let colorFromHex: UIColor = .init(hex: "#34eb49")
-```
+![Example](https://github.com/MobileUpLLC/Utils/blob/task/Add-documentation-for-Button/UtilsExample/Source/App/Resources/ButtonExample.png)
 
 ## Requirements
 
