@@ -79,6 +79,70 @@ An example:
 ```
 [LocalNotificationService usage examle](https://github.com/MobileUpLLC/Utils/blob/develop/UtilsExample/Source/UI/ExampleViewController.swift)
 
+### 4. Extensions
+
+[UIKit and Foundation extensions](https://github.com/MobileUpLLC/Utils/tree/develop/Sources/Utils/Extensions)
+
+Added extensions for numbers (Int, Double, Float, CGFloat)
+```swift
+    static var one: Self { 1 }
+    static var two: Self { 2 }
+    static var three: Self { 3 }
+    static var four: Self { 4 }
+    static var five: Self { 5 }
+    static var six: Self { 6 }
+    static var seven: Self { 7 }
+    static var eight: Self { 8 }
+    static var nine: Self { 9 }
+    static var ten: Self { 10 }
+    
+    static var hundred: Self { 100 }
+    static var thousand: Self { 1_000 }
+    static var million: Self { 1_000_000 }
+    static var billion: Self { 1_000_000_000 }
+```
+
+Added a convenient layout for view
+```swift
+ func layoutSubview(
+        _ view: UIView,
+        with insets: LayoutInsets = .zero,
+        safe: Bool = false
+    ) {
+        addSubview(view)
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        if let top = insets.top {
+            view.topAnchor.makeConstraint(equalTo: getTopAnchor(safe: safe), constant: top)
+        }
+        
+        if let left = insets.left {
+            view.leadingAnchor.makeConstraint(equalTo: getLeadingAnchor(safe: safe), constant: left)
+        }
+        
+        if let bottom = insets.bottom {
+            view.bottomAnchor.makeConstraint(equalTo: getBottomAnchor(safe: safe), constant: -bottom)
+        }
+        
+        if let right = insets.right {
+            view.trailingAnchor.makeConstraint(equalTo: getTrailingAnchor(safe: safe), constant: -right)
+        }
+    }
+```
+
+Added hex value for UIColor
+```swift
+public extension UIColor {
+    
+    private enum Constants {
+        
+        static let componentMaxValue: Float = 255
+    }
+    
+    var hexValue: String { getHex() }
+```
+
 ## Requirements
 
 - Swift 5.0 +
