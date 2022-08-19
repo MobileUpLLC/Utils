@@ -229,6 +229,8 @@ Added a convenient layout for view
 Added hex value for UIColor
 ```swift
     let hexFromGreen: String = UIColor.green.hexValue
+    
+    let colorFromHex: UIColor = .init(hex: "#34eb49")
 ```
 
 ## Requirements
