@@ -221,14 +221,9 @@ Extensions for numbers (Int, Double, Float, CGFloat)
 
 Added a convenient layout for view
 ```swift
-    private func layoutView() {
-        guard let view = view else {
-            return
-        }
-
-        insertSubview(view, at: .zero)
-        layoutSubview(view)
-    }
+        let superview = UIView()
+        let subview = UIView()
+        superview.layoutSubview(subview, with: LayoutInsets.zero, safe: true)
 ```
 
 Added hex value for UIColor
