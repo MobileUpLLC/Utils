@@ -207,8 +207,32 @@ func getJsonFormServer() {
     ```swift    
     convenience init(baseUrl: String) {
         self.init(baseUrl: baseUrl, session: Session(RequestLogger()))
-    }
+### 5. Extensions
+
+[UIKit and Foundation extensions](https://github.com/MobileUpLLC/Utils/tree/develop/Sources/Utils/Extensions)
+
+Extensions for numbers (Int, Double, Float, CGFloat)
+```swift
+        let red = Float(components[.zero])
+        let green = Float(components[.one])
+        let blue = Float(components[.two])
+        var alpha: Float = .one
 ```
+
+Added a convenient layout for view
+```swift
+        let superview = UIView()
+        let subview = UIView()
+        superview.layoutSubview(subview, with: LayoutInsets.zero, safe: true)
+```
+
+Added hex value for UIColor
+```swift
+    let hexFromGreen: String = UIColor.green.hexValue
+    
+    let colorFromHex: UIColor = .init(hex: "#34eb49")
+```
+
 ## Requirements
 
 - Swift 5.0 +
@@ -216,7 +240,7 @@ func getJsonFormServer() {
 
 ## Installation
 
-Utils doesn't contain any external dependencies.
+Utils contain Alamofire 5.6 as external dependencies.
 
 ### CocoaPods
 
