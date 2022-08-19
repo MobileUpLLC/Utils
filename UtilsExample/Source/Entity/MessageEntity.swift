@@ -1,5 +1,5 @@
 //
-//  ExampleEntity.swift
+//  MessageEntity.swift
 //  UtilsExample
 //
 //  Created by Чаусов Николай on 18.08.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ExampleEntity: Decodable {
+struct MessageEntity: Decodable {
     
     var message: String?
 }

@@ -24,7 +24,7 @@ final class XibInitableViewController: UIViewController, XibInitable {
 
     private func getJsonFormServer() {
         ExampleServerClient.shared.get(
-            type: ExampleEntity.self,
+            type: MessageEntity.self,
             endpoint: "api/breeds/image/random"
         ) { result in
             switch result {
