@@ -237,6 +237,11 @@ Added hex value for UIColor
 ### 6. Button
 
 Added a basic button that you can work with and xib. Just inherit your button from the ```Button``` class in the inspector
+To use the button in yourself , you need to set:
+1. Type = Custom
+2. Style = [Default](https://stackoverflow.com/questions/71137424/custom-uibutton-imageedgeinsets-titleedgeinsets-not-working)
+
+More about [UIEdgeInsets](https://medium.com/short-swift-stories/using-uiedgeinsets-to-layout-a-uibutton-44ba04dd085c)
 
 
 ![Example](https://github.com/MobileUpLLC/Utils/blob/task/Add-documentation-for-Button/UtilsExample/Source/App/Resources/ButtonExample.png)
