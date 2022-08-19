@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomButton: UIButton {
+class Button: UIButton {
     
     private enum Constants {
         
