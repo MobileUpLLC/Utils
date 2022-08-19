@@ -243,7 +243,7 @@ Added hex value for UIColor
 
 ## Installation
 
-Utils doesn't contain any external dependencies.
+Utils contain Alamofire 5.6 as external dependencies.
 
 ### CocoaPods
 
