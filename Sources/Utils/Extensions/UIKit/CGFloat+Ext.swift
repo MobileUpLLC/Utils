@@ -19,4 +19,6 @@ public extension CGFloat {
     static var eight: Self { 8 }
     static var nine: Self { 9 }
     static var ten: Self { 10 }
+    
+    static var half: Self { 0.5 }
 }
