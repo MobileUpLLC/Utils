@@ -211,7 +211,7 @@ func getJsonFormServer() {
 
 [UIKit and Foundation extensions](https://github.com/MobileUpLLC/Utils/tree/develop/Sources/Utils/Extensions)
 
-Added extensions for numbers (Int, Double, Float, CGFloat)
+Extensions for numbers (Int, Double, Float, CGFloat)
 ```swift
         let red = Float(components[.zero])
         let green = Float(components[.one])
@@ -233,7 +233,7 @@ Added a convenient layout for view
 
 Added hex value for UIColor
 ```swift
-    let hexFromGreen: UIColor = .green.hexValue
+    let hexFromGreen: String = UIColor.green.hexValue
 ```
 
 ## Requirements
