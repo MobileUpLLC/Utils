@@ -207,6 +207,7 @@ func getJsonFormServer() {
     ```swift    
     convenience init(baseUrl: String) {
         self.init(baseUrl: baseUrl, session: Session(RequestLogger()))
+
 ### 5. Extensions
 
 [UIKit and Foundation extensions](https://github.com/MobileUpLLC/Utils/tree/develop/Sources/Utils/Extensions)
@@ -227,6 +228,15 @@ Added a convenient layout for view
 ```
 
 Added hex value for UIColor
+```swift
+    let hexFromGreen: String = UIColor.green.hexValue
+    
+    let colorFromHex: UIColor = .init(hex: "#34eb49")
+```
+
+### 6. Button
+
+Added a basic button that you can work with and xib. Just inherit your button from the ```Button``` class in the inspector
 ```swift
     let hexFromGreen: String = UIColor.green.hexValue
     
