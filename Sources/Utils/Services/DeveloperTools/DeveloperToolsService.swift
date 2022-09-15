@@ -9,10 +9,10 @@ import UIKit
 
 public final class DeveloperToolsService {
     
-    static var isEnabled = false
+    public static var isEnabled = false
     static weak var customActionDelegate: DeveloperToolsCustomActionDelegate?
     
-    static func setup() {
+    public static func setup() {
         NotificationCenter.default.addObserver(forName: .deviceHaveBeenShaken, object: nil, queue: nil) { _ in
             
             let toolsController = DeveloperToolsController.initiate()
