@@ -47,8 +47,6 @@ public final class DeveloperToolsController: UIViewController, XibInitable {
     }
     
     @IBAction private func openLogsButtonTapped() {
-        let logsController = LogsController.initiate()
-    
         UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(
             PulseUI.MainViewController(),
             animated: false,
@@ -57,10 +55,11 @@ public final class DeveloperToolsController: UIViewController, XibInitable {
     }
 
     @IBAction private func close() {
-        dismiss(animated: true, completion: nil)
+        DeveloperToolsLogger.removeAllLogs()
+//        dismiss(animated: true, completion: nil)
     }
     
     @IBAction private func clear() {
-        DeveloperToolsLogger.clear()
+        DeveloperToolsLogger.clearLogs()
     }
 }
