@@ -26,7 +26,7 @@ public final class DeveloperToolsLogger {
         
         static let dateLogLabel = "Created at "
         static let loggedFile = " in file: "
-        static let loggedFunc = "in function: "
+        static let loggedFunc = " in function: "
         static let loggedLine = " on line: "
         static let enter = "\n"
     }
@@ -51,7 +51,6 @@ public final class DeveloperToolsLogger {
         }
         
         var logCollector: String = .empty
-        logCollector = UIDevice.description()
         
         for message in messages {
             logCollector.append(
