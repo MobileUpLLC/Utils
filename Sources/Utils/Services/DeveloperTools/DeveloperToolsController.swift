@@ -14,7 +14,7 @@ protocol DeveloperToolsCustomActionDelegate: AnyObject {
     func developerToolCustomActionDidTapped(_ developerTools: DeveloperToolsController)
 }
 
-public final class DeveloperToolsController: UIViewController, XibInitable {
+final class DeveloperToolsController: UIViewController, XibInitable {
     
     private enum Constants {
         

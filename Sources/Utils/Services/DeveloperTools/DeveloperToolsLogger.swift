@@ -8,7 +8,7 @@
 import Foundation
 import Pulse
 
-enum LogLevel: String {
+public enum LogLevel: String {
     
     case trace = "[Trace 👣]"
     case details = "[Detail ℹ️]"
@@ -20,7 +20,7 @@ enum LogLevel: String {
     static var allValues: [LogLevel] { return [.trace, .details, .event, .warning, .error, .critical] }
 }
 
-final class DeveloperToolsLogger {
+public final class DeveloperToolsLogger {
     
     private enum Constants {
         
