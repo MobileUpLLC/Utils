@@ -15,7 +15,7 @@ public final class DeveloperToolsService {
     public static func setup() {
         NotificationCenter.default.addObserver(forName: .deviceHaveBeenShaken, object: nil, queue: nil) { _ in
             
-            let toolsController = DeveloperToolsController.initiate()
+            let toolsController = DeveloperToolsController.init(nibName: "DeveloperToolsController", bundle: Bundle.module)
             toolsController.modalPresentationStyle = .overCurrentContext
             
             UIApplication.shared.windows.first?.rootViewController?.present(
