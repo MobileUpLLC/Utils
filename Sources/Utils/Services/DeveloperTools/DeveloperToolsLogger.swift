@@ -5,7 +5,7 @@
 //  Created by Petrovich on 07.11.2021.
 //
 
-import Foundation
+import UIKit
 import Pulse
 
 public enum LogLevel: String {
@@ -25,9 +25,9 @@ public final class DeveloperToolsLogger {
     private enum Constants {
         
         static let dateLogLabel = "Created at "
-        static let descriptionLabel = " Description: "
-        static let loggedFile = " In file: "
-        static let loggedLine = " On line: "
+        static let loggedFile = " in file: "
+        static let loggedFunc = "in function: "
+        static let loggedLine = " on line: "
         static let enter = "\n"
     }
     
@@ -45,16 +45,13 @@ public final class DeveloperToolsLogger {
         loggerStore.removeAll()
     }
     
-    public class func removeAllLogs() {
-        try? loggerStore.destroy()
-    }
-    
     public class func getLogs() -> String {
         guard let messages = try? loggerStore.allMessages() else {
             return .empty
         }
         
         var logCollector: String = .empty
+        logCollector = UIDevice.description()
         
         for message in messages {
             logCollector.append(
@@ -64,10 +61,10 @@ public final class DeveloperToolsLogger {
                 + convertToLevel(from: message.level)
                 + .space
                 + message.text
-                + Constants.descriptionLabel
-                + message.description
                 + Constants.loggedFile
                 + message.file
+                + Constants.loggedFunc
+                + message.function
                 + Constants.loggedLine
                 + message.line.description
                 + Constants.enter

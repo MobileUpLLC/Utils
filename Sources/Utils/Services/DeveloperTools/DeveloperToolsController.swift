@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Pulse
 import PulseUI
 
 protocol DeveloperToolsCustomActionDelegate: AnyObject {
@@ -36,9 +35,9 @@ final class DeveloperToolsController: UIViewController, XibInitable {
         dark(false)
     }
 
-    private func dark(_ on: Bool) {
+    private func dark(_ isOn: Bool) {
         UIView.animate(withDuration: Constants.animationDuration) {
-            self.darkView.backgroundColor = on ? UIColor.black.withAlphaComponent(Constants.darkViewAlpha) : .clear
+            self.darkView.backgroundColor = isOn ? UIColor.black.withAlphaComponent(Constants.darkViewAlpha) : .clear
         }
     }
 

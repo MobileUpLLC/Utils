@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Utils
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        
+        DeveloperToolsService.setup()
+        DeveloperToolsService.isEnabled = true
+
         window = UIWindow(frame: UIScreen.main.bounds)
         let controller = UINavigationController(rootViewController: ExampleViewController())
 

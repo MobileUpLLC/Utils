@@ -40,7 +40,7 @@ final class ExampleViewController: UIViewController {
                     print(Constants.nonSuccessAuthorization)
                 }
             case .failure(let error):
-                print(error.localizedDescription)
+                DeveloperToolsLogger.logMessage("Push service", level: .error, message: error.localizedDescription)
             }
         }
     }

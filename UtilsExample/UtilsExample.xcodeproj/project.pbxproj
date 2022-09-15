@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		941BA1CE28ABA8C000E747EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D108B628ABA74000D1C7A3 /* LaunchScreen.storyboard */; };
+		945EA4BA28D354B40056161A /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = 945EA4B928D354B40056161A /* Utils */; };
 		948BE09828ABA1CB00A3D10F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948BE09728ABA1CB00A3D10F /* AppDelegate.swift */; };
 		948BE0A128ABA1CC00A3D10F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 948BE0A028ABA1CC00A3D10F /* Assets.xcassets */; };
-		94B5553128ABB48D000DEFEF /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = 94B5553028ABB48D000DEFEF /* Utils */; };
 		94B5553428ABC4A2000DEFEF /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5553228ABC4A2000DEFEF /* ExampleViewController.swift */; };
 		94B5553528ABC4A2000DEFEF /* ExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B5553328ABC4A2000DEFEF /* ExampleViewController.xib */; };
 		94B5553928ABC60E000DEFEF /* XibInitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5553728ABC60E000DEFEF /* XibInitableViewController.swift */; };
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94B5553128ABB48D000DEFEF /* Utils in Frameworks */,
+				945EA4BA28D354B40056161A /* Utils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +258,7 @@
 			);
 			name = UtilsExample;
 			packageProductDependencies = (
-				94B5553028ABB48D000DEFEF /* Utils */,
+				945EA4B928D354B40056161A /* Utils */,
 			);
 			productName = UtilsExample;
 			productReference = 948BE09428ABA1CB00A3D10F /* UtilsExample.app */;
@@ -311,7 +311,7 @@
 			);
 			mainGroup = 948BE08B28ABA1CB00A3D10F;
 			packageReferences = (
-				94B5552F28ABB48D000DEFEF /* XCRemoteSwiftPackageReference "Utils" */,
+				945EA4B828D354B40056161A /* XCRemoteSwiftPackageReference "Utils" */,
 			);
 			productRefGroup = 948BE09528ABA1CB00A3D10F /* Products */;
 			projectDirPath = "";
@@ -459,7 +459,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -513,7 +513,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -540,7 +540,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -570,7 +570,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -653,20 +653,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		94B5552F28ABB48D000DEFEF /* XCRemoteSwiftPackageReference "Utils" */ = {
+		945EA4B828D354B40056161A /* XCRemoteSwiftPackageReference "Utils" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MobileUpLLC/Utils";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.28;
+				branch = "task/UPUP-336-debug-service-with-pulse";
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		94B5553028ABB48D000DEFEF /* Utils */ = {
+		945EA4B928D354B40056161A /* Utils */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 94B5552F28ABB48D000DEFEF /* XCRemoteSwiftPackageReference "Utils" */;
+			package = 945EA4B828D354B40056161A /* XCRemoteSwiftPackageReference "Utils" */;
 			productName = Utils;
 		};
 /* End XCSwiftPackageProductDependency section */
