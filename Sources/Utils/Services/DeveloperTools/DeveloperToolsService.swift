@@ -74,32 +74,3 @@ public final class DeveloperToolsService {
         )
     }
 }
-
-public struct CustomDebugAction {
-    
-    let title: String
-    let handler: () -> Void
-    
-    public init(title: String, handler: @escaping () -> Void) {
-        self.title = title
-        self.handler = handler
-    }
-}
-
-public extension Notification.Name {
-    
-    static let deviceHaveBeenShaken = Notification.Name("deviceHaveBeenShaken")
-}
-
-extension UIWindow {
-
-    // swiftlint:disable:next override_in_extension
-    override open func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if DeveloperToolsService.isEnabled && motion == .motionShake {
-            DeveloperToolsLogger.logMessage(label: "Catch motion", level: .event, message: "Device have been shaken.")
-            NotificationCenter.default.post(name: .deviceHaveBeenShaken, object: nil)
-        } else {
-            super.motionEnded(motion, with: event)
-        }
-    }
-}

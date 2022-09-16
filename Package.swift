@@ -25,6 +25,11 @@ let package = Package(
     targets: [
         .target(
             name: "Utils",
-            dependencies: ["Alamofire", "Pulse", .product(name: "PulseUI", package: "Pulse")])
+            dependencies: [
+                "Alamofire",
+                "Pulse",
+                .product(name: "PulseUI", package: "Pulse")
+            ]
+        )
     ]
 )
