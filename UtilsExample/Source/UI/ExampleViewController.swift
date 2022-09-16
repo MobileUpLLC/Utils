@@ -18,6 +18,8 @@ final class ExampleViewController: UIViewController {
         static let nonSuccessAuthorizationStatus = "Has no rules to push Notifications"
         static let notificationTitle = "Feed the cat"
         static let notificationSubtitle = "It looks hungry"
+        static let firstCustomActionTitle = "First action"
+        static let secondCustomActionTitle = "Second action"
         static let notificationDelay: TimeInterval = 5
     }
     
@@ -40,9 +42,36 @@ final class ExampleViewController: UIViewController {
                     print(Constants.nonSuccessAuthorization)
                 }
             case .failure(let error):
-                DeveloperToolsLogger.logMessage("Push service", level: .error, message: error.localizedDescription)
+                DeveloperToolsLogger.logMessage(
+                    label: "Push service",
+                    level: .error,
+                    message: error.localizedDescription
+                )
             }
         }
+        
+        configureDeveloperCustomActions()
+    }
+    
+    private func configureDeveloperCustomActions() {
+        DeveloperToolsService.customActions = [
+            CustomDebugAction(title: Constants.firstCustomActionTitle) {
+                DeveloperToolsLogger.logMessage(
+                    label: "Custom action",
+                    level: .details,
+                    message: "First cutom action tapped"
+                )
+            },
+            CustomDebugAction(title: Constants.secondCustomActionTitle) { [weak self] in
+                DeveloperToolsLogger.logMessage(
+                    label: "Custom action",
+                    level: .details,
+                    message: "Second cutom action tapped"
+                )
+                
+                self?.navigationController?.pushViewController(XibInitableViewController.initiate(), animated: true)
+            }
+        ]
     }
 
     @IBAction private func openXibInitableTap() {

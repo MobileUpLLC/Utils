@@ -24,11 +24,10 @@ public final class DeveloperToolsService {
     
     public static func setup() {
         NotificationCenter.default.addObserver(forName: .deviceHaveBeenShaken, object: nil, queue: nil) { _ in
-            
             showActionSheet()
             
             DeveloperToolsLogger.logMessage(
-                "DeveloperToolsService",
+                label: "DeveloperToolsService",
                 level: .event,
                 message: "DeveloperToolsService was setup"
             )
@@ -97,7 +96,7 @@ extension UIWindow {
     // swiftlint:disable:next override_in_extension
     override open func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if DeveloperToolsService.isEnabled && motion == .motionShake {
-            DeveloperToolsLogger.logMessage("Catch motion", level: .event, message: "Device have been shaken.")
+            DeveloperToolsLogger.logMessage(label: "Catch motion", level: .event, message: "Device have been shaken.")
             NotificationCenter.default.post(name: .deviceHaveBeenShaken, object: nil)
         } else {
             super.motionEnded(motion, with: event)
