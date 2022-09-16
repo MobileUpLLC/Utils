@@ -290,7 +290,6 @@ private func configureDeveloperCustomActions() {
 
 ![image](https://user-images.githubusercontent.com/80983073/190639753-b4a4bbaf-413a-4c81-b2b4-a2b82e599f07.png)
 
-
 #### DeveloperToolsLogger
 Service also provide ```DeveloperToolsLogger```, you can:
 1. Log message with priority level
