@@ -243,13 +243,88 @@ To use the button, you need to set:
 
 More about [UIEdgeInsets](https://medium.com/short-swift-stories/using-uiedgeinsets-to-layout-a-uibutton-44ba04dd085c)
 
+![Example](https://github.com/MobileUpLLC/Utils/blob/develop/UtilsExample/Source/App/Resources/ButtonExample.png)
 
-![Example](https://github.com/MobileUpLLC/Utils/blob/task/Add-documentation-for-Button/UtilsExample/Source/App/Resources/ButtonExample.png)
+### 7. DeveloperTools Service
+
+#### DeveloperToolsService
+You can use ```DeveloperToolsService``` for using debug-feature by shaken device or simulator. This debug-feature provide log-screen and custom actions.
+To enable ```DeveloperToolsService``` you have to setup and enable service in AppDelegate: 
+
+```swift
+    DeveloperToolsService.setup()
+    DeveloperToolsService.isEnabled = true
+```
+
+#### Custom actions
+To use custom actions you have to set an Array of ```CustomDebugAction``` and set it in place you want to use it.
+
+```swift
+override func viewDidLoad() {
+    ...
+    configureDeveloperCustomActions()
+    ...
+}
+
+private func configureDeveloperCustomActions() {
+    DeveloperToolsService.customActions = [
+        CustomDebugAction(title: "First action") {
+            DeveloperToolsLogger.logMessage(
+                label: "Custom action",
+                level: .details,
+                message: "First cutom action tapped"
+            )
+        },
+        CustomDebugAction(title: "Second action") { [weak self] in
+            DeveloperToolsLogger.logMessage(
+                label: "Custom action",
+                level: .details,
+                message: "Second cutom action tapped"
+            )
+
+            self?.navigationController?.pushViewController(XibInitableViewController.initiate(), animated: true)
+        }
+    ]
+}     
+```
+
+![image](https://user-images.githubusercontent.com/80983073/190639753-b4a4bbaf-413a-4c81-b2b4-a2b82e599f07.png)
+
+
+#### DeveloperToolsLogger
+Service also provide ```DeveloperToolsLogger```, you can:
+1. Log message with priority level
+
+```swift
+logMessage(label: String, level: LogLevel, message: String) 
+```
+
+LogLevels:
+
+    1. trace 👣
+    2. detail ℹ️
+    3. event 💬
+    4. warning ⚠️
+    5. error ⛔
+    6. critical 🔥
+    
+2. Log request
+
+```swift
+logRequest(to request: URLRequest, with response: URLResponse, error: Error?, data: Data?)
+```
+
+3. Use getLogs() to get all logs in one string.
+4. Check and share your logs via PulseUI framework:
+
+Shake device -> Show Logs -> Share button -> Check .txt input format and share logs
+
+![image](https://user-images.githubusercontent.com/80983073/190637789-3f64b44c-051b-4734-b084-3aede21b27b4.png)
 
 ## Requirements
 
 - Swift 5.0 +
-- iOS 12.0 +
+- iOS 13.0 +
 
 ## Installation
 
@@ -261,7 +336,7 @@ Utils contain Alamofire 5.6 as external dependencies.
 2. Add the following to Podfile 
 
 ```
-pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.0.23'
+pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.0.31'
 ```
 
 3. Make ```pod install```
@@ -276,7 +351,7 @@ Swift Package Manager
 
 ```
 dependencies: [
-    .package(url: "https://github.com/MobileUpLLC/Utils", .upToNextMajor(from: "0.0.23"))
+    .package(url: "https://github.com/MobileUpLLC/Utils", .upToNextMajor(from: "0.0.31"))
 ]
 ```
 
