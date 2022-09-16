@@ -23,7 +23,7 @@ class ExampleServerClient: HttpClient<ServerError> {
     convenience init(baseUrl: String) {
         self.init(
             baseUrl: baseUrl,
-            session: Session(eventMonitors: [DataRequestLogger()]))
+            session: Session(eventMonitors: [ExampleDataRequestLogger()]))
     }
     
     override class func convertError(_ error: AFError) -> ServerError {
