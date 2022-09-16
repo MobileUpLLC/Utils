@@ -21,7 +21,6 @@ public final class DeveloperToolsService {
     
     public static var isEnabled = false
     public static var customActions: [CustomDebugAction] = []
-    static weak var customActionDelegate: DeveloperToolsCustomActionDelegate?
     
     public static func setup() {
         NotificationCenter.default.addObserver(forName: .deviceHaveBeenShaken, object: nil, queue: nil) { _ in
@@ -81,6 +80,11 @@ public struct CustomDebugAction {
     
     let title: String
     let handler: () -> Void
+    
+    public init(title: String, handler: @escaping () -> Void) {
+        self.title = title
+        self.handler = handler
+    }
 }
 
 public extension Notification.Name {
