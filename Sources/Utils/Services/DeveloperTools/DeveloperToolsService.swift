@@ -69,7 +69,7 @@ public final class DeveloperToolsService {
     }
     
     private static func openLogController() {
-        UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(
+        UIApplication.shared.windows.first?.rootViewController?.present(
             PulseUI.MainViewController(),
             animated: false,
             completion: nil
