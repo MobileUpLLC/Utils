@@ -33,47 +33,13 @@ final class ExampleViewController: UIViewController {
 
         view.backgroundColor = .white
         
-        pushService.requestAuthorization { result in
-            switch result {
-            case .success(let isAuthorised):
-                if isAuthorised {
-                    print(Constants.successAuthorization)
-                } else {
-                    print(Constants.nonSuccessAuthorization)
-                }
-            case .failure(let error):
-                DeveloperToolsLogger.logMessage(
-                    label: "Push service",
-                    level: .error,
-                    message: error.localizedDescription
-                )
-            }
+        pushService.requestAuthorization { [weak self] result in
+            self?.handleAuthorizationResponce(with: result)
         }
         
         configureDeveloperCustomActions()
     }
     
-    private func configureDeveloperCustomActions() {
-        DeveloperToolsService.customActions = [
-            CustomDebugAction(title: Constants.firstCustomActionTitle) {
-                DeveloperToolsLogger.logMessage(
-                    label: "Custom action",
-                    level: .details,
-                    message: "First cutom action tapped"
-                )
-            },
-            CustomDebugAction(title: Constants.secondCustomActionTitle) { [weak self] in
-                DeveloperToolsLogger.logMessage(
-                    label: "Custom action",
-                    level: .details,
-                    message: "Second cutom action tapped"
-                )
-                
-                self?.navigationController?.pushViewController(XibInitableViewController.initiate(), animated: true)
-            }
-        ]
-    }
-
     @IBAction private func openXibInitableTap() {
         let xibController = XibInitableViewController.initiate()
 
@@ -127,5 +93,43 @@ final class ExampleViewController: UIViewController {
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
 
         UNUserNotificationCenter.current().add(request)
+    }
+    
+    private func handleAuthorizationResponce(with result: Result<Bool, Error>) {
+        switch result {
+        case .success(let isAuthorised):
+            if isAuthorised {
+                print(Constants.successAuthorization)
+            } else {
+                print(Constants.nonSuccessAuthorization)
+            }
+        case .failure(let error):
+            DeveloperToolsLogger.logMessage(
+                label: "Push service",
+                level: .error,
+                message: error.localizedDescription
+            )
+        }
+    }
+    
+    private func configureDeveloperCustomActions() {
+        DeveloperToolsService.customActions = [
+            CustomDebugAction(title: Constants.firstCustomActionTitle) {
+                DeveloperToolsLogger.logMessage(
+                    label: "Custom action",
+                    level: .details,
+                    message: "First cutom action tapped"
+                )
+            },
+            CustomDebugAction(title: Constants.secondCustomActionTitle) { [weak self] in
+                DeveloperToolsLogger.logMessage(
+                    label: "Custom action",
+                    level: .details,
+                    message: "Second cutom action tapped"
+                )
+                
+                self?.navigationController?.pushViewController(XibInitableViewController.initiate(), animated: true)
+            }
+        ]
     }
 }
