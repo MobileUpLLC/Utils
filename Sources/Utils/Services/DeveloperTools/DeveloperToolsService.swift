@@ -22,29 +22,33 @@ public final class DeveloperToolsService {
     public static var isEnabled = false
     public static var customActions: [CustomDebugAction] = []
     
-    public static func setup() {
+    public class func setup() {
         NotificationCenter.default.addObserver(forName: .deviceHaveBeenShaken, object: nil, queue: nil) { _ in
             showActionSheet()
-            
-            DeveloperToolsLogger.logMessage(
-                label: "DeveloperToolsService",
-                level: .event,
-                message: "DeveloperToolsService was setup"
-            )
         }
     }
     
-    private static func showActionSheet() {
+    private class func showActionSheet() {
         let alert = UIAlertController(
             title: Constants.alertTitle,
             message: Constants.alertMessage,
             preferredStyle: .actionSheet
         )
         
+        setupAlertActions(to: alert)
+        
+        UIApplication.shared.windows.first?.rootViewController?.present(
+            alert,
+            animated: false,
+            completion: nil
+        )
+    }
+    
+    private class func setupAlertActions(to alert: UIAlertController) {
         alert.addAction(UIAlertAction(title: Constants.showLogActionTitle, style: .default) { _ in
             openLogController()
         })
-        
+
         alert.addAction(UIAlertAction(title: Constants.clearLogActionTitle, style: .default) { _ in
             DeveloperToolsLogger.clearLogs()
         })
@@ -58,15 +62,9 @@ public final class DeveloperToolsService {
         alert.addAction(UIAlertAction(title: Constants.dismissAlertTitle, style: .cancel) { _ in
             alert.dismiss(animated: true)
         })
-
-        UIApplication.shared.windows.first?.rootViewController?.present(
-            alert,
-            animated: false,
-            completion: nil
-        )
     }
     
-    private static func openLogController() {
+    private class func openLogController() {
         UIApplication.shared.windows.first?.rootViewController?.present(
             PulseUI.MainViewController(),
             animated: false,
