@@ -30,6 +30,7 @@
 		FAA4CCD628ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json in Resources */ = {isa = PBXBuildFile; fileRef = FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */; };
 		FAD395B428ACFAF300862F9C /* UtilsExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */; };
 		FADD435B28AF98DF00DCF1FA /* ButtonExample.png in Resources */ = {isa = PBXBuildFile; fileRef = FADD435A28AF98DF00DCF1FA /* ButtonExample.png */; };
+		FAE0A9FF28E42D1700FB7EAD /* StoryboardInitableController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE0A9FE28E42D1700FB7EAD /* StoryboardInitableController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		FAD395B128ACFAF300862F9C /* UtilsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExampleTests.swift; sourceTree = "<group>"; };
 		FADD435A28AF98DF00DCF1FA /* ButtonExample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonExample.png; sourceTree = "<group>"; };
+		FAE0A9FE28E42D1700FB7EAD /* StoryboardInitableController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardInitableController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 		94B5553628ABC5F6000DEFEF /* Initable */ = {
 			isa = PBXGroup;
 			children = (
+				FAE0A9FD28E42CF500FB7EAD /* Storyboard */,
 				E512FBAE28AC2C5A00C518DA /* Controllers */,
 				E512FBAF28AC2C8700C518DA /* Views */,
 			);
@@ -238,6 +241,14 @@
 				FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */,
 			);
 			path = UtilsExampleTests;
+			sourceTree = "<group>";
+		};
+		FAE0A9FD28E42CF500FB7EAD /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				FAE0A9FE28E42D1700FB7EAD /* StoryboardInitableController.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +349,7 @@
 				94B5553528ABC4A2000DEFEF /* ExampleViewController.xib in Resources */,
 				FAA2CADB28AE143D006EA394 /* XibViewViewControllerExample.xib in Resources */,
 				948BE0A128ABA1CC00A3D10F /* Assets.xcassets in Resources */,
+				FAE0A9FF28E42D1700FB7EAD /* StoryboardInitableController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

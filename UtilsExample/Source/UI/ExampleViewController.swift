@@ -45,6 +45,10 @@ final class ExampleViewController: UIViewController {
         }
     }
 
+    @IBAction private func openStoryboardInitableControllerTap() {
+        print("open")
+    }
+
     @IBAction private func openXibInitableTap() {
         let xibController = XibInitableViewController.initiate()
 
