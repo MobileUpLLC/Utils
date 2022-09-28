@@ -16,6 +16,7 @@ public protocol StoryboardInitable: Initable {
 public extension StoryboardInitable {
 
     static var storyboardId: String { String(describing: Self.self) }
+    static var storyboardName: String { String(describing: Self.self) }
 }
 
 public extension StoryboardInitable where Self: UIViewController {

@@ -31,6 +31,7 @@
 		FAD395B428ACFAF300862F9C /* UtilsExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */; };
 		FADD435B28AF98DF00DCF1FA /* ButtonExample.png in Resources */ = {isa = PBXBuildFile; fileRef = FADD435A28AF98DF00DCF1FA /* ButtonExample.png */; };
 		FAE0A9FF28E42D1700FB7EAD /* StoryboardInitableController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE0A9FE28E42D1700FB7EAD /* StoryboardInitableController.storyboard */; };
+		FAE0AA0128E42FAF00FB7EAD /* StoryboardInitableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE0AA0028E42FAF00FB7EAD /* StoryboardInitableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExampleTests.swift; sourceTree = "<group>"; };
 		FADD435A28AF98DF00DCF1FA /* ButtonExample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonExample.png; sourceTree = "<group>"; };
 		FAE0A9FE28E42D1700FB7EAD /* StoryboardInitableController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardInitableController.storyboard; sourceTree = "<group>"; };
+		FAE0AA0028E42FAF00FB7EAD /* StoryboardInitableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitableController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE0A9FE28E42D1700FB7EAD /* StoryboardInitableController.storyboard */,
+				FAE0AA0028E42FAF00FB7EAD /* StoryboardInitableController.swift */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				94B5553928ABC60E000DEFEF /* XibInitableViewController.swift in Sources */,
 				94B5554228ABD76F000DEFEF /* ClosureExampleViewController.swift in Sources */,
 				948BE09828ABA1CB00A3D10F /* AppDelegate.swift in Sources */,
+				FAE0AA0128E42FAF00FB7EAD /* StoryboardInitableController.swift in Sources */,
 				94B5553C28ABC749000DEFEF /* CodeInitableViewController.swift in Sources */,
 				E5246BBB28ACD44E00381384 /* FormXibView.swift in Sources */,
 				E5DA631D28AE75D4005E5689 /* ExampleServerClient.swift in Sources */,
@@ -552,7 +556,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -582,7 +586,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -670,7 +674,7 @@
 			repositoryURL = "https://github.com/MobileUpLLC/Utils";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.28;
+				minimumVersion = 0.0.31;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

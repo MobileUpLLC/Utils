@@ -46,7 +46,9 @@ final class ExampleViewController: UIViewController {
     }
 
     @IBAction private func openStoryboardInitableControllerTap() {
-        print("open")
+        let storyboardController = StoryboardInitableController.initiate()
+        
+        navigationController?.pushViewController(storyboardController, animated: true)
     }
 
     @IBAction private func openXibInitableTap() {
