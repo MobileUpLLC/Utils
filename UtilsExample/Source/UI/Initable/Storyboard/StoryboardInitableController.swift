@@ -8,7 +8,4 @@
 import UIKit
 import Utils
 
-final class StoryboardInitableController: UIViewController, StoryboardInitable {
-
-    static var storyboardName: String { "StoryboardInitableController" }
-}
+final class StoryboardInitableController: UIViewController, StoryboardInitable { }
