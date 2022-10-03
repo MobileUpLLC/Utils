@@ -33,8 +33,8 @@ public final class DeveloperToolsLogger {
     
     private static let loggerStore = LoggerStore.shared
     
-    public class func logMessage(_ label: String?, level: LogLevel, message: String) {
-        loggerStore.storeMessage(label: label ?? .empty, level: level.externalLevel, message: message)
+    public class func logMessage(label: String, level: LogLevel, message: String) {
+        loggerStore.storeMessage(label: label, level: level.externalLevel, message: message)
     }
     
     public class func logRequest(to request: URLRequest, with response: URLResponse, error: Error?, data: Data?) {

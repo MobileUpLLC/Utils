@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		940E738428D49AD900C5AD3C /* ExampleDataRequestLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940E738328D49AD900C5AD3C /* ExampleDataRequestLogger.swift */; };
 		941BA1CE28ABA8C000E747EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D108B628ABA74000D1C7A3 /* LaunchScreen.storyboard */; };
 		945EA4BA28D354B40056161A /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = 945EA4B928D354B40056161A /* Utils */; };
 		948BE09828ABA1CB00A3D10F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948BE09728ABA1CB00A3D10F /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		940E738328D49AD900C5AD3C /* ExampleDataRequestLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleDataRequestLogger.swift; sourceTree = "<group>"; };
 		948BE09428ABA1CB00A3D10F /* UtilsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UtilsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		948BE09728ABA1CB00A3D10F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		948BE0A028ABA1CC00A3D10F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				E5DA631C28AE75D4005E5689 /* ExampleServerClient.swift */,
+				940E738328D49AD900C5AD3C /* ExampleDataRequestLogger.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				940E738428D49AD900C5AD3C /* ExampleDataRequestLogger.swift in Sources */,
 				FAA2CADC28AE143D006EA394 /* XibViewExample.swift in Sources */,
 				E512FBA928AC1EA700C518DA /* FormCodeView.swift in Sources */,
 				E5DA632228AE8B03005E5689 /* MessageEntity.swift in Sources */,
@@ -657,7 +661,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MobileUpLLC/Utils";
 			requirement = {
-				branch = "task/UPUP-336-debug-service-with-pulse";
+				branch = "task/UPUP-337-action-sheet";
 				kind = branch;
 			};
 		};

@@ -33,7 +33,11 @@ final class XibInitableViewController: UIViewController, XibInitable {
                     self.getImageFromServer(with: url)
                 }
             case .failure(let error):
-                DeveloperToolsLogger.logMessage("Server Failure", level: .error, message: error.localizedDescription)
+                DeveloperToolsLogger.logMessage(
+                    label: "Server Failure",
+                    level: .error,
+                    message: error.localizedDescription
+                )
             }
         }
     }

@@ -78,5 +78,3 @@ class Button: UIButton {
         backgroundColor = isSelected ? selectedColor : normalColor
     }
 }
-
-

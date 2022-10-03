@@ -23,11 +23,11 @@ class ExampleServerClient: HttpClient<ServerError> {
     convenience init(baseUrl: String) {
         self.init(
             baseUrl: baseUrl,
-            session: Session(eventMonitors: [DataRequestLogger()]))
+            session: Session(eventMonitors: [ExampleDataRequestLogger()]))
     }
     
     override class func convertError(_ error: AFError) -> ServerError {
-        DeveloperToolsLogger.logMessage("Converting error", level: .error, message: "\(error)")
+        DeveloperToolsLogger.logMessage(label: "Converting error", level: .error, message: "\(error)")
         
         if error.responseCode == 404 {
             return .pageNotFound
