@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  StoryboardInitable.swift
 //  
 //
 //  Created by vitalii on 28.09.2022.
