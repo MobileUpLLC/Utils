@@ -149,7 +149,6 @@
 		94B5553628ABC5F6000DEFEF /* Initable */ = {
 			isa = PBXGroup;
 			children = (
-				FAE0A9FD28E42CF500FB7EAD /* Storyboard */,
 				E512FBAE28AC2C5A00C518DA /* Controllers */,
 				E512FBAF28AC2C8700C518DA /* Views */,
 			);
@@ -168,8 +167,8 @@
 		E512FBAE28AC2C5A00C518DA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				94B5553728ABC60E000DEFEF /* XibInitableViewController.swift */,
-				94B5553828ABC60E000DEFEF /* XibInitableViewController.xib */,
+				FAF9C1EA28EC377F009D4987 /* XibInitableController */,
+				FAF9C1E928EC3755009D4987 /* StoryboardInitableController */,
 				94B5553B28ABC749000DEFEF /* CodeInitableViewController.swift */,
 			);
 			path = Controllers;
@@ -245,13 +244,22 @@
 			path = UtilsExampleTests;
 			sourceTree = "<group>";
 		};
-		FAE0A9FD28E42CF500FB7EAD /* Storyboard */ = {
+		FAF9C1E928EC3755009D4987 /* StoryboardInitableController */ = {
 			isa = PBXGroup;
 			children = (
 				FAE0A9FE28E42D1700FB7EAD /* StoryboardInitableController.storyboard */,
 				FAE0AA0028E42FAF00FB7EAD /* StoryboardInitableController.swift */,
 			);
-			path = Storyboard;
+			path = StoryboardInitableController;
+			sourceTree = "<group>";
+		};
+		FAF9C1EA28EC377F009D4987 /* XibInitableController */ = {
+			isa = PBXGroup;
+			children = (
+				94B5553728ABC60E000DEFEF /* XibInitableViewController.swift */,
+				94B5553828ABC60E000DEFEF /* XibInitableViewController.xib */,
+			);
+			path = XibInitableController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -674,7 +682,7 @@
 			repositoryURL = "https://github.com/MobileUpLLC/Utils";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.32;
+				minimumVersion = 0.0.33;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

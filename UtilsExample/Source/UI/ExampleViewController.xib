@@ -146,7 +146,7 @@
                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="openStoryboardInitableControllerTap" destination="-1" eventType="touchUpInside" id="25V-DO-JkV"/>
+                        <action selector="openStoryboardInitableControllerButtonTapped" destination="-1" eventType="touchUpInside" id="MhF-jd-rav"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nothing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhx-KG-PD1">
