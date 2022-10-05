@@ -8,7 +8,7 @@
 import Utils
 import UIKit
 
-class XibViewExample: XibView1 {
+class XibViewExample: XibView {
     
     @IBOutlet private weak var label: UILabel!
     
