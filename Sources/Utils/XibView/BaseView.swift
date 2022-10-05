@@ -1,5 +1,5 @@
 //
-//  View.swift
+//  BaseView.swift
 //  Utils
 //
 //  Created by vitalii on 17.08.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class View: UIView {
+open class BaseView: UIView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
