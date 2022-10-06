@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class XibView: BaseView {
+open class XibView1: BaseView {
 
     var view: UIView?
     
@@ -36,13 +36,13 @@ open class XibView: BaseView {
     }
     
     private func loadViewFromNib() -> UIView? {
-        let nib: UINib? = UINib(nibName: Self.xibName, bundle: Bundle(for: XibView.self))
+        let nib: UINib? = UINib(nibName: Self.xibName, bundle: Bundle(for: XibView1.self))
         
         return nib?.instantiate(withOwner: self, options: nil).first as? UIView
     }
 }
 
-extension XibView: XibInitable {
+extension XibView1: XibInitable {
     
     public static func initiate() -> Self {
         return self.init(fromCodeWithFrame: .zero)

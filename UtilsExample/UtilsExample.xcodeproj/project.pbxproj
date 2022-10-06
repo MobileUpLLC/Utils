@@ -10,7 +10,6 @@
 		941BA1CE28ABA8C000E747EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D108B628ABA74000D1C7A3 /* LaunchScreen.storyboard */; };
 		948BE09828ABA1CB00A3D10F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948BE09728ABA1CB00A3D10F /* AppDelegate.swift */; };
 		948BE0A128ABA1CC00A3D10F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 948BE0A028ABA1CC00A3D10F /* Assets.xcassets */; };
-		94B5553128ABB48D000DEFEF /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = 94B5553028ABB48D000DEFEF /* Utils */; };
 		94B5553428ABC4A2000DEFEF /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5553228ABC4A2000DEFEF /* ExampleViewController.swift */; };
 		94B5553528ABC4A2000DEFEF /* ExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B5553328ABC4A2000DEFEF /* ExampleViewController.xib */; };
 		94B5553928ABC60E000DEFEF /* XibInitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5553728ABC60E000DEFEF /* XibInitableViewController.swift */; };
@@ -23,6 +22,7 @@
 		E5246BBD28ACD46C00381384 /* FormXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5246BBC28ACD46C00381384 /* FormXibView.xib */; };
 		E5DA631D28AE75D4005E5689 /* ExampleServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA631C28AE75D4005E5689 /* ExampleServerClient.swift */; };
 		E5DA632228AE8B03005E5689 /* MessageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA632128AE8B03005E5689 /* MessageEntity.swift */; };
+		FA1DDD6728EEB89D007DCEB9 /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = FA1DDD6628EEB89D007DCEB9 /* Utils */; };
 		FAA2CADA28AE143D006EA394 /* XibViewViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2CAD528AE143D006EA394 /* XibViewViewControllerExample.swift */; };
 		FAA2CADB28AE143D006EA394 /* XibViewViewControllerExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA2CAD628AE143D006EA394 /* XibViewViewControllerExample.xib */; };
 		FAA2CADC28AE143D006EA394 /* XibViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2CAD828AE143D006EA394 /* XibViewExample.swift */; };
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94B5553128ABB48D000DEFEF /* Utils in Frameworks */,
+				FA1DDD6728EEB89D007DCEB9 /* Utils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +95,7 @@
 				948BE09628ABA1CB00A3D10F /* Source */,
 				FAD395B228ACFAF300862F9C /* UtilsExampleTests */,
 				948BE09528ABA1CB00A3D10F /* Products */,
+				FA1DDD6528EEB89D007DCEB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,6 +197,13 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		FA1DDD6528EEB89D007DCEB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FAA2CAD328AE143D006EA394 /* XibView */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,7 +266,7 @@
 			);
 			name = UtilsExample;
 			packageProductDependencies = (
-				94B5553028ABB48D000DEFEF /* Utils */,
+				FA1DDD6628EEB89D007DCEB9 /* Utils */,
 			);
 			productName = UtilsExample;
 			productReference = 948BE09428ABA1CB00A3D10F /* UtilsExample.app */;
@@ -311,7 +319,6 @@
 			);
 			mainGroup = 948BE08B28ABA1CB00A3D10F;
 			packageReferences = (
-				94B5552F28ABB48D000DEFEF /* XCRemoteSwiftPackageReference "Utils" */,
 			);
 			productRefGroup = 948BE09528ABA1CB00A3D10F /* Products */;
 			projectDirPath = "";
@@ -652,21 +659,9 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		94B5552F28ABB48D000DEFEF /* XCRemoteSwiftPackageReference "Utils" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MobileUpLLC/Utils";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.34;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		94B5553028ABB48D000DEFEF /* Utils */ = {
+		FA1DDD6628EEB89D007DCEB9 /* Utils */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 94B5552F28ABB48D000DEFEF /* XCRemoteSwiftPackageReference "Utils" */;
 			productName = Utils;
 		};
 /* End XCSwiftPackageProductDependency section */
