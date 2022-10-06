@@ -10,7 +10,6 @@
 		941BA1CE28ABA8C000E747EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D108B628ABA74000D1C7A3 /* LaunchScreen.storyboard */; };
 		948BE09828ABA1CB00A3D10F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948BE09728ABA1CB00A3D10F /* AppDelegate.swift */; };
 		948BE0A128ABA1CC00A3D10F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 948BE0A028ABA1CC00A3D10F /* Assets.xcassets */; };
-		94B5553128ABB48D000DEFEF /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = 94B5553028ABB48D000DEFEF /* Utils */; };
 		94B5553428ABC4A2000DEFEF /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5553228ABC4A2000DEFEF /* ExampleViewController.swift */; };
 		94B5553528ABC4A2000DEFEF /* ExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B5553328ABC4A2000DEFEF /* ExampleViewController.xib */; };
 		94B5553928ABC60E000DEFEF /* XibInitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5553728ABC60E000DEFEF /* XibInitableViewController.swift */; };
@@ -30,6 +29,7 @@
 		FAA4CCD628ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json in Resources */ = {isa = PBXBuildFile; fileRef = FAA4CCD528ABD55B00CF022D /* jsonArrayForBundleFileReaderTest.json */; };
 		FAD395B428ACFAF300862F9C /* UtilsExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */; };
 		FADD435B28AF98DF00DCF1FA /* ButtonExample.png in Resources */ = {isa = PBXBuildFile; fileRef = FADD435A28AF98DF00DCF1FA /* ButtonExample.png */; };
+		FAF3FC1F28ED8B37004061D2 /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = FAF3FC1E28ED8B37004061D2 /* Utils */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +68,7 @@
 		FAD395B128ACFAF300862F9C /* UtilsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExampleTests.swift; sourceTree = "<group>"; };
 		FADD435A28AF98DF00DCF1FA /* ButtonExample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonExample.png; sourceTree = "<group>"; };
+		FAF3FC1C28ED8AB5004061D2 /* Utils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Utils; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94B5553128ABB48D000DEFEF /* Utils in Frameworks */,
+				FAF3FC1F28ED8B37004061D2 /* Utils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,9 +93,11 @@
 		948BE08B28ABA1CB00A3D10F = {
 			isa = PBXGroup;
 			children = (
+				FAF3FC1B28ED8AB5004061D2 /* Packages */,
 				948BE09628ABA1CB00A3D10F /* Source */,
 				FAD395B228ACFAF300862F9C /* UtilsExampleTests */,
 				948BE09528ABA1CB00A3D10F /* Products */,
+				FAF3FC1D28ED8B37004061D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,6 +243,21 @@
 			path = UtilsExampleTests;
 			sourceTree = "<group>";
 		};
+		FAF3FC1B28ED8AB5004061D2 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3FC1C28ED8AB5004061D2 /* Utils */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		FAF3FC1D28ED8B37004061D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,7 +276,7 @@
 			);
 			name = UtilsExample;
 			packageProductDependencies = (
-				94B5553028ABB48D000DEFEF /* Utils */,
+				FAF3FC1E28ED8B37004061D2 /* Utils */,
 			);
 			productName = UtilsExample;
 			productReference = 948BE09428ABA1CB00A3D10F /* UtilsExample.app */;
@@ -311,7 +329,6 @@
 			);
 			mainGroup = 948BE08B28ABA1CB00A3D10F;
 			packageReferences = (
-				94B5552F28ABB48D000DEFEF /* XCRemoteSwiftPackageReference "Utils" */,
 			);
 			productRefGroup = 948BE09528ABA1CB00A3D10F /* Products */;
 			projectDirPath = "";
@@ -652,21 +669,9 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		94B5552F28ABB48D000DEFEF /* XCRemoteSwiftPackageReference "Utils" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MobileUpLLC/Utils";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.34;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		94B5553028ABB48D000DEFEF /* Utils */ = {
+		FAF3FC1E28ED8B37004061D2 /* Utils */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 94B5552F28ABB48D000DEFEF /* XCRemoteSwiftPackageReference "Utils" */;
 			productName = Utils;
 		};
 /* End XCSwiftPackageProductDependency section */
