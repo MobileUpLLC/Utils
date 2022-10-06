@@ -693,17 +693,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		94B5552F28ABB48D000DEFEF /* XCRemoteSwiftPackageReference "Utils" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MobileUpLLC/Utils";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.33;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		FAF3FC1E28ED8B37004061D2 /* Utils */ = {
 			isa = XCSwiftPackageProductDependency;
