@@ -21,7 +21,7 @@ open class MulticastDelegate<T> {
         delegates.remove(delegate as AnyObject)
     }
     
-    public func invokeForEachDelegate(_ handler: (T) -> ()) {
+    public func invokeForEachDelegate(_ handler: (T) -> Void) {
         delegates.allObjects
             .compactMap { $0 as? T }
             .forEach { handler($0) }
