@@ -80,6 +80,9 @@ class MulticastDelegateController: UIViewController, CodeInitable {
             accumulator = delegate.test(accumulator: accumulator)
         }
         lable.text = Constants.labelPrefix + String(accumulator)
+        
+        mulicastDelegate.remove(delegate: addTen)
+        mulicastDelegate.remove(delegate: addTwo)
     }
 }
 
