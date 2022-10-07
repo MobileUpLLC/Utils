@@ -68,36 +68,36 @@ class UtilsExampleTests: XCTestCase {
     
     func testMulticastDelegateInvoke() {
         
-        let mulicastDelegate = MulticastDelegate<Delegate>()
+        let multicastDelegate = MulticastDelegate<Delegate>()
         
         let a = A()
         let b = B()
         let c = C()
         
-        mulicastDelegate.add(delegate: a)
-        mulicastDelegate.add(delegate: b)
-        mulicastDelegate.add(delegate: c)
+        multicastDelegate.add(delegate: a)
+        multicastDelegate.add(delegate: b)
+        multicastDelegate.add(delegate: c)
         
-        mulicastDelegate.invokeForEachDelegate { delegate in
+        multicastDelegate.invokeForEachDelegate { delegate in
             XCTAssertTrue(["A", "B", "C"].contains { delegate.foo() == $0 })
         }
     }
     
     func testMulticastDelegateNilObject() {
         
-        let mulicastDelegate = MulticastDelegate<Delegate>()
+        let multicastDelegate = MulticastDelegate<Delegate>()
         
         let a = A()
         let b = B()
         var c: C? = C()
         
-        mulicastDelegate.add(delegate: a)
-        mulicastDelegate.add(delegate: b)
-        mulicastDelegate.add(delegate: c!)
+        multicastDelegate.add(delegate: a)
+        multicastDelegate.add(delegate: b)
+        multicastDelegate.add(delegate: c!)
         
         c = nil
         
-        mulicastDelegate.invokeForEachDelegate { delegate in
+        multicastDelegate.invokeForEachDelegate { delegate in
             XCTAssertTrue(["A", "B"].contains { delegate.foo() == $0 })
         }
     }

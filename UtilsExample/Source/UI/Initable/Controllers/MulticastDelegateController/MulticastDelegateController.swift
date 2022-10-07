@@ -23,7 +23,7 @@ class MulticastDelegateController: UIViewController, CodeInitable {
     
     private let addTen = AddTen()
     private let addTwo = AddTwo()
-    private let lable = UILabel()
+    private let label = UILabel()
     
     private let mulicastDelegate = MulticastDelegate<TestDelegate>()
     
@@ -45,7 +45,7 @@ class MulticastDelegateController: UIViewController, CodeInitable {
         button.tintColor = .white
         button.backgroundColor = .blue
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
+        button.addTarget(self, action: #selector(showAccumulatorViewTapped), for: .touchUpInside)
         
         view.addSubview(button)
         
@@ -59,27 +59,27 @@ class MulticastDelegateController: UIViewController, CodeInitable {
     }
     
     private func setupLabel() {
-        lable.font = .systemFont(ofSize: Constants.fontSize)
-        lable.text = Constants.labelText
-        lable.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: Constants.fontSize)
+        label.text = Constants.labelText
+        label.translatesAutoresizingMaskIntoConstraints = false
         
-        view.addSubview(lable)
+        view.addSubview(label)
         
         NSLayoutConstraint.activate(
             [
-                lable.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.horizontalInset),
-                lable.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.horizontalOffset),
-                lable.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: Constants.yInset)
+                label.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.horizontalInset),
+                label.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.horizontalOffset),
+                label.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: Constants.yInset)
             ]
         )
     }
     
-    @objc func buttonTap() {
+    @objc func showAccumulatorViewTapped() {
         var accumulator: Int = .zero
         mulicastDelegate.invokeForEachDelegate { delegate in
             accumulator = delegate.test(accumulator: accumulator)
         }
-        lable.text = Constants.labelPrefix + String(accumulator)
+        label.text = Constants.labelPrefix + String(accumulator)
         
         mulicastDelegate.remove(delegate: addTen)
         mulicastDelegate.remove(delegate: addTwo)

@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gR-Mf-cbd">
-                    <rect key="frame" x="16" y="64" width="382" height="56"/>
+                    <rect key="frame" x="16" y="16" width="382" height="56"/>
                     <color key="backgroundColor" systemColor="systemBlueColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="56" id="kSB-cu-k9S"/>
@@ -36,7 +36,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0y-tX-uQS">
-                    <rect key="frame" x="16" y="136" width="382" height="56"/>
+                    <rect key="frame" x="16" y="88" width="382" height="56"/>
                     <color key="backgroundColor" systemColor="systemBlueColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="56" id="FFL-BT-UQ3"/>
@@ -50,7 +50,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Closure TextField Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkG-3p-K3H">
-                    <rect key="frame" x="16" y="317" width="182" height="21"/>
+                    <rect key="frame" x="16" y="269" width="182" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="182" id="Y2p-CA-ByJ"/>
                     </constraints>
@@ -59,7 +59,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sv-FB-D6K">
-                    <rect key="frame" x="16" y="208" width="382" height="56"/>
+                    <rect key="frame" x="16" y="160" width="382" height="56"/>
                     <color key="backgroundColor" systemColor="systemBlueColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="56" id="YVl-BQ-Ec2"/>
@@ -73,13 +73,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nothing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEC-Kv-UAp">
-                    <rect key="frame" x="189" y="280" width="209" height="21"/>
+                    <rect key="frame" x="189" y="232" width="209" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Closure Slider Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="667-cW-PeS">
-                    <rect key="frame" x="16" y="280" width="157" height="21"/>
+                    <rect key="frame" x="16" y="232" width="157" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="157" id="6Ez-CV-Xxr"/>
                     </constraints>
@@ -88,7 +88,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="py9-L2-mxN">
-                    <rect key="frame" x="16" y="790" width="382" height="56"/>
+                    <rect key="frame" x="16" y="824" width="382" height="56"/>
                     <color key="backgroundColor" red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="56" id="pMj-vF-7It"/>
@@ -102,7 +102,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsL-0p-nD8">
-                    <rect key="frame" x="16" y="718" width="382" height="56"/>
+                    <rect key="frame" x="16" y="752" width="382" height="56"/>
                     <color key="backgroundColor" systemColor="systemBlueColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="56" id="jC1-2o-KQt"/>
@@ -116,7 +116,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbM-gg-Zfx" customClass="Button" customModule="Utils">
-                    <rect key="frame" x="16" y="646" width="382" height="56"/>
+                    <rect key="frame" x="16" y="680" width="382" height="56"/>
                     <color key="backgroundColor" systemColor="systemBlueColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="56" id="690-qi-VQp"/>
@@ -136,7 +136,7 @@
                     </userDefinedRuntimeAttributes>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vI0-XB-c8t">
-                    <rect key="frame" x="16" y="575" width="382" height="55"/>
+                    <rect key="frame" x="16" y="609" width="382" height="55"/>
                     <color key="backgroundColor" systemColor="systemBlueColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="55" id="Z09-gC-z8X"/>
@@ -150,13 +150,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nothing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhx-KG-PD1">
-                    <rect key="frame" x="214" y="317" width="184" height="21"/>
+                    <rect key="frame" x="214" y="269" width="184" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWP-BX-jvf">
-                    <rect key="frame" x="16" y="504" width="382" height="55"/>
+                    <rect key="frame" x="16" y="538" width="382" height="55"/>
                     <color key="backgroundColor" systemColor="systemBlueColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="55" id="kzI-MW-lqy"/>
@@ -166,7 +166,7 @@
                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="openMulticastDelegateExampleTap" destination="-1" eventType="touchUpInside" id="7Cq-ua-Nfk"/>
+                        <action selector="openMulticastDelegateExampleTapped" destination="-1" eventType="touchUpInside" id="DqT-MJ-yfP"/>
                     </connections>
                 </button>
             </subviews>

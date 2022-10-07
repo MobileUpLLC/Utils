@@ -76,7 +76,7 @@ final class ExampleViewController: UIViewController {
         navigationController?.pushViewController(xibContoller, animated: true)
     }
     
-    @IBAction private func openMulticastDelegateExampleTap() {
+    @IBAction private func openMulticastDelegateExampleTapped() {
         let multicastDelegateController = MulticastDelegateController.initiate()
         
         navigationController?.pushViewController(multicastDelegateController, animated: true)
