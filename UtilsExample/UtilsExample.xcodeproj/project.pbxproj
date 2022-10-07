@@ -23,6 +23,7 @@
 		E5DA631D28AE75D4005E5689 /* ExampleServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA631C28AE75D4005E5689 /* ExampleServerClient.swift */; };
 		E5DA632228AE8B03005E5689 /* MessageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA632128AE8B03005E5689 /* MessageEntity.swift */; };
 		FA00FBE628F041850015EDA7 /* MulticastDelegateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00FBE428F041850015EDA7 /* MulticastDelegateController.swift */; };
+		FA00FBEC28F068AB0015EDA7 /* MulticastDelegateTestClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00FBEB28F068AB0015EDA7 /* MulticastDelegateTestClasses.swift */; };
 		FAA2CADA28AE143D006EA394 /* XibViewViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2CAD528AE143D006EA394 /* XibViewViewControllerExample.swift */; };
 		FAA2CADB28AE143D006EA394 /* XibViewViewControllerExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA2CAD628AE143D006EA394 /* XibViewViewControllerExample.xib */; };
 		FAA2CADC28AE143D006EA394 /* XibViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2CAD828AE143D006EA394 /* XibViewExample.swift */; };
@@ -64,6 +65,7 @@
 		E5DA631C28AE75D4005E5689 /* ExampleServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleServerClient.swift; sourceTree = "<group>"; };
 		E5DA632128AE8B03005E5689 /* MessageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageEntity.swift; sourceTree = "<group>"; };
 		FA00FBE428F041850015EDA7 /* MulticastDelegateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegateController.swift; sourceTree = "<group>"; };
+		FA00FBEB28F068AB0015EDA7 /* MulticastDelegateTestClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegateTestClasses.swift; sourceTree = "<group>"; };
 		FAA2CAD528AE143D006EA394 /* XibViewViewControllerExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibViewViewControllerExample.swift; sourceTree = "<group>"; };
 		FAA2CAD628AE143D006EA394 /* XibViewViewControllerExample.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XibViewViewControllerExample.xib; sourceTree = "<group>"; };
 		FAA2CAD828AE143D006EA394 /* XibViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibViewExample.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD395B328ACFAF300862F9C /* UtilsExampleTests.swift */,
+				FA00FBEB28F068AB0015EDA7 /* MulticastDelegateTestClasses.swift */,
 			);
 			path = UtilsExampleTests;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA00FBEC28F068AB0015EDA7 /* MulticastDelegateTestClasses.swift in Sources */,
 				FAD395B428ACFAF300862F9C /* UtilsExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
