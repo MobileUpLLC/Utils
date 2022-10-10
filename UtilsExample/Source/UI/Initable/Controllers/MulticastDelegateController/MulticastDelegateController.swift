@@ -16,22 +16,22 @@ class MulticastDelegateController: UIViewController, CodeInitable {
         static let horizontalOffset: CGFloat = -16
         static let horizontalInset: CGFloat = 16
         static let yInset: CGFloat = 50
-        static let labelText = "Accumulator is 0"
+        static let labelInitialText = "Accumulator is 0"
         static let labelPrefix = "Now accumulator is = "
         static let fontSize: CGFloat = 21
     }
     
-    private let addTen = AddTen()
-    private let addTwo = AddTwo()
+    private let testFirstObject = TestFirstObject()
+    private let testSecondObject = TestSecondObject()
     private let label = UILabel()
     
-    private let mulicastDelegate = MulticastDelegate<TestDelegate>()
+    private let multicastDelegate = MulticastDelegate<TestDelegate>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mulicastDelegate.add(delegate: addTen)
-        mulicastDelegate.add(delegate: addTwo)
+        multicastDelegate.add(delegate: testFirstObject)
+        multicastDelegate.add(delegate: testSecondObject)
         
         view.backgroundColor = .white
         
@@ -60,7 +60,7 @@ class MulticastDelegateController: UIViewController, CodeInitable {
     
     private func setupLabel() {
         label.font = .systemFont(ofSize: Constants.fontSize)
-        label.text = Constants.labelText
+        label.text = Constants.labelInitialText
         label.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(label)
@@ -76,13 +76,15 @@ class MulticastDelegateController: UIViewController, CodeInitable {
     
     @objc func showAccumulatorViewTapped() {
         var accumulator: Int = .zero
-        mulicastDelegate.invokeForEachDelegate { delegate in
+        
+        multicastDelegate.invokeForEachDelegate { delegate in
             accumulator = delegate.test(accumulator: accumulator)
         }
+        
         label.text = Constants.labelPrefix + String(accumulator)
         
-        mulicastDelegate.remove(delegate: addTen)
-        mulicastDelegate.remove(delegate: addTwo)
+        multicastDelegate.remove(delegate: testFirstObject)
+        multicastDelegate.remove(delegate: testSecondObject)
     }
 }
 
@@ -91,20 +93,20 @@ private protocol TestDelegate: AnyObject {
     func test(accumulator: Int) -> Int
 }
 
-private class AddTen: TestDelegate {
+private class TestFirstObject: TestDelegate {
     
-    private let baseAdd = 10
+    private let valueForAdd = 10
     
     func test(accumulator: Int) -> Int {
-        return accumulator + baseAdd
+        return accumulator + valueForAdd
     }
 }
 
-private class AddTwo: TestDelegate {
+private class TestSecondObject: TestDelegate {
     
-    private let baseAdd = 2
+    private let valueForAdd = 2
     
     func test(accumulator: Int) -> Int {
-        return accumulator + baseAdd
+        return accumulator + valueForAdd
     }
 }
