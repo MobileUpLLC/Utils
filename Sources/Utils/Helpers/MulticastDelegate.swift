@@ -9,6 +9,8 @@ import Foundation
 
 // Если объект, который был добавлен в NSHashTable, был удалён (равен nil),
 // таблица будет хранить слабую ссылку, пока не будут вызыванны методы add remove invokeForEachDelegate,
+// https://developer.apple.com/documentation/foundation/nshashtable
+// https://nshipster.com/nshashtable-and-nsmaptable/
 open class MulticastDelegate<T> {
     
     private var delegates = NSHashTable<AnyObject>.weakObjects()
