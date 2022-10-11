@@ -28,16 +28,29 @@ class MulticastDelegateController: UIViewController, CodeInitable {
     
     private let multicastDelegate = MulticastDelegate<TestDelegate>()
     
+    private var accumulator: Int = .zero
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         
-        multicastDelegate.add(delegate: testFirstObject)
-        multicastDelegate.add(delegate: testSecondObject)
-        
         setupButton()
         setupLabel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        multicastDelegate.add(delegate: testFirstObject)
+        multicastDelegate.add(delegate: testSecondObject)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        multicastDelegate.remove(delegate: testFirstObject)
+        multicastDelegate.remove(delegate: testSecondObject)
     }
     
     private func setupButton() {
@@ -71,17 +84,12 @@ class MulticastDelegateController: UIViewController, CodeInitable {
         ])
     }
     
-    @objc func showAccumulatorViewTapped() {
-        var accumulator: Int = .zero
-        
+    @objc private func showAccumulatorViewTapped() {
         multicastDelegate.invokeForEachDelegate { delegate in
             accumulator = delegate.test(accumulator: accumulator)
         }
         
         accumulatorLabel.text = Constants.labelPrefix + String(accumulator)
-        
-        multicastDelegate.remove(delegate: testFirstObject)
-        multicastDelegate.remove(delegate: testSecondObject)
     }
 }
 
