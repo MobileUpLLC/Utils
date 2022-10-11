@@ -208,18 +208,10 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		FA00FBE328F0414C0015EDA7 /* MulticastDelegateController */ = {
-			isa = PBXGroup;
-			children = (
-				FA00FBE428F041850015EDA7 /* MulticastDelegateController.swift */,
-			);
-			path = MulticastDelegateController;
-			sourceTree = "<group>";
-		};
 		FA201ED628F593450011B71E /* MulticastDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				FA00FBE328F0414C0015EDA7 /* MulticastDelegateController */,
+				FA00FBE428F041850015EDA7 /* MulticastDelegateController.swift */,
 			);
 			path = MulticastDelegate;
 			sourceTree = "<group>";
