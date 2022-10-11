@@ -23,6 +23,7 @@ class MulticastDelegateController: UIViewController, CodeInitable {
     
     private let testFirstObject = TestFirstObject()
     private let testSecondObject = TestSecondObject()
+
     private let label = UILabel()
     
     private let multicastDelegate = MulticastDelegate<TestDelegate>()
@@ -30,10 +31,10 @@ class MulticastDelegateController: UIViewController, CodeInitable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .white
+        
         multicastDelegate.add(delegate: testFirstObject)
         multicastDelegate.add(delegate: testSecondObject)
-        
-        view.backgroundColor = .white
         
         setupButton()
         setupLabel()
@@ -95,7 +96,7 @@ private protocol TestDelegate: AnyObject {
 
 private class TestFirstObject: TestDelegate {
     
-    private let valueForAdd = 10
+    private let valueForAdd = 1
     
     func test(accumulator: Int) -> Int {
         return accumulator + valueForAdd
