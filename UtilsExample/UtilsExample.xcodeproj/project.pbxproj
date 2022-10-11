@@ -144,6 +144,7 @@
 		948BE0AC28ABA5C300A3D10F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FA201ED628F593450011B71E /* MulticastDelegate */,
 				FAA2CAD328AE143D006EA394 /* XibView */,
 				94B5553D28ABD54E000DEFEF /* Closure */,
 				94B5553628ABC5F6000DEFEF /* Initable */,
@@ -174,7 +175,6 @@
 		E512FBAE28AC2C5A00C518DA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA00FBE328F0414C0015EDA7 /* MulticastDelegateController */,
 				FAF9C1EA28EC377F009D4987 /* XibInitableController */,
 				FAF9C1E928EC3755009D4987 /* StoryboardInitableController */,
 				94B5553B28ABC749000DEFEF /* CodeInitableViewController.swift */,
@@ -214,6 +214,14 @@
 				FA00FBE428F041850015EDA7 /* MulticastDelegateController.swift */,
 			);
 			path = MulticastDelegateController;
+			sourceTree = "<group>";
+		};
+		FA201ED628F593450011B71E /* MulticastDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FA00FBE328F0414C0015EDA7 /* MulticastDelegateController */,
+			);
+			path = MulticastDelegate;
 			sourceTree = "<group>";
 		};
 		FAA2CAD328AE143D006EA394 /* XibView */ = {

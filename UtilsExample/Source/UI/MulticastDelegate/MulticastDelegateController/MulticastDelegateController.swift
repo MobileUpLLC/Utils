@@ -23,8 +23,8 @@ class MulticastDelegateController: UIViewController, CodeInitable {
     
     private let testFirstObject = TestFirstObject()
     private let testSecondObject = TestSecondObject()
-
-    private let label = UILabel()
+    
+    private let accumulatorLabel = UILabel()
     
     private let multicastDelegate = MulticastDelegate<TestDelegate>()
     
@@ -50,29 +50,25 @@ class MulticastDelegateController: UIViewController, CodeInitable {
         
         view.addSubview(button)
         
-        NSLayoutConstraint.activate(
-            [
-                button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.horizontalInset),
-                button.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.horizontalOffset),
-                button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-            ]
-        )
+        NSLayoutConstraint.activate([
+            button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.horizontalInset),
+            button.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.horizontalOffset),
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     private func setupLabel() {
-        label.font = .systemFont(ofSize: Constants.fontSize)
-        label.text = Constants.labelInitialText
-        label.translatesAutoresizingMaskIntoConstraints = false
+        accumulatorLabel.font = .systemFont(ofSize: Constants.fontSize)
+        accumulatorLabel.text = Constants.labelInitialText
+        accumulatorLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        view.addSubview(label)
+        view.addSubview(accumulatorLabel)
         
-        NSLayoutConstraint.activate(
-            [
-                label.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.horizontalInset),
-                label.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.horizontalOffset),
-                label.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: Constants.yInset)
-            ]
-        )
+        NSLayoutConstraint.activate([
+            accumulatorLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.horizontalInset),
+            accumulatorLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.horizontalOffset),
+            accumulatorLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: Constants.yInset)
+        ])
     }
     
     @objc func showAccumulatorViewTapped() {
@@ -82,7 +78,7 @@ class MulticastDelegateController: UIViewController, CodeInitable {
             accumulator = delegate.test(accumulator: accumulator)
         }
         
-        label.text = Constants.labelPrefix + String(accumulator)
+        accumulatorLabel.text = Constants.labelPrefix + String(accumulator)
         
         multicastDelegate.remove(delegate: testFirstObject)
         multicastDelegate.remove(delegate: testSecondObject)

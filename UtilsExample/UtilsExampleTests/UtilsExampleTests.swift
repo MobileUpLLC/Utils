@@ -67,7 +67,6 @@ class UtilsExampleTests: XCTestCase {
     }
     
     func testMulticastDelegateInvoke() {
-        
         let multicastDelegate = MulticastDelegate<Delegate>()
         
         let a = A()
@@ -84,7 +83,6 @@ class UtilsExampleTests: XCTestCase {
     }
     
     func testMulticastDelegateNilObject() {
-        
         let multicastDelegate = MulticastDelegate<Delegate>()
         
         let a = A()
