@@ -35,8 +35,8 @@ class MulticastDelegateController: UIViewController, CodeInitable {
         
         view.backgroundColor = .white
         
-        setupButton()
-        setupLabel()
+        setupAccumulatorButton()
+        setupAccumulatorLabel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,13 +53,13 @@ class MulticastDelegateController: UIViewController, CodeInitable {
         multicastDelegate.remove(delegate: testSecondObject)
     }
     
-    private func setupButton() {
+    private func setupAccumulatorButton() {
         let button = UIButton(type: .system)
         button.setTitle(Constants.title, for: .normal)
         button.tintColor = .white
         button.backgroundColor = .blue
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(showAccumulatorViewTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(showAccumulatorButtonTapped), for: .touchUpInside)
         
         view.addSubview(button)
         
@@ -70,7 +70,7 @@ class MulticastDelegateController: UIViewController, CodeInitable {
         ])
     }
     
-    private func setupLabel() {
+    private func setupAccumulatorLabel() {
         accumulatorLabel.font = .systemFont(ofSize: Constants.fontSize)
         accumulatorLabel.text = Constants.labelInitialText
         accumulatorLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -84,7 +84,7 @@ class MulticastDelegateController: UIViewController, CodeInitable {
         ])
     }
     
-    @objc private func showAccumulatorViewTapped() {
+    @objc private func showAccumulatorButtonTapped() {
         multicastDelegate.invokeForEachDelegate { delegate in
             accumulator = delegate.test(accumulator: accumulator)
         }
