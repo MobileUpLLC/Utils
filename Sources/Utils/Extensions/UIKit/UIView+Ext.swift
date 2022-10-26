@@ -9,12 +9,24 @@ import UIKit
 
 public struct LayoutInsets {
     
-    public static var zero: LayoutInsets { self.init(top: .zero, left: .zero, bottom: .zero, right: .zero) }
+    public static var zero: LayoutInsets { self.init() }
     
     public var top: CGFloat?
     public var left: CGFloat?
     public var bottom: CGFloat?
     public var right: CGFloat?
+    
+    public init(
+        top: CGFloat? = .zero,
+        left: CGFloat? = .zero,
+        bottom: CGFloat? = .zero,
+        right: CGFloat? = .zero
+    ) {
+        self.top = top
+        self.left = left
+        self.bottom = bottom
+        self.right = right
+    }
     
     public static func insets(
         top: CGFloat? = .zero,
