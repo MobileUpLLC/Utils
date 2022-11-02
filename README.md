@@ -207,8 +207,29 @@ func getJsonFormServer() {
     ```swift    
     convenience init(baseUrl: String) {
         self.init(baseUrl: baseUrl, session: Session(RequestLogger()))
+        
+### 5. AsyncServerClient
 
-### 5. Extensions
+Classic ServerClients's twin, which implement the same functionality by using async/await. Allows to chain requests with single error handling. Result of every chained request can be used in further ones. Can be also used in syncronous functions by creating a Task unit.
+
+    ```swift
+    private func getJsonFromServer() {
+        Task {
+            do {
+                let entity = try await ExampleAsyncServerClient.shared.performRequest(
+                    method: .get,
+                    type: MessageEntity.self,
+                    endpoint: "api/breeds/image/random"
+                )
+                print("Success: \(String(describing: entity.message))")
+            } catch let error as ServerError {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    ```
+
+### 6. Extensions
 
 [UIKit and Foundation extensions](https://github.com/MobileUpLLC/Utils/tree/develop/Sources/Utils/Extensions)
 
@@ -234,7 +255,7 @@ Added hex value for UIColor
     let colorFromHex: UIColor = .init(hex: "#34eb49")
 ```
 
-### 6. Button
+### 7. Button
 
 Added a basic button that you can work with and xib. Just inherit your button from the ```Button``` class in the inspector.
 To use the button, you need to set:

@@ -35,7 +35,7 @@ final class CodeInitableViewController: UIViewController, CodeInitable {
         setupLabel()
         setupFormCodeView()
         setupFormXibView()
-        getJsonFormServer()
+        getJsonFromServer()
     }
 
     private func setupLabel() {
@@ -78,7 +78,7 @@ final class CodeInitableViewController: UIViewController, CodeInitable {
         ])
     }
     
-    private func getJsonFormServer() {
+    private func getJsonFromServer() {
         Task {
             do {
                 let entity = try await ExampleAsyncServerClient.shared.performRequest(
