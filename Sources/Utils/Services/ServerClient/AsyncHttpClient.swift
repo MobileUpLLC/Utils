@@ -10,7 +10,7 @@ import Alamofire
 
 open class AsyncHttpClient<E: Error>: BaseHttpClient {
     
-    func performRequest<T: Decodable, P: Encodable>(
+    open func performRequest<T: Decodable, P: Encodable>(
         method: HTTPMethod,
         type: T.Type,
         endpoint: String,
@@ -29,7 +29,7 @@ open class AsyncHttpClient<E: Error>: BaseHttpClient {
         }
     }
     
-    func performRequest<T: Decodable>(
+    open func performRequest<T: Decodable>(
         method: HTTPMethod,
         type: T.Type,
         endpoint: String,
@@ -52,19 +52,19 @@ open class AsyncHttpClient<E: Error>: BaseHttpClient {
         }
     }
     
-    func validateResponse(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> Result<Void, E> {
+    open func validateResponse(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> Result<Void, E> {
         assertionFailure("Subclasses must implement this method")
         
         return .success(Void())
     }
     
-    func convertError(_ error: AFError) -> E? {
+    open func convertError(_ error: AFError) -> E? {
         assertionFailure("Subclasses must implement this method")
         
         return nil
     }
     
-    func validate(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> Result<Void, Error> {
+    open func validate(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> Result<Void, Error> {
         return validateResponse(request: request, response: response, data: data)
             .mapError { $0 as Error }
     }
