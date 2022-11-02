@@ -7,27 +7,36 @@
 
 import Foundation
 
-// Если объект, который был добавлен в NSHashTable, был удалён (равен nil),
-// таблица будет хранить слабую ссылку, пока не будут вызыванны методы add или remove или invokeForEachDelegate
-// https://developer.apple.com/documentation/foundation/nshashtable
-// https://nshipster.com/nshashtable-and-nsmaptable/
 open class MulticastDelegate<T> {
     
-    private var delegates = NSHashTable<AnyObject>.weakObjects()
+    private class Wrapper {
+        
+        weak var delegate: AnyObject?
+        
+        init(_ delegate: AnyObject) {
+            self.delegate = delegate
+        }
+    }
+    
+    public var delegates: [T] { wrappers.compactMap { $0.delegate } as! [T] }
+    
+    private var wrappers: [Wrapper] = []
     
     public init() { }
     
     public func add(delegate: T) {
-        delegates.add(delegate as AnyObject)
+        let wrapper = Wrapper(delegate as AnyObject)
+        wrappers.append(wrapper)
     }
     
     public func remove(delegate: T) {
-        delegates.remove(delegate as AnyObject)
+        guard let index = wrappers.firstIndex(where: { $0.delegate === (delegate as AnyObject) }) else {
+            return
+        }
+        wrappers.remove(at: index)
     }
     
     public func invokeForEachDelegate(_ handler: (T) -> Void) {
-        delegates.allObjects
-            .compactMap { $0 as? T }
-            .forEach { handler($0) }
+        delegates.forEach { handler($0) }
     }
 }
