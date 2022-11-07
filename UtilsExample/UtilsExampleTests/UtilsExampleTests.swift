@@ -96,9 +96,7 @@ class UtilsExampleTests: XCTestCase {
         c = nil
         
         multicastDelegate.invokeForEachDelegate { delegate in
-            DispatchQueue.main.async {
-                XCTAssertTrue(["A", "B"].contains { delegate.foo() == $0 })
-            }
+            XCTAssertTrue(["A", "B"].contains { delegate.foo() == $0 })
         }
     }
 }

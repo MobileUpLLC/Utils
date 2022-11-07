@@ -25,11 +25,15 @@ open class MulticastDelegate<T> {
     public init() { }
     
     public func add(delegate: T) {
+        removeEmptyWrappers()
+        
         let wrapper = Wrapper(delegate as AnyObject)
         wrappers.append(wrapper)
     }
     
     public func remove(delegate: T) {
+        removeEmptyWrappers()
+        
         guard let index = wrappers.firstIndex(where: { $0.delegate === (delegate as AnyObject) }) else {
             return
         }
@@ -37,6 +41,12 @@ open class MulticastDelegate<T> {
     }
     
     public func invokeForEachDelegate(_ handler: (T) -> Void) {
+        removeEmptyWrappers()
+        
         delegates.forEach { handler($0) }
+    }
+    
+    private func removeEmptyWrappers() {
+        wrappers = wrappers.filter { $0.delegate != nil }
     }
 }
