@@ -18,7 +18,7 @@ open class MulticastDelegate<T> {
         }
     }
     
-    public var delegates: [T] { wrappers.compactMap { $0.delegate } as! [T] }
+    public var delegates: [T] { wrappers.compactMap { $0.delegate as? T } }
     
     private var wrappers: [Wrapper] = []
     
