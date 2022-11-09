@@ -65,38 +65,4 @@ class UtilsExampleTests: XCTestCase {
             XCTFail("Array encoding fall")
         }
     }
-    
-    func testMulticastDelegateInvoke() {
-        let multicastDelegate = MulticastDelegate<Delegate>()
-        
-        let a = A()
-        let b = B()
-        let c = C()
-        
-        multicastDelegate.add(delegate: a)
-        multicastDelegate.add(delegate: b)
-        multicastDelegate.add(delegate: c)
-        
-        multicastDelegate.invokeForEachDelegate { delegate in
-            XCTAssertTrue(["A", "B", "C"].contains { delegate.foo() == $0 })
-        }
-    }
-    
-    func testMulticastDelegateNilObject() {
-        let multicastDelegate = MulticastDelegate<Delegate>()
-        
-        let a = A()
-        let b = B()
-        var c: C? = C()
-        
-        multicastDelegate.add(delegate: a)
-        multicastDelegate.add(delegate: b)
-        multicastDelegate.add(delegate: c!)
-        
-        c = nil
-        
-        multicastDelegate.invokeForEachDelegate { delegate in
-            XCTAssertTrue(["A", "B"].contains { delegate.foo() == $0 })
-        }
-    }
 }

@@ -7,28 +7,36 @@
 
 import Foundation
 
-open class MulticastDelegate<T> {
+private class Wrapper<T>: Hashable {
     
-    private class Wrapper {
-        
-        weak var delegate: AnyObject?
-        
-        init(_ delegate: AnyObject) {
-            self.delegate = delegate
-        }
+    weak var delegate: AnyObject?
+    
+    init(_ delegate: T) {
+        self.delegate = delegate as AnyObject
     }
     
-    public var delegates: [T] { wrappers.compactMap { $0.delegate as? T } }
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(ObjectIdentifier(self))
+    }
     
-    private var wrappers: [Wrapper] = []
+    static func == (lhs: Wrapper<T>, rhs: Wrapper<T>) -> Bool {
+        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+    }
+}
+
+open class MulticastDelegate<T> {
+    
+    private var delegates: [T] { wrappers.compactMap { $0.delegate as? T } }
+    
+    private var wrappers: Set<Wrapper<T>> = []
     
     public init() { }
     
     public func add(delegate: T) {
         removeEmptyWrappers()
         
-        let wrapper = Wrapper(delegate as AnyObject)
-        wrappers.append(wrapper)
+        let wrapper = Wrapper(delegate)
+        wrappers.insert(wrapper)
     }
     
     public func remove(delegate: T) {

@@ -8,6 +8,29 @@
 import UIKit
 import Utils
 
+private protocol TestDelegate: AnyObject {
+    
+    func test(accumulator: Int) -> Int
+}
+
+private class TestFirstObject: TestDelegate {
+    
+    private let valueForAdd = 1
+    
+    func test(accumulator: Int) -> Int {
+        return accumulator + valueForAdd
+    }
+}
+
+private class TestSecondObject: TestDelegate {
+    
+    private let valueForAdd = 2
+    
+    func test(accumulator: Int) -> Int {
+        return accumulator + valueForAdd
+    }
+}
+
 class MulticastDelegateController: UIViewController, CodeInitable {
     
     private enum Constants {
@@ -90,28 +113,5 @@ class MulticastDelegateController: UIViewController, CodeInitable {
         }
         
         accumulatorLabel.text = Constants.labelPrefix + String(accumulator)
-    }
-}
-
-private protocol TestDelegate: AnyObject {
-    
-    func test(accumulator: Int) -> Int
-}
-
-private class TestFirstObject: TestDelegate {
-    
-    private let valueForAdd = 1
-    
-    func test(accumulator: Int) -> Int {
-        return accumulator + valueForAdd
-    }
-}
-
-private class TestSecondObject: TestDelegate {
-    
-    private let valueForAdd = 2
-    
-    func test(accumulator: Int) -> Int {
-        return accumulator + valueForAdd
     }
 }
