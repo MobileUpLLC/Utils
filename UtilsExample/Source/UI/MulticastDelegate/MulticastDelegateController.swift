@@ -69,13 +69,6 @@ class MulticastDelegateController: UIViewController, CodeInitable {
         multicastDelegate.add(delegate: testSecondObject)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        multicastDelegate.remove(delegate: testFirstObject)
-        multicastDelegate.remove(delegate: testSecondObject)
-    }
-    
     private func setupAccumulatorButton() {
         let button = UIButton(type: .system)
         button.setTitle(Constants.title, for: .normal)

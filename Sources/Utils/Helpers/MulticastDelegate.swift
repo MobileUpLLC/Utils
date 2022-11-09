@@ -42,10 +42,10 @@ open class MulticastDelegate<T> {
     public func remove(delegate: T) {
         removeEmptyWrappers()
         
-        guard let index = wrappers.firstIndex(where: { $0.delegate === (delegate as AnyObject) }) else {
+        guard let element = wrappers.first(where: { $0.delegate === (delegate as AnyObject) }) else {
             return
         }
-        wrappers.remove(at: index)
+        wrappers.remove(element)
     }
     
     public func invokeForEachDelegate(_ handler: (T) -> Void) {
