@@ -238,8 +238,19 @@ Added hex value for UIColor
 
 MulticastDelegate this is a way to go through all the delegates and do something
 1. Use ```func add(delegate: T)``` for add delegate 
+```
+        multicastDelegate.add(delegate: testFirstObject)
+```
 2. Use ```func remove(delegate: T)``` for delete delegate from MulticastDelegate
+```
+        multicastDelegate.remove(delegate: testFirstObject)
+```
 3. Use ```func invokeForEachDelegate(_ handler: (T) -> Void)``` for run something on each delegate
+```
+        multicastDelegate.invokeForEachDelegate { delegate in
+            accumulator = delegate.test(accumulator: accumulator)
+        }
+```
 
 ### 7. Button
 
