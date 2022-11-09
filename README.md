@@ -207,6 +207,7 @@ func getJsonFormServer() {
     ```swift    
     convenience init(baseUrl: String) {
         self.init(baseUrl: baseUrl, session: Session(RequestLogger()))
+    ```
 
 ### 5. Extensions
 
@@ -233,8 +234,14 @@ Added hex value for UIColor
     
     let colorFromHex: UIColor = .init(hex: "#34eb49")
 ```
+### 6. MulticastDelegate
 
-### 6. Button
+MulticastDelegate this is a way to go through all the delegates and do something
+1. Use ```func add(delegate: T)``` for add delegate 
+2. Use ```func remove(delegate: T)``` for delete delegate from MulticastDelegate
+3. Use ```func invokeForEachDelegate(_ handler: (T) -> Void)``` for run something on each delegate
+
+### 7. Button
 
 Added a basic button that you can work with and xib. Just inherit your button from the ```Button``` class in the inspector.
 To use the button, you need to set:
