@@ -212,8 +212,8 @@ func getJsonFormServer() {
 
 Classic ServerClients's twin, which implement the same functionality by using async/await. Allows to chain requests with single error handling. Result of every chained request can be used in further ones. Can be also used in syncronous functions by creating a Task unit.
 
-    ```swift
-        private func getJsonWithAsyncServerClient() {
+```swift
+    private func getJsonWithAsyncServerClient() {
         getData { [weak self] in
             let entity = try await ExampleAsyncServerClient.shared.performRequest(
                 method: .get,
@@ -224,9 +224,9 @@ Classic ServerClients's twin, which implement the same functionality by using as
             self?.getImageFromServer(with: entity.message)
         }
     }
-    ```
+```
     
-    ```swift   
+```swift   
     func getData(_ request: @escaping (() async throws -> Void)) {
         Task {
             do {
@@ -236,7 +236,7 @@ Classic ServerClients's twin, which implement the same functionality by using as
             }
         }
     }
-    ```
+```
 
 ### 6. Extensions
 
@@ -306,7 +306,7 @@ Swift Package Manager
 
 ```
 dependencies: [
-    .package(url: "https://github.com/MobileUpLLC/Utils", .upToNextMajor(from: "0.0.39"))
+    .package(url: "https://github.com/MobileUpLLC/Utils", .upToNextMajor(from: "0.0.40"))
 ]
 ```
 
