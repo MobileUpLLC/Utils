@@ -261,7 +261,7 @@ Utils contain Alamofire 5.6 as external dependencies.
 2. Add the following to Podfile 
 
 ```
-pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.0.23'
+pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.0.39'
 ```
 
 3. Make ```pod install```
@@ -276,7 +276,7 @@ Swift Package Manager
 
 ```
 dependencies: [
-    .package(url: "https://github.com/MobileUpLLC/Utils", .upToNextMajor(from: "0.0.23"))
+    .package(url: "https://github.com/MobileUpLLC/Utils", .upToNextMajor(from: "0.0.39"))
 ]
 ```
 
