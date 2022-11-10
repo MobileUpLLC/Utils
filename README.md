@@ -207,6 +207,7 @@ func getJsonFormServer() {
     ```swift    
     convenience init(baseUrl: String) {
         self.init(baseUrl: baseUrl, session: Session(RequestLogger()))
+    ```
         
 ### 5. AsyncServerClient
 
@@ -263,8 +264,35 @@ Added hex value for UIColor
     
     let colorFromHex: UIColor = .init(hex: "#34eb49")
 ```
+### 7. MulticastDelegate
 
-### 7. Button
+MulticastDelegate this is a way to go through all the delegates and do something
+You can create multicastDelegate like this:
+```
+protocol FooDelegate: AnyObject { 
+
+    func bar()
+ }
+
+let multicastDelegate = MulticastDelegate<FooDelegate>()
+```
+
+1. This way you can add delegate 
+```
+        multicastDelegate.add(delegate: testFirstObject)
+```
+2. This way you can delete delegate from MulticastDelegate
+```
+        multicastDelegate.remove(delegate: testFirstObject)
+```
+3. This way you can run something on each delegate
+```
+        multicastDelegate.invokeForEachDelegate { delegate in
+            delegate.bar()
+        }
+```
+
+### 8. Button
 
 Added a basic button that you can work with and xib. Just inherit your button from the ```Button``` class in the inspector.
 To use the button, you need to set:

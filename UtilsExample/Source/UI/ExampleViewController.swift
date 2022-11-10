@@ -82,6 +82,12 @@ final class ExampleViewController: UIViewController {
         navigationController?.pushViewController(xibContoller, animated: true)
     }
     
+    @IBAction private func openMulticastDelegateExampleButtonTapped() {
+        let multicastDelegateController = MulticastDelegateController.initiate()
+        
+        navigationController?.pushViewController(multicastDelegateController, animated: true)
+    }
+    
     @IBAction private func pushNotificationButtonTap(_ sender: UIButton) {
         pushService.getAuthorizationStatus { [weak self] status in
             if status == .authorized {
