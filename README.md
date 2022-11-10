@@ -213,15 +213,24 @@ func getJsonFormServer() {
 Classic ServerClients's twin, which implement the same functionality by using async/await. Allows to chain requests with single error handling. Result of every chained request can be used in further ones. Can be also used in syncronous functions by creating a Task unit.
 
     ```swift
-    private func getJsonFromServer() {
+        private func getJsonWithAsyncServerClient() {
+        getData { [weak self] in
+            let entity = try await ExampleAsyncServerClient.shared.performRequest(
+                method: .get,
+                type: MessageEntity.self,
+                endpoint: Constants.apiEndpoint
+            )
+            
+            self?.getImageFromServer(with: entity.message)
+        }
+    }
+    ```
+    
+    ```swift   
+    func getData(_ request: @escaping (() async throws -> Void)) {
         Task {
             do {
-                let entity = try await ExampleAsyncServerClient.shared.performRequest(
-                    method: .get,
-                    type: MessageEntity.self,
-                    endpoint: "api/breeds/image/random"
-                )
-                print("Success: \(String(describing: entity.message))")
+                try await request()
             } catch let error as ServerError {
                 print(error.localizedDescription)
             }

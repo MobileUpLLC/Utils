@@ -34,14 +34,14 @@ final class ServerClientViewController: UIViewController, XibInitable {
     }
     
     private func getJsonWithAsyncServerClient() {
-        getData {
+        getData { [weak self] in
             let entity = try await ExampleAsyncServerClient.shared.performRequest(
                 method: .get,
                 type: MessageEntity.self,
                 endpoint: Constants.apiEndpoint
             )
             
-            self.getImageFromServer(with: entity.message)
+            self?.getImageFromServer(with: entity.message)
         }
     }
     
