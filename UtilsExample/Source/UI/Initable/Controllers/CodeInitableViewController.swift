@@ -35,7 +35,6 @@ final class CodeInitableViewController: UIViewController, CodeInitable {
         setupLabel()
         setupFormCodeView()
         setupFormXibView()
-        getJsonFromServer()
     }
 
     private func setupLabel() {
@@ -76,21 +75,6 @@ final class CodeInitableViewController: UIViewController, CodeInitable {
             formXibView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Constants.baseViewOffset),
             formXibView.heightAnchor.constraint(equalToConstant: Constants.formXibViewHeight)
         ])
-    }
-    
-    private func getJsonFromServer() {
-        Task {
-            do {
-                let entity = try await ExampleAsyncServerClient.shared.performRequest(
-                    method: .get,
-                    type: MessageEntity.self,
-                    endpoint: "api/breeds/image/random"
-                )
-                print("Success: \(String(describing: entity.message))")
-            } catch let error as ServerError {
-                print(error.localizedDescription)
-            }
-        }
     }
     
     @objc func dismissKeyboard() {
