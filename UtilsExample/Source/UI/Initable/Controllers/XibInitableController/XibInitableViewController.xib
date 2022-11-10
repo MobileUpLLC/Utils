@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,8 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XibInitableViewController" customModule="UtilsExample" customModuleProvider="target">
             <connections>
-                <outlet property="gitHubImage" destination="PE5-Mx-3Yp" id="ly0-V0-Nqn"/>
-                <outlet property="serverClientLabel" destination="RSd-eu-sji" id="Qeo-qC-4JP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,20 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This image was downloaded with serverClient" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSd-eu-sji">
-                    <rect key="frame" x="16" y="340" width="382" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PE5-Mx-3Yp">
-                    <rect key="frame" x="16" y="60" width="382" height="248"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="248" id="dVk-nR-6xT"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, i was inited by Xib" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Gs-rh-JRW">
-                    <rect key="frame" x="16" y="392.5" width="382" height="21"/>
+                    <rect key="frame" x="115" y="437.5" width="184" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -43,15 +29,8 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="5Gs-rh-JRW" firstAttribute="top" secondItem="RSd-eu-sji" secondAttribute="bottom" constant="32" id="5mj-Id-mdF"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PE5-Mx-3Yp" secondAttribute="trailing" constant="16" id="7if-uQ-EGF"/>
-                <constraint firstItem="RSd-eu-sji" firstAttribute="top" secondItem="PE5-Mx-3Yp" secondAttribute="bottom" constant="32" id="CIo-MU-ro0"/>
-                <constraint firstItem="PE5-Mx-3Yp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="EJM-17-sJo"/>
-                <constraint firstItem="PE5-Mx-3Yp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="G9v-dp-yyg"/>
-                <constraint firstItem="RSd-eu-sji" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="SUi-fG-Ner"/>
-                <constraint firstItem="5Gs-rh-JRW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="qqJ-EU-pd3"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RSd-eu-sji" secondAttribute="trailing" constant="16" id="xwH-rV-WJh"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Gs-rh-JRW" secondAttribute="trailing" constant="16" id="zs4-Eg-w3f"/>
+                <constraint firstItem="5Gs-rh-JRW" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="en7-PB-Cgd"/>
+                <constraint firstItem="5Gs-rh-JRW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="usN-MR-d0F"/>
             </constraints>
             <point key="canvasLocation" x="132" y="100"/>
         </view>
