@@ -16,11 +16,23 @@ public struct LayoutInsets {
     public var bottom: CGFloat?
     public var right: CGFloat?
     
+    public init(
+        top: CGFloat? = nil,
+        left: CGFloat? = nil,
+        bottom: CGFloat? = nil,
+        right: CGFloat? = nil
+    ) {
+        self.top = top
+        self.left = left
+        self.bottom = bottom
+        self.right = right
+    }
+    
     public static func insets(
-        top: CGFloat? = .zero,
-        left: CGFloat? = .zero,
-        bottom: CGFloat? = .zero,
-        right: CGFloat? = .zero
+        top: CGFloat? = nil,
+        left: CGFloat? = nil,
+        bottom: CGFloat? = nil,
+        right: CGFloat? = nil
     ) -> LayoutInsets {
         return LayoutInsets(top: top, left: left, bottom: bottom, right: right)
     }
