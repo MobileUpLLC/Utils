@@ -237,15 +237,25 @@ Added hex value for UIColor
 ### 6. MulticastDelegate
 
 MulticastDelegate this is a way to go through all the delegates and do something
-1. Use ```func add(delegate: T)``` for add delegate 
+You can create multicastDelegate like this:
+```
+protocol FooDelegate: AnyObject { 
+
+    func bar()
+ }
+
+let multicastDelegate = MulticastDelegate<FooDelegate>()
+```
+
+1. This way you can add delegate 
 ```
         multicastDelegate.add(delegate: testFirstObject)
 ```
-2. Use ```func remove(delegate: T)``` for delete delegate from MulticastDelegate
+2. This way you can delete delegate from MulticastDelegate
 ```
         multicastDelegate.remove(delegate: testFirstObject)
 ```
-3. Use ```func invokeForEachDelegate(_ handler: (T) -> Void)``` for run something on each delegate
+3. This way you can run something on each delegate
 ```
         multicastDelegate.invokeForEachDelegate { delegate in
             accumulator = delegate.test(accumulator: accumulator)

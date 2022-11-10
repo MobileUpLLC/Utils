@@ -36,18 +36,34 @@ class MulticastDelegateController: UIViewController, CodeInitable {
     private enum Constants {
         
         static let title = "Press me to run delegates"
-        static let horizontalOffset: CGFloat = -16
-        static let horizontalInset: CGFloat = 16
-        static let yInset: CGFloat = 50
+        static let horizontalOffset = -16.0
+        static let horizontalInset = 16.0
+        static let yInset = 50.0
         static let labelInitialText = "Accumulator is 0"
         static let labelPrefix = "Now accumulator is = "
-        static let fontSize: CGFloat = 21
+        static let fontSize = 21.0
     }
     
     private let testFirstObject = TestFirstObject()
     private let testSecondObject = TestSecondObject()
     
-    private let accumulatorLabel = UILabel()
+    private lazy var accumulatorLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: Constants.fontSize)
+        label.text = Constants.labelInitialText
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var accumulatorButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle(Constants.title, for: .normal)
+        button.tintColor = .white
+        button.backgroundColor = .blue
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(showAccumulatorButtonTapped), for: .touchUpInside)
+        return button
+    }()
     
     private let multicastDelegate = MulticastDelegate<TestDelegate>()
     
@@ -58,8 +74,7 @@ class MulticastDelegateController: UIViewController, CodeInitable {
         
         view.backgroundColor = .white
         
-        setupAccumulatorButton()
-        setupAccumulatorLabel()
+        layoutViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,30 +84,15 @@ class MulticastDelegateController: UIViewController, CodeInitable {
         multicastDelegate.add(delegate: testSecondObject)
     }
     
-    private func setupAccumulatorButton() {
-        let button = UIButton(type: .system)
-        button.setTitle(Constants.title, for: .normal)
-        button.tintColor = .white
-        button.backgroundColor = .blue
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(showAccumulatorButtonTapped), for: .touchUpInside)
-        
-        view.addSubview(button)
-        
+    private func layoutViews() {
+        view.addSubview(accumulatorButton)
         NSLayoutConstraint.activate([
-            button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.horizontalInset),
-            button.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.horizontalOffset),
-            button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            accumulatorButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.horizontalInset),
+            accumulatorButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.horizontalOffset),
+            accumulatorButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-    }
-    
-    private func setupAccumulatorLabel() {
-        accumulatorLabel.font = .systemFont(ofSize: Constants.fontSize)
-        accumulatorLabel.text = Constants.labelInitialText
-        accumulatorLabel.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(accumulatorLabel)
-        
         NSLayoutConstraint.activate([
             accumulatorLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.horizontalInset),
             accumulatorLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.horizontalOffset),
