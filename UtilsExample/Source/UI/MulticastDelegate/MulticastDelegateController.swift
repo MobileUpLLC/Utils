@@ -52,6 +52,7 @@ class MulticastDelegateController: UIViewController, CodeInitable {
         label.font = .systemFont(ofSize: Constants.fontSize)
         label.text = Constants.labelInitialText
         label.translatesAutoresizingMaskIntoConstraints = false
+        
         return label
     }()
     
@@ -62,6 +63,7 @@ class MulticastDelegateController: UIViewController, CodeInitable {
         button.backgroundColor = .blue
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(showAccumulatorButtonTapped), for: .touchUpInside)
+        
         return button
     }()
     

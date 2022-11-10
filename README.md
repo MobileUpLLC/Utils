@@ -258,7 +258,7 @@ let multicastDelegate = MulticastDelegate<FooDelegate>()
 3. This way you can run something on each delegate
 ```
         multicastDelegate.invokeForEachDelegate { delegate in
-            accumulator = delegate.test(accumulator: accumulator)
+            delegate.bar()
         }
 ```
 
