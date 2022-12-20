@@ -9,21 +9,22 @@ import UIKit
 
 open class Button: UIButton {
     
-    private enum Constants {
-        
-        static let defaultTitleEdgeInsets = UIEdgeInsets(top: .ten, left: .ten, bottom: .ten, right: .ten)
-    }
-    
-    @IBInspectable var normalColor: UIColor? { didSet { backgroundColor = normalColor } }
-    @IBInspectable var highlightedColor: UIColor?
-    @IBInspectable var selectedColor: UIColor?
-    @IBInspectable var disabledColor: UIColor?
-    @IBInspectable var normalTitleColor: UIColor? { didSet { setTitleColor(normalTitleColor, for: .normal) } }
-    @IBInspectable var disabledTitleColor: UIColor? { didSet { setTitleColor(disabledTitleColor, for: .disabled) } }
-    
     open override var isHighlighted: Bool { didSet { updateHighlighted() } }
     open override var isSelected: Bool { didSet { updateSelected() } }
     open override var isEnabled: Bool { didSet { updateEnabled() } }
+    
+    @IBInspectable open var normalColor: UIColor? { didSet { backgroundColor = normalColor } }
+    @IBInspectable open var highlightedColor: UIColor?
+    @IBInspectable open var selectedColor: UIColor?
+    @IBInspectable open var disabledColor: UIColor?
+    
+    @IBInspectable open var normalTitleColor: UIColor? {
+        didSet { setTitleColor(normalTitleColor, for: .normal) }
+    }
+    
+    @IBInspectable open var disabledTitleColor: UIColor? {
+        didSet { setTitleColor(disabledTitleColor, for: .disabled) }
+    }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,14 +48,13 @@ open class Button: UIButton {
         self.init(type: .custom)
     }
     
-    func initSetup(isForInterfaceBuilder: Bool) {
+    private func initSetup(isForInterfaceBuilder: Bool) {
         clipsToBounds = false
         titleLabel?.adjustsFontSizeToFitWidth = true
         titleLabel?.minimumScaleFactor = .half
-        titleEdgeInsets = Constants.defaultTitleEdgeInsets
     }
     
-    func updateHighlighted() {
+    private func updateHighlighted() {
         guard isEnabled, isSelected == false, let highlightedColor = highlightedColor else {
             return
         }
@@ -62,7 +62,7 @@ open class Button: UIButton {
         backgroundColor = isHighlighted ? highlightedColor : normalColor
     }
     
-    func updateEnabled() {
+    private func updateEnabled() {
         guard let disabledColor = disabledColor else {
             return
         }
@@ -70,7 +70,7 @@ open class Button: UIButton {
         backgroundColor = isEnabled ? normalColor : disabledColor
     }
     
-    func updateSelected() {
+    private func updateSelected() {
         guard isEnabled, let selectedColor = selectedColor else {
             return
         }
