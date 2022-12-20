@@ -25,7 +25,7 @@ open class Button: UIButton {
     open override var isSelected: Bool { didSet { updateSelected() } }
     open override var isEnabled: Bool { didSet { updateEnabled() } }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         
         initSetup(isForInterfaceBuilder: false)
@@ -43,7 +43,7 @@ open class Button: UIButton {
         initSetup(isForInterfaceBuilder: true)
     }
     
-    convenience init() {
+    convenience public init() {
         self.init(type: .custom)
     }
     
