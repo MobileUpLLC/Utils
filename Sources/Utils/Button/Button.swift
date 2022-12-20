@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Button: UIButton {
+open class Button: UIButton {
     
     private enum Constants {
         
@@ -21,9 +21,9 @@ class Button: UIButton {
     @IBInspectable var normalTitleColor: UIColor? { didSet { setTitleColor(normalTitleColor, for: .normal) } }
     @IBInspectable var disabledTitleColor: UIColor? { didSet { setTitleColor(disabledTitleColor, for: .disabled) } }
     
-    override var isHighlighted: Bool { didSet { updateHighlighted() } }
-    override var isSelected: Bool { didSet { updateSelected() } }
-    override var isEnabled: Bool { didSet { updateEnabled() } }
+    open override var isHighlighted: Bool { didSet { updateHighlighted() } }
+    open override var isSelected: Bool { didSet { updateSelected() } }
+    open override var isEnabled: Bool { didSet { updateEnabled() } }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,13 +31,13 @@ class Button: UIButton {
         initSetup(isForInterfaceBuilder: false)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         
         initSetup(isForInterfaceBuilder: false)
     }
     
-    override func prepareForInterfaceBuilder() {
+    open override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         
         initSetup(isForInterfaceBuilder: true)
