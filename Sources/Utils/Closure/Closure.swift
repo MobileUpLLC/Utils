@@ -17,6 +17,7 @@ public enum Closure {
     public typealias Double = ((Swift.Double) -> Swift.Void)
     public typealias String = ((Swift.String) -> Swift.Void)
     public typealias URL = ((Foundation.URL) -> Swift.Void)
+    // swiftlint: disable syntactic_sugar
     public typealias Array<T> = (([T]) -> Swift.Void)
     public typealias Generic<T> = ((T) -> Swift.Void)
 }
