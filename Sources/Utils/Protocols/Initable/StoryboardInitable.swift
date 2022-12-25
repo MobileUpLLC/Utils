@@ -22,7 +22,7 @@ public extension StoryboardInitable {
 public extension StoryboardInitable where Self: UIViewController {
 
     static func initiate() -> Self {
-        return UIStoryboard(name: storyboardName, bundle: Bundle.main)
-            .instantiateViewController(identifier: storyboardId) as! Self
+       return UIStoryboard(name: storyboardName, bundle: Bundle.main)
+            .instantiateViewController(identifier: storyboardId) as Self
     }
 }

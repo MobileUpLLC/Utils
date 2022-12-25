@@ -29,10 +29,12 @@ public extension XibInitable where Self: UIViewController {
 public extension XibInitable where Self: UIView {
 
     static func initiate() -> Self {
-        guard let instance = UINib(nibName: xibName, bundle: nil)
-            .instantiate(withOwner: nil, options: nil)
-            .first as? Self else {
-            fatalError("Can not reslolve UINib")
+        guard
+            let instance = UINib(nibName: xibName, bundle: nil)
+                .instantiate(withOwner: nil, options: nil)
+                .first as? Self
+        else {
+            fatalError("Couldn't resolve xib: \(xibName) for view: \(Self.self)")
         }
 
         return instance
