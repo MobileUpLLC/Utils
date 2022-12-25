@@ -13,7 +13,9 @@ open class Button: UIButton {
     open override var isSelected: Bool { didSet { updateSelected() } }
     open override var isEnabled: Bool { didSet { updateEnabled() } }
     
-    @IBInspectable open var normalColor: UIColor? { didSet { backgroundColor = normalColor } }
+    @IBInspectable open var normalColor: UIColor? {
+        didSet { backgroundColor = normalColor }
+    }
     @IBInspectable open var highlightedColor: UIColor?
     @IBInspectable open var selectedColor: UIColor?
     @IBInspectable open var disabledColor: UIColor?
@@ -25,6 +27,8 @@ open class Button: UIButton {
     @IBInspectable open var disabledTitleColor: UIColor? {
         didSet { setTitleColor(disabledTitleColor, for: .disabled) }
     }
+    
+    public var onTap: Closure.Void?
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,12 +50,16 @@ open class Button: UIButton {
     
     convenience public init() {
         self.init(type: .custom)
+        
+        initSetup(isForInterfaceBuilder: false)
     }
     
     private func initSetup(isForInterfaceBuilder: Bool) {
         clipsToBounds = false
         titleLabel?.adjustsFontSizeToFitWidth = true
         titleLabel?.minimumScaleFactor = .half
+        
+        addTarget(self, action: #selector(touchedUpInside), for: .touchUpInside)
     }
     
     private func updateHighlighted() {
@@ -76,5 +84,9 @@ open class Button: UIButton {
         }
         
         backgroundColor = isSelected ? selectedColor : normalColor
+    }
+    
+    @objc private func touchedUpInside() {
+        onTap?()
     }
 }
