@@ -43,6 +43,7 @@ final class MulticastDelegateTests: XCTestCase {
     private var c: C? = C()
     
     override func setUp() {
+        super.setUp()
         multicastDelegate.add(delegate: a)
         multicastDelegate.add(delegate: b)
         if let c {
@@ -51,6 +52,7 @@ final class MulticastDelegateTests: XCTestCase {
     }
     
     override func tearDown() {
+        super.tearDown()
         multicastDelegate.remove(delegate: a)
         multicastDelegate.remove(delegate: b)
         if let c {
