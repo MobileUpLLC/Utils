@@ -1,308 +1,147 @@
-# Utils!
+# Utils
 
-[![githubIcon-1](https://user-images.githubusercontent.com/80983073/183376152-fcdff7f9-8971-4250-90df-622f792c9ef9.png)](https://developer.apple.com/documentation/xcode-release-notes/swift-5-release-notes-for-xcode-10_2)
-[![githubIcon-2](https://user-images.githubusercontent.com/80983073/183376159-db6fa792-44b5-4639-aa4c-d8c72a7ec28e.png)](https://developer.apple.com)
-[![githubIcon-3](https://user-images.githubusercontent.com/80983073/183376162-1e432ab7-fe11-4c66-95a6-38c2687401d7.png)](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app)
-![githubIcon-2](https://user-images.githubusercontent.com/80983073/183608595-b9a19341-7914-4284-9f83-b0b84c9cc3d6.png)
-[![githubIcon-4](https://user-images.githubusercontent.com/80983073/183376168-2e38a743-39ed-461d-bca1-230866f5608c.png)](https://github.com/MobileUpLLC/Utils/blob/main/LICENSE)
+<p align="left">
+    <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/language-Swift_5-green" alt="Swift5" /></a>
+ <img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform iOS" />
+ <a href="https://github.com/MobileUpLLC/Utils/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License: MIT" /></a>
+<img src="https://img.shields.io/badge/SPM-compatible-green" alt="SPM Compatible">
+<img src="https://img.shields.io/badge/CocoaPods-compatible-green" alt="Cocoapods Compatible">
+</p>
 
-Some handly utilities for IOS-app development.
+Utils for iOS development.
 
 ## Features
 
-- Initiate view from code and xib with Initable protocols
-- Find and decode json with BundleFileReader
-- Handly create Local Push Notification Service with LocalNotificationService
-- Use base extensions and generic closures for neat and clean code-writing
-- Create reusable Xib View's to init from Xib with XibView
-- Work with network connection with ServerClient
+- [Initable](#initable)
+- [BundleFileReader](#bundlefilereader)
+- [LocalNotificaitonService](#localnotificationservice)
+- [Extensions](#extensions)
+- [MulticastDelegate](#multicastdelegate)
+- [ServerClient](/Documentation/ServerClient.md)
+- [Button](#button)
+- [Layout](#layout)
 
-## Usage
+### Initable
+Initialize views/controllers from code/xib/storyboard with one simple interface ```.initiate()```
 
-### 1. Initable and XibView
-
-Initable protocls conforms with ```UIView``` and ```UIViewController```.
-
-1. Inherit your class from Code or Xib -Initable protocol
-2. Init your class with ```.initate()```
-
-In case you creating View from Xib, that need's to be inited in another Xib – inherit XibView class ```MyView: XibView```. XibView is also conform to XibInitable.
-
-[Initable usage example](https://github.com/MobileUpLLC/Utils/tree/develop/UtilsExample/Source/UI/Initable)
-
-[XibView usage example](https://github.com/MobileUpLLC/Utils/tree/develop/UtilsExample/Source/UI/XibView)
-
-### 2. BundleFileReader
-
-```BundleFilesReader``` and ```jsonDecoder``` allows you to conveniently decode json files from your project
-
+Controllers example:
 ```swift
-func testDictionaryEncoding() {
-    let dictionary: [String: Any] = ["One": 1, "Two": "Два", "Three": 0.47, "Four": true]
+// Controller without nib.
+class FooController: UIViewController, CodeInitable { }
+let foo = FooController.initiate()
 
-    do {
-        let encodedData = try JSONConverter.encode(dictionary: dictionary)
-        let decodedData = try JSONConverter.decode(data: encodedData) as [String: Any]
+// Controller with xib named "FooContoller"
+class BarController: UIVewController: XibInitable {
+    static var xibName: String { "FooContoller" }
+}
+let bar = BarController.initiate()
 
-        XCTAssertEqual(
-            NSDictionary(dictionary: dictionary, copyItems: false),
-            NSDictionary(dictionary: decodedData, copyItems: false)
-        )
-    } catch {
-        XCTFail()
-    }
+// Controller with storyboard named "BazStoryboard" with id "BazControllerId"
+class BazController: UIVewController: StoryboardInitable {
+    static var storyboardId: String { "BazControllerId" }
+    static var storyboardName: String { "BazStoryboard" }
+}
+let baz = BazController.initiate()
+```
+
+[Initable Example](https://github.com/MobileUpLLC/Utils/tree/develop/UtilsExample/Source/UI/Initable)
+
+
+### BundleFileReader
+Reading custom object/JSON/Data from Bundle.
+
+Bundle contains ```foo.json``` file.
+```json
+{
+    "bar": 100
 }
 ```
 
-[BundleFileReader usage example](https://github.com/MobileUpLLC/Utils/blob/develop/UtilsExample/UtilsExampleTests/UtilsExampleTests.swift)
+Reading:
+```swift
+struct Foo {
+    let bar: Int
+}
 
-### 3. LocalNotificationService
+let foo: Foo = BundleFileReader.readObject("foo")
+```
 
-Implement localNotificationService as singletone ```let pushService = LocalNotificationService.shared```
+More about BundleFileReader in action [here](https://github.com/MobileUpLLC/Utils/blob/develop/UtilsExample/UtilsExampleTests/UtilsExampleTests.swift).
 
+### LocalNotificationService
+
+Lightweight tool for managing local notifications. Tools:
 1. Use ```requestAuthorization``` to request User's approve for sending notifications
 2. Use ```getAuthorizationStatus``` to check current authorization status
 3. Use ```willPresent``` to ask the delegate what to do after receiving notification
 4. Use ```didRecieve``` to inform delegate about receiving notification
 
-An example:
+Example:
 ```swift
-@IBAction private func pushNotificationButtonTap(_ sender: UIButton) {
-    pushService.getAuthorizationStatus { [weak self] status in
-        if status == .authorized { 
-            self?.createNotificationRequest()
-            print(Constants.successAuthorizationStatus)
-        } else {
-            print(Constants.nonSuccessAuthorizationStatus)
-        }
-    }
-}
-```
-[LocalNotificationService usage examle](https://github.com/MobileUpLLC/Utils/blob/develop/UtilsExample/Source/UI/ExampleViewController.swift)
-
-### 4. ServerClient
-
-Idea of the Client is a One Server, one Error type, many Data types. Handly way to create client-server application.
-
-1. Implement your own ```ServerClient``` singletone inherited from ```HttpClient``` with custom Error handler
-2. Override ```init(baseUrl: String)``` with calling ```init(baseUrl, session)```
-
-In [Example](https://github.com/MobileUpLLC/Utils/blob/task/UPUP-223-server-client/UtilsExample/Source/Service/ExampleServerClient.swift) we will connect to random dog image API
-
-```swift
-enum ServerError: Error {
-    
-    case pageNotFound
-    case unacceptableStatusCode(Int)
-    case unknown
-}
-
-class ExampleServerClient: HttpClient<ServerError> {
-    
-    static let shared = ExampleServerClient(baseUrl: "https://dog.ceo/")
-    
-    convenience init(baseUrl: String) {
-        self.init(baseUrl: baseUrl, session: Session(DataRequestLogger()))
-    }
-}
-```
-
-3. Override ```convertError``` to handle custom server errros
-
-```swift
-override class func convertError(_ error: AFError) -> ServerError {
-    print("\(error)")
-
-    if error.responseCode == 404 {
-        return .pageNotFound
+LocalNotificationService.shared.getAuthorizationStatus { status in
+    if status == .authorized { 
+        // Do some...
     } else {
-        return .unknown
+        // Do another...
     }
 }
 ```
+[LocalNotificationService examle](https://github.com/MobileUpLLC/Utils/blob/develop/UtilsExample/Source/UI/ExampleViewController.swift)
 
-4. Override ```valildateResponse``` to validate incoming response
 
+### Extensions
+
+Useful extensions for all code situations
 ```swift
-override class func validateResponse(
-    request: URLRequest?,
-    response: HTTPURLResponse,
-    data: Data?
-) -> Result<Void, ServerError> {
-    if (200..<300).contains(response.statusCode) {
-        return .success(Void())
-    } else {
-        return .failure(ServerError.unacceptableStatusCode(response.statusCode))
-    }
-}
+let number = Float.two // 2.0
+let closure = Closure.Int // (Int) -> Void
+let color = UIColor(hex: "#FFFFFF") // White Color
+// and others
 ```
 
-5. Override get and post method's as you want to perform request
+[Extensions example](https://github.com/MobileUpLLC/Utils/tree/develop/Sources/Utils/Extensions)
 
-You can see all the code in [Example file](https://github.com/MobileUpLLC/Utils/blob/task/UPUP-223-server-client/UtilsExample/Source/Service/ExampleServerClient.swift)
 
+### MulticastDelegate
+
+MulticastDelegate hepls to manage more than one delegate.
 ```swift
-    @discardableResult
-    override func get<T: Decodable>(
-        type: T.Type,
-        endpoint: String,
-        parameters: [String: Any]? = nil,
-        decoder: JSONDecoder = JSONDecoder(),
-        completion: @escaping (Result<T, ServerError>) -> Void
-    ) -> DataRequest {
-        return
-            performRequest(
-                method: .get,
-                type: type,
-                endpoint: endpoint,
-                parameters: parameters,
-                decoder: decoder,
-                completion: completion
-            )
-    }
-```
-
-6. Create Entity to decode incoming JSON's
-
-```swift
-struct ExampleEntity: Decodable {
-    
-    var message: String?
-}
-```
-
-7. Bring written code to life
-
-```swift
-func getJsonFormServer() {
-    ExampleServerClient.shared.get(
-        type: ExampleEntity.self,
-        endpoint: "api/breeds/image/random"
-    ) { result in
-        switch result {
-        case .success(let entity):
-            if let url = entity.message {
-                self.getImageFromServer(with: url)
-            }
-        case .failure(let error):
-            print(error.localizedDescription)
-        }
-    }
-}
-```
-
-8. You can also make your own DataRequestLogger 
-    1. Create ```class ExampleLogger: DataRequestLogger```
-    2. Override ```printLogs()``` with your Log framework
-    ```swift
-    final class RequestLogger: DataRequestLogger {
-
-        override func printLogs(_ logs: String) {
-            Log.details(logs)
-        }
-    }
-    ```
-    3. Then push your logger in ```ServerClient``` Init
-
-    ```swift    
-    convenience init(baseUrl: String) {
-        self.init(baseUrl: baseUrl, session: Session(RequestLogger()))
-    ```
-        
-### 5. AsyncServerClient
-
-Classic ServerClients's twin, which implement the same functionality by using async/await. Allows to chain requests with single error handling. Result of every chained request can be used in further ones. Can be also used in syncronous functions by creating a Task unit.
-
-```swift
-    private func getJsonWithAsyncServerClient() {
-        getData { [weak self] in
-            let entity = try await ExampleAsyncServerClient.shared.performRequest(
-                method: .get,
-                type: MessageEntity.self,
-                endpoint: Constants.apiEndpoint
-            )
-            
-            self?.getImageFromServer(with: entity.message)
-        }
-    }
-```
-    
-```swift   
-    func getData(_ request: @escaping (() async throws -> Void)) {
-        Task {
-            do {
-                try await request()
-            } catch let error as ServerError {
-                print(error.localizedDescription)
-            }
-        }
-    }
-```
-
-### 6. Extensions
-
-[UIKit and Foundation extensions](https://github.com/MobileUpLLC/Utils/tree/develop/Sources/Utils/Extensions)
-
-Extensions for numbers (Int, Double, Float, CGFloat)
-```swift
-        let red = Float(components[.zero])
-        let green = Float(components[.one])
-        let blue = Float(components[.two])
-        var alpha: Float = .one
-```
-
-Added a convenient layout for view
-```swift
-        let superview = UIView()
-        let subview = UIView()
-        superview.layoutSubview(subview, with: LayoutInsets.zero, safe: true)
-```
-
-Added hex value for UIColor
-```swift
-    let hexFromGreen: String = UIColor.green.hexValue
-    
-    let colorFromHex: UIColor = .init(hex: "#34eb49")
-```
-### 7. MulticastDelegate
-
-MulticastDelegate this is a way to go through all the delegates and do something
-You can create multicastDelegate like this:
-```
 protocol FooDelegate: AnyObject { 
-
     func bar()
  }
 
 let multicastDelegate = MulticastDelegate<FooDelegate>()
+
+multicastDelegate.add(delegate: object)
+multicastDelegate.remove(delegate: object)
+
+multicastDelegate.invokeForEachDelegate { delegate in
+    delegate.bar()
+}
 ```
 
-1. This way you can add delegate 
-```
-        multicastDelegate.add(delegate: testFirstObject)
-```
-2. This way you can delete delegate from MulticastDelegate
-```
-        multicastDelegate.remove(delegate: testFirstObject)
-```
-3. This way you can run something on each delegate
-```
-        multicastDelegate.invokeForEachDelegate { delegate in
-            delegate.bar()
-        }
+### Button
+Base button class with a lots of customization.
+
+Usage from code:
+```swift 
+class FooButton: Button { }
 ```
 
-### 8. Button
+Usage from nib:
+1. Set your button class to ```Button``` in IB
+1. Set Type = Custom in IB
+2. Set Style = [Default](https://stackoverflow.com/questions/71137424/custom-uibutton-imageedgeinsets-titleedgeinsets-not-working) in IB
 
-Added a basic button that you can work with and xib. Just inherit your button from the ```Button``` class in the inspector.
-To use the button, you need to set:
-1. Type = Custom
-2. Style = [Default](https://stackoverflow.com/questions/71137424/custom-uibutton-imageedgeinsets-titleedgeinsets-not-working)
+### Layout
+Simple view layout
 
-More about [UIEdgeInsets](https://medium.com/short-swift-stories/using-uiedgeinsets-to-layout-a-uibutton-44ba04dd085c)
+```swift
+let superview = UIView()
+let subview = UIView()
 
-
-![Example](https://github.com/MobileUpLLC/Utils/blob/task/Add-documentation-for-Button/UtilsExample/Source/App/Resources/ButtonExample.png)
+superview.layoutSubview(subview, with: LayoutInsets.zero, safe: true)
+```
 
 ## Requirements
 
