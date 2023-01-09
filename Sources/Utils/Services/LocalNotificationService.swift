@@ -8,7 +8,6 @@
 import UIKit
 
 public protocol LocalNotificationServiceDelegate: AnyObject {
-
     func localNotificationService(
         _ service: LocalNotificationService,
         willPresent notification: UNNotification
@@ -21,7 +20,6 @@ public protocol LocalNotificationServiceDelegate: AnyObject {
 }
 
 public class LocalNotificationService: NSObject, UNUserNotificationCenterDelegate {
-
     public static let shared = LocalNotificationService()
     
     public weak var delegate: LocalNotificationServiceDelegate?

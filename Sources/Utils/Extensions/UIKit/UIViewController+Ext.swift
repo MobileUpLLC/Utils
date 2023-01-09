@@ -7,6 +7,5 @@
 import UIKit
 
 public extension UIViewController {
-
     static var className: String { String(describing: Self.self) }
 }

@@ -8,7 +8,6 @@ import Foundation
 import Alamofire
 
 open class DataRequestLogger {
-    
     open func logRequest(_ request: Request) {
         guard let urlRequest = request.request else {
             return
@@ -138,7 +137,6 @@ open class DataRequestLogger {
 }
 
 extension DataRequestLogger: EventMonitor {
-    
     public func requestDidResume(_ request: Request) {
         logRequest(request)
     }

@@ -8,7 +8,6 @@
 import UIKit
 
 open class Button: UIButton {
-    
     open override var isHighlighted: Bool { didSet { updateHighlighted() } }
     open override var isSelected: Bool { didSet { updateSelected() } }
     open override var isEnabled: Bool { didSet { updateEnabled() } }

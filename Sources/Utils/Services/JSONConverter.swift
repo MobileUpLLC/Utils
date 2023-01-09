@@ -8,9 +8,7 @@
 import Foundation
 
 public class JSONConverter {
-    
     enum Error: Swift.Error {
-        
         case parsing
     }
     
@@ -28,7 +26,6 @@ public class JSONConverter {
         json: Any,
         options: JSONSerialization.WritingOptions = []
     ) throws -> Data {
-        
         return try JSONSerialization.data(withJSONObject: json, options: options)
     }
     
@@ -36,7 +33,6 @@ public class JSONConverter {
         dictionary: [String : Any],
         options: JSONSerialization.WritingOptions = []
     ) throws -> Data {
-        
         return try encode(json: dictionary, options: options)
     }
     

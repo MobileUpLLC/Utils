@@ -9,15 +9,12 @@ import XCTest
 import Utils
 
 struct Person: Codable, Equatable {
-    
     let name: String
     let age: Int
 }
 
 class UtilsExampleTests: XCTestCase {
-    
     private enum Constnts {
-        
         static let jsonFileName: String = "jsonArrayForBundleFileReaderTest"
     }
     

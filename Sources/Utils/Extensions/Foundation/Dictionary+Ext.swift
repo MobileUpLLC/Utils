@@ -8,7 +8,6 @@
 import Foundation
 
 public extension Dictionary {
-
     mutating func setValue(_ value: Value?, forKey key: Key) {
        if let value = value {
            self[key] = value

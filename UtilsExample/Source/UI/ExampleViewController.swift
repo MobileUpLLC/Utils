@@ -9,9 +9,7 @@ import UIKit
 import Utils
 
 final class ExampleViewController: UIViewController {
-    
     private enum Constants {
-        
         static let successAuthorization = "Success"
         static let nonSuccessAuthorization = "Failure"
         static let successAuthorizationStatus = "Lock screen to get Notification"

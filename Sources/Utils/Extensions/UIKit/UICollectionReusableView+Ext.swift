@@ -8,6 +8,5 @@
 import UIKit
 
 public extension UICollectionReusableView {
-    
     static var reuseId: String { String(describing: Self.self) }
 }

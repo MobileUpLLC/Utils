@@ -9,7 +9,6 @@ import Utils
 import UIKit
 
 class XibViewExample: XibView {
-    
     @IBOutlet private var label: UILabel!
     
     override func initSetup() {

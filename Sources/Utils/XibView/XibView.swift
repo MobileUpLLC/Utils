@@ -8,7 +8,6 @@
 import UIKit
 
 open class XibView: BaseView {
-
     var view: UIView?
     
     open override func initSetup() {
@@ -43,7 +42,6 @@ open class XibView: BaseView {
 }
 
 extension XibView: XibInitable {
-    
     public static func initiate() -> Self {
         return self.init(fromCodeWithFrame: .zero)
     }

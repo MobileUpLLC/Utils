@@ -9,33 +9,28 @@ import XCTest
 import Utils
 
 private protocol Delegate: AnyObject {
-    
     func foo() -> String
 }
 
 private class A: Delegate {
-    
     func foo() -> String {
         return "A"
     }
 }
 
 private class B: Delegate {
-    
     func foo() -> String {
         return "B"
     }
 }
 
 private class C: Delegate {
-    
     func foo() -> String {
         return "C"
     }
 }
 
 final class MulticastDelegateTests: XCTestCase {
-    
     private let multicastDelegate = MulticastDelegate<Delegate>()
     
     private let a = A()

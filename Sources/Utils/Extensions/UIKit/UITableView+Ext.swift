@@ -8,9 +8,7 @@
 import UIKit
 
 public extension UITableView {
-    
     private enum Constants {
-        
         static let nibType: String = "nib"
     }
     

@@ -9,14 +9,12 @@ import UIKit
 public protocol CodeInitable: Initable { }
 
 public extension CodeInitable where Self: UIViewController {
-
     static func initiate() -> Self {
         return Self()
     }
 }
 
 public extension CodeInitable where Self: UIView {
-
     static func initiate() -> Self {
         return Self()
     }

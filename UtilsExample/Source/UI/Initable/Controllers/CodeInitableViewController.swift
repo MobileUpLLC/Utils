@@ -9,9 +9,7 @@ import UIKit
 import Utils
 
 final class CodeInitableViewController: UIViewController, CodeInitable {
-
     private enum Constants {
-        
         static let baseViewInset: CGFloat = 16
         static let baseViewOffset: CGFloat = -16
         static let formViewTopInset: CGFloat = 48

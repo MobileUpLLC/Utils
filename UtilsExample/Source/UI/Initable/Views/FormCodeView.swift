@@ -9,9 +9,7 @@ import UIKit
 import Utils
 
 final class FormCodeView: UIView, CodeInitable {
-    
     private enum Constants {
-        
         static let formLabelText = "Enter your phone number here"
         static let formPlaceholder = "+7-999-12-34-56"
         static let textFieldBorderWidth: CGFloat = 1

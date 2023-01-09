@@ -9,9 +9,7 @@ import UIKit
 import Utils
 
 final class FormXibView: UIView, XibInitable {
-    
     private enum Constants {
-        
         static let textFieldBorderWidth: CGFloat = 1
         static let textFieldCornerRadius: CGFloat = 8
     }

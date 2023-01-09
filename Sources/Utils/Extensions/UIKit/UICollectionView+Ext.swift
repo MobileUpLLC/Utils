@@ -8,9 +8,7 @@
 import UIKit
 
 public extension UICollectionView {
-    
     private enum Constants {
-        
         static let nibType: String = "nib"
     }
     

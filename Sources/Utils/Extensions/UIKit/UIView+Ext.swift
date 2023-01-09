@@ -8,7 +8,6 @@
 import UIKit
 
 public struct LayoutInsets {
-    
     public static var zero: LayoutInsets { self.init(top: .zero, left: .zero, bottom: .zero, right: .zero) }
     
     public var top: CGFloat?
@@ -39,7 +38,6 @@ public struct LayoutInsets {
 }
 
 public extension UIView {
-    
     func layoutSubview(
         _ view: UIView,
         with insets: LayoutInsets = .zero,
@@ -137,7 +135,6 @@ public extension UIView {
 }
 
 public extension NSLayoutAnchor {
-    
     @objc func makeConstraint(equalTo anchor: NSLayoutAnchor, constant: CGFloat) {
         constraint(equalTo: anchor, constant: constant).isActive = true
     }

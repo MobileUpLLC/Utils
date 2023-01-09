@@ -9,12 +9,10 @@ import UIKit
 import Utils
 
 private protocol TestDelegate: AnyObject {
-    
     func test(accumulator: Int) -> Int
 }
 
 private class TestFirstObject: TestDelegate {
-    
     private let valueForAdd = 1
     
     func test(accumulator: Int) -> Int {
@@ -23,7 +21,6 @@ private class TestFirstObject: TestDelegate {
 }
 
 private class TestSecondObject: TestDelegate {
-    
     private let valueForAdd = 2
     
     func test(accumulator: Int) -> Int {
@@ -32,9 +29,7 @@ private class TestSecondObject: TestDelegate {
 }
 
 class MulticastDelegateController: UIViewController, CodeInitable {
-    
     private enum Constants {
-        
         static let title = "Press me to run delegates"
         static let horizontalOffset = -16.0
         static let horizontalInset = 16.0
