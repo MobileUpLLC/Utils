@@ -7,7 +7,6 @@
 import Alamofire
 
 open class BaseHttpClient {
-    
     let baseUrl: String
     let session: Session
     

@@ -10,7 +10,6 @@ import Foundation
 import Utils
 
 class ExampleAsyncServerClient: AsyncHttpClient<ServerError> {
-    
     static let shared = ExampleAsyncServerClient(baseUrl: "https://dog.ceo/")
     
     override func validateResponse(

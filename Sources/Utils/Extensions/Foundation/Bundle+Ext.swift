@@ -8,9 +8,7 @@
 import Foundation
 
 public extension Bundle {
-    
     private enum Constants {
-        
         static let bundleShortVersionString: String = "CFBundleShortVersionString"
         static let bundleVersionString: String = "CFBundleVersion"
     }

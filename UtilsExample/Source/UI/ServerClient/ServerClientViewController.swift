@@ -9,9 +9,7 @@ import UIKit
 import Utils
 
 final class ServerClientViewController: UIViewController, XibInitable {
-    
     private enum Constants {
-        
         static let apiEndpoint = "api/breeds/image/random"
     }
     

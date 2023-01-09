@@ -8,6 +8,5 @@
 import UIKit
 
 public extension UITableViewCell {
-    
     static var reuseId: String { String(describing: Self.self) }
 }

@@ -9,9 +9,7 @@ import UIKit
 import Utils
 
 final class ClosureExampleViewController: UIViewController, XibInitable {
-
     private enum Constants {
-        
         static let sliderBaseValue: Float = 50
         static let empty = ""
     }

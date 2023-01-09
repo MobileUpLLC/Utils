@@ -9,7 +9,6 @@ import Foundation
 import Alamofire
 
 open class AsyncHttpClient<E: Error>: BaseHttpClient {
-    
     open func performRequest<T: Decodable, P: Encodable>(
         method: HTTPMethod,
         type: T.Type,

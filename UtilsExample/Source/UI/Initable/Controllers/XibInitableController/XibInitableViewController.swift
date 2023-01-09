@@ -9,7 +9,6 @@ import UIKit
 import Utils
 
 final class XibInitableViewController: UIViewController, XibInitable {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

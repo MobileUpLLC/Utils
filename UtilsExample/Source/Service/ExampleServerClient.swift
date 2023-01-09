@@ -10,14 +10,12 @@ import Utils
 import Alamofire
 
 enum ServerError: Error {
-    
     case pageNotFound
     case unacceptableStatusCode(Int)
     case unknown
 }
 
 class ExampleServerClient: HttpClient<ServerError> {
-    
     static let shared = ExampleServerClient(baseUrl: "https://dog.ceo/")
     
     convenience init(baseUrl: String) {

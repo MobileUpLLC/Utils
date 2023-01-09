@@ -8,6 +8,5 @@
 import Foundation
 
 struct MessageEntity: Decodable {
-    
     var message: String?
 }

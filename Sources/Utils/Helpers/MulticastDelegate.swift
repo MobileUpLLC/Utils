@@ -8,7 +8,6 @@
 import Foundation
 
 private class Wrapper<T>: Hashable {
-    
     weak var delegate: AnyObject?
     
     init(_ delegate: T) {
@@ -25,7 +24,6 @@ private class Wrapper<T>: Hashable {
 }
 
 open class MulticastDelegate<T> {
-    
     private var delegates: [T] { wrappers.compactMap { $0.delegate as? T } }
     
     private var wrappers: Set<Wrapper<T>> = []

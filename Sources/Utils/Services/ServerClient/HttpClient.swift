@@ -8,7 +8,6 @@ import Foundation
 import Alamofire
 
 open class HttpClient<E: Error>: BaseHttpClient {
-    
     open func post<T: Decodable>(
         type: T.Type,
         endpoint: String,

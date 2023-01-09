@@ -7,6 +7,5 @@
 import UIKit
 
 public protocol Initable {
-
     static func initiate() -> Self
 }

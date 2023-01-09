@@ -8,14 +8,11 @@
 import Foundation
 
 open class BundleFileReader {
-    
     private enum Constants {
-        
         static let jsonExtension: String = "json"
     }
 
     enum BundleFileReaderError: Error {
-        
         case missingFile(String)
     }
     

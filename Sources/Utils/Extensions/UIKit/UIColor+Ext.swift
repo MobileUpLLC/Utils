@@ -7,9 +7,7 @@
 import UIKit
 
 public extension UIColor {
-    
     private enum Constants {
-        
         static let componentMaxValue: Float = 255
     }
     

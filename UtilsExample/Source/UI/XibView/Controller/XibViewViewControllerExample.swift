@@ -9,7 +9,6 @@ import UIKit
 import Utils
 
 class XibViewViewControllerExample: UIViewController, XibInitable {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
