@@ -120,6 +120,21 @@ multicastDelegate.invokeForEachDelegate { delegate in
 }
 ```
 
+### UIKit.View(Controller) Preview
+Live preview for UIKit views/controllers.
+
+```swift
+class FooView: UIView { ... }
+
+struct FooView_Previews: PreviewProvider {
+    static var previews: some View {
+        ViewPreview {
+            FooView()
+        }
+    }
+}
+```
+
 ### Button
 Base button class with a lots of customization.
 
