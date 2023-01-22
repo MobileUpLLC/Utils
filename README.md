@@ -173,7 +173,7 @@ Utils contain Alamofire 5.6 as external dependencies.
 2. Add the following to Podfile 
 
 ```
-pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.0.43'
+pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.0.43', :branch => 'develop'
 ```
 
 3. Make ```pod install```
