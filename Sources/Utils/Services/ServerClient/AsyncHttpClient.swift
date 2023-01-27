@@ -14,12 +14,19 @@ open class AsyncHttpClient<E: Error>: BaseHttpClient {
         type: T.Type,
         endpoint: String,
         parameters: P,
+        headers: HTTPHeaders? = nil,
         decoder: JSONDecoder = JSONDecoder()
     ) async throws -> T {
         let encoder = getParameterEncoder(method: method)
         
         do {
-            return try await request(endpoint: endpoint, method: method, parameters: parameters, encoder: encoder)
+            return try await request(
+                endpoint: endpoint,
+                method: method,
+                parameters: parameters,
+                encoder: encoder,
+                headers: headers
+            )
                 .validate(validate(request:response:data:))
                 .serializingDecodable(type, decoder: decoder)
                 .value
