@@ -58,6 +58,24 @@ open class AsyncHttpClient<E: Error>: BaseHttpClient {
         }
     }
     
+    open func performRequest(method: HTTPMethod, endpoint: String) async throws -> Data {
+        let encoder = getParameterEncoder(method: method)
+
+        do {
+            return try await request(
+                endpoint: endpoint,
+                method: method,
+                parameters: nil as String?,
+                encoder: encoder
+            )
+            .validate(validate(request:response:data:))
+            .serializingData()
+            .value
+        } catch let error as AFError {
+            throw convertError(error) ?? AFError.explicitlyCancelled
+        }
+    }
+    
     open func validateResponse(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> Result<Void, E> {
         assertionFailure("Subclasses must implement this method")
         
