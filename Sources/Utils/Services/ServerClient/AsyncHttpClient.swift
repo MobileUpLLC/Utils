@@ -39,6 +39,7 @@ open class AsyncHttpClient<E: Error>: BaseHttpClient {
         method: HTTPMethod,
         type: T.Type,
         endpoint: String,
+        headers: HTTPHeaders? = nil,
         decoder: JSONDecoder = JSONDecoder()
     ) async throws -> T {
         let encoder = getParameterEncoder(method: method)
@@ -48,7 +49,8 @@ open class AsyncHttpClient<E: Error>: BaseHttpClient {
                 endpoint: endpoint,
                 method: method,
                 parameters: nil as String?,
-                encoder: encoder
+                encoder: encoder,
+                headers: headers
             )
             .validate(validate(request:response:data:))
             .serializingDecodable(type, decoder: decoder)
@@ -77,7 +79,7 @@ open class AsyncHttpClient<E: Error>: BaseHttpClient {
     
     private func getParameterEncoder(method: HTTPMethod) -> ParameterEncoder {
         return method == .post || method == .put
-        ? JSONParameterEncoder.default
-        : URLEncodedFormParameterEncoder.default
+            ? JSONParameterEncoder.default
+            : URLEncodedFormParameterEncoder.default
     }
 }
