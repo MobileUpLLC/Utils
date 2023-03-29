@@ -8,7 +8,6 @@
 import SwiftUI
 
 public struct ViewPreview: UIViewRepresentable {
-    
     private let viewBuilder: () -> UIView
 
     public init(builder: @escaping () -> UIView) {
