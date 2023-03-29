@@ -158,6 +158,27 @@ let subview = UIView()
 superview.layoutSubview(subview, with: LayoutInsets.zero, safe: true)
 ```
 
+### StackView
+StackView with item content builder.
+
+```swift
+let items = (0..<10).map { Int($0) }
+let stackView = ItemsStackView<Int, UILabel>(
+    axis: .horizontal,
+    distribution: .fill,
+    alignment: .fill,
+    spacing: 10,
+    edgeInsets: .zero,
+    items: items
+) { item in
+    let label = UILabel()
+    label.text = "\(item)"
+    
+    return label
+}
+```
+
+
 ## Requirements
 
 - Swift 5.0 +
@@ -173,7 +194,7 @@ Utils contain Alamofire 5.6 as external dependencies.
 2. Add the following to Podfile 
 
 ```
-pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.0.43', :branch => 'develop'
+pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.0.50', :branch => 'develop'
 ```
 
 3. Make ```pod install```
