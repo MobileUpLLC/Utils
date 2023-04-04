@@ -14,8 +14,6 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "13.0"
   spec.ios.frameworks = 'UIKit'
   spec.swift_version = ['5']
- 
-  spec.dependency "Alamofire"
 
   spec.source = { :git => 'https://github.com/MobileUpLLC/Utils.git', :tag => spec.version.to_s }
   spec.source_files  = "Sources/", "Sources/**/*.{swift}"

@@ -42,12 +42,6 @@ final class ExampleViewController: UIViewController {
             }
         }
     }
-
-    @IBAction private func openServerClientControllerButtonTapped() {
-        let serverClientController = ServerClientViewController.initiate()
-        
-        navigationController?.pushViewController(serverClientController, animated: true)
-    }
     
     @IBAction private func openStoryboardInitableControllerButtonTapped() {
         let storyboardController = StoryboardInitableController.initiate()

@@ -17,7 +17,6 @@ Utils for iOS development.
 - [LocalNotificaitonService](#localnotificationservice)
 - [Extensions](#extensions)
 - [MulticastDelegate](#multicastdelegate)
-- [ServerClient](/Documentation/ServerClient.md)
 - [Button](#button)
 - [Layout](#layout)
 
@@ -183,10 +182,6 @@ let stackView = ItemsStackView<Int, UILabel>(
 
 - Swift 5.0 +
 - iOS 12.0 +
-
-## Installation
-
-Utils contain Alamofire 5.6 as external dependencies.
 
 ### CocoaPods
 

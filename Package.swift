@@ -12,15 +12,9 @@ let package = Package(
             name: "Utils",
             targets: ["Utils"])
     ],
-    dependencies: [
-        .package(
-            url: "https://github.com/Alamofire/Alamofire.git",
-            .upToNextMajor(from: "5.6.1")
-        )
-    ],
     targets: [
         .target(
-            name: "Utils",
-            dependencies: ["Alamofire"])
+            name: "Utils"
+        )
     ]
 )
