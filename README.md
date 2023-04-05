@@ -181,7 +181,7 @@ let stackView = ItemsStackView<Int, UILabel>(
 ## Requirements
 
 - Swift 5.0 +
-- iOS 12.0 +
+- iOS 13.0 +
 
 ### CocoaPods
 
@@ -189,7 +189,7 @@ let stackView = ItemsStackView<Int, UILabel>(
 2. Add the following to Podfile 
 
 ```
-pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.0.50', :branch => 'develop'
+pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.1.0', :branch => 'develop'
 ```
 
 3. Make ```pod install```
@@ -204,7 +204,7 @@ Swift Package Manager
 
 ```
 dependencies: [
-    .package(url: "https://github.com/MobileUpLLC/Utils", .upToNextMajor(from: "0.0.43"))
+    .package(url: "https://github.com/MobileUpLLC/Utils", .upToNextMajor(from: "0.1.0"))
 ]
 ```
 
