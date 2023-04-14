@@ -169,20 +169,6 @@
                         <action selector="openMulticastDelegateExampleButtonTapped" destination="-1" eventType="touchUpInside" id="y8k-Ev-BxC"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BqB-BV-C4p">
-                    <rect key="frame" x="16" y="432" width="382" height="55"/>
-                    <color key="backgroundColor" systemColor="systemBlueColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="55" id="OMB-Cy-b4y"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Open ServerClient Controller">
-                        <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="openServerClientControllerButtonTapped" destination="-1" eventType="touchUpInside" id="faV-DS-IyA"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -197,8 +183,6 @@
                 <constraint firstItem="TkG-3p-K3H" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="9UV-iV-xVh"/>
                 <constraint firstItem="r0y-tX-uQS" firstAttribute="top" secondItem="6gR-Mf-cbd" secondAttribute="bottom" constant="16" id="D3a-lg-6iM"/>
                 <constraint firstItem="PbM-gg-Zfx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="FjF-77-eKd"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BqB-BV-C4p" secondAttribute="trailing" constant="16" id="Imv-eY-BAb"/>
-                <constraint firstItem="vI0-XB-c8t" firstAttribute="top" secondItem="BqB-BV-C4p" secondAttribute="bottom" constant="88" id="Jzd-pn-DbB"/>
                 <constraint firstItem="GsL-0p-nD8" firstAttribute="top" secondItem="PbM-gg-Zfx" secondAttribute="bottom" constant="16" id="MuC-Iq-gok"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nhx-KG-PD1" secondAttribute="trailing" constant="16" id="NaD-9A-JE1"/>
                 <constraint firstItem="r0y-tX-uQS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="O51-ZJ-o0h"/>
@@ -214,7 +198,6 @@
                 <constraint firstItem="vI0-XB-c8t" firstAttribute="top" secondItem="jWP-BX-jvf" secondAttribute="bottom" constant="16" id="cFj-1F-cbj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="py9-L2-mxN" secondAttribute="trailing" constant="16" id="fOR-j1-Rmh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="r0y-tX-uQS" secondAttribute="trailing" constant="16" id="hri-NF-Ivo"/>
-                <constraint firstItem="BqB-BV-C4p" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="kUG-Jo-pgU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6gR-Mf-cbd" secondAttribute="trailing" constant="16" id="ljQ-x7-0Vq"/>
                 <constraint firstItem="8sv-FB-D6K" firstAttribute="top" secondItem="r0y-tX-uQS" secondAttribute="bottom" constant="16" id="nqg-2s-18M"/>
                 <constraint firstItem="667-cW-PeS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="pN2-ZM-OCz"/>

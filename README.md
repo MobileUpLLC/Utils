@@ -17,7 +17,6 @@ Utils for iOS development.
 - [LocalNotificaitonService](#localnotificationservice)
 - [Extensions](#extensions)
 - [MulticastDelegate](#multicastdelegate)
-- [ServerClient](/Documentation/ServerClient.md)
 - [Button](#button)
 - [Layout](#layout)
 
@@ -182,11 +181,7 @@ let stackView = ItemsStackView<Int, UILabel>(
 ## Requirements
 
 - Swift 5.0 +
-- iOS 12.0 +
-
-## Installation
-
-Utils contain Alamofire 5.6 as external dependencies.
+- iOS 13.0 +
 
 ### CocoaPods
 
@@ -194,7 +189,7 @@ Utils contain Alamofire 5.6 as external dependencies.
 2. Add the following to Podfile 
 
 ```
-pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.0.50', :branch => 'develop'
+pod 'Utils', :git => 'https://github.com/MobileUpLLC/Utils', :tag => '0.1.0', :branch => 'develop'
 ```
 
 3. Make ```pod install```
@@ -209,7 +204,7 @@ Swift Package Manager
 
 ```
 dependencies: [
-    .package(url: "https://github.com/MobileUpLLC/Utils", .upToNextMajor(from: "0.0.43"))
+    .package(url: "https://github.com/MobileUpLLC/Utils", .upToNextMajor(from: "0.1.0"))
 ]
 ```
 

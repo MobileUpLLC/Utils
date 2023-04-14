@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Utils"
-  spec.version      = "0.0.40"
+  spec.version      = "0.1.0"
   spec.summary      = "Utilities for fast, neat and convenient IOS-development"
   spec.description  = "Use handly utilities instead of creating by your own"
   spec.homepage     = "https://github.com/MobileUpLLC/Utils"
@@ -14,8 +14,6 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "13.0"
   spec.ios.frameworks = 'UIKit'
   spec.swift_version = ['5']
- 
-  spec.dependency "Alamofire"
 
   spec.source = { :git => 'https://github.com/MobileUpLLC/Utils.git', :tag => spec.version.to_s }
   spec.source_files  = "Sources/", "Sources/**/*.{swift}"
