@@ -7,6 +7,26 @@
 
 import UIKit
 
+extension UNAuthorizationOptions {
+    public static var `default`: UNAuthorizationOptions { [.alert, .sound, .badge] }
+}
+
+extension UNNotificationPresentationOptions {
+    public static var `default`: UNNotificationPresentationOptions {
+        if #available(iOS 14.0, *) {
+            return [.banner, .list, .sound, .badge]
+        } else {
+            return [.alert, .sound, .badge]
+        }
+    }
+}
+
+extension UNAuthorizationStatus {
+    public var isDenied: Bool { self == .denied }
+    public var isNotDetermined: Bool { self == .notDetermined }
+    public var isAuthorized: Bool { self == .authorized }
+}
+
 public protocol LocalNotificationServiceDelegate: AnyObject {
     func localNotificationService(
         _ service: LocalNotificationService,
@@ -19,13 +39,32 @@ public protocol LocalNotificationServiceDelegate: AnyObject {
     )
 }
 
+extension LocalNotificationServiceDelegate {
+    public func localNotificationService(
+        _ service: LocalNotificationService,
+        willPresent notification: UNNotification
+    ) -> UNNotificationPresentationOptions {
+        .default
+    }
+}
+
 public class LocalNotificationService: NSObject, UNUserNotificationCenterDelegate {
     public static let shared = LocalNotificationService()
     
     public weak var delegate: LocalNotificationServiceDelegate?
 
+    public var authorizationStatus: UNAuthorizationStatus {
+        get async {
+            await UNUserNotificationCenter.current().notificationSettings().authorizationStatus
+        }
+    }
+    
+    public func requestAuthorization(options: UNAuthorizationOptions = .default) async throws -> Bool {
+        try await UNUserNotificationCenter.current().requestAuthorization(options: options)
+    }
+    
     public func requestAuthorization(
-        options: UNAuthorizationOptions = [.alert, .sound, .badge],
+        options: UNAuthorizationOptions = .default,
         completion: @escaping (Result<Bool, Error>) -> Void
     ) {
         UNUserNotificationCenter.current().requestAuthorization(options: options) { success, error in
