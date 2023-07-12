@@ -40,7 +40,7 @@ public protocol LocalNotificationServiceDelegate: AnyObject {
 }
 
 extension LocalNotificationServiceDelegate {
-    func localNotificationService(
+    public func localNotificationService(
         _ service: LocalNotificationService,
         willPresent notification: UNNotification
     ) -> UNNotificationPresentationOptions {
