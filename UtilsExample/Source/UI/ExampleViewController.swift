@@ -29,16 +29,17 @@ final class ExampleViewController: UIViewController {
 
         view.backgroundColor = .white
         
-        pushService.requestAuthorization { result in
-            switch result {
-            case .success(let isAuthorised):
-                if isAuthorised {
+        Task {
+            do {
+                let isAuthorized = try await LocalNotificationService.shared.requestAuthorization()
+                
+                if isAuthorized {
                     print(Constants.successAuthorization)
                 } else {
                     print(Constants.nonSuccessAuthorization)
                 }
-            case .failure(let error):
-                print(error.localizedDescription)
+            } catch let error {
+                print(error)
             }
         }
     }
@@ -81,9 +82,10 @@ final class ExampleViewController: UIViewController {
     }
     
     @IBAction private func pushNotificationButtonTap(_ sender: UIButton) {
-        pushService.getAuthorizationStatus { [weak self] status in
-            if status == .authorized {
-                self?.createNotificationRequest()
+        Task {
+            let status = await LocalNotificationService.shared.authorizationStatus
+            if status.isAuthorized {
+                createNotificationRequest()
                 print(Constants.successAuthorizationStatus)
             } else {
                 print(Constants.nonSuccessAuthorizationStatus)
