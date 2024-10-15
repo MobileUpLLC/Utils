@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/// Solves the problem of storing reference types in an array for `MulticastDelegate`.
 private class Wrapper<T>: Hashable {
     weak var delegate: AnyObject?
     
@@ -24,8 +24,10 @@ private class Wrapper<T>: Hashable {
 }
 
 open class MulticastDelegate<T> {
+/// Computed property for unwrapping delegates from its storage location.
     private var delegates: [T] { wrappers.compactMap { $0.delegate as? T } }
-    
+/// Main storage location of delegates, it's stored as wrappers so that there is no additional reference to the delegate.
+/// Each time a delegate is added/removed or delegates' handler is called, set is being cleared of empty wrappers.
     private var wrappers: Set<Wrapper<T>> = []
     
     public init() { }
