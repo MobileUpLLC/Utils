@@ -6,7 +6,7 @@
 //
 
 import Foundation
-/// Solves the problem of storing reference types in an array for `MulticastDelegate.
+/// Solves the problem of storing reference types in an array for `MulticastDelegate`.
 private class Wrapper<T>: Hashable {
     weak var delegate: AnyObject?
     
